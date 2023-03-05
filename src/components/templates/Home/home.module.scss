@@ -10,7 +10,7 @@
       rgba(21, 21, 21, 0.56) 100%,
       rgba(21, 21, 21, 0.56) 100%
     ),
-    url($cdn + "images/bgHome1.png") left top/cover no-repeat;
+    url($cdn + "images/home/bgHome1.png") left top/cover no-repeat;
 
   @include media-breakpoint-up(xl) {
     /* height: 100vh; */
