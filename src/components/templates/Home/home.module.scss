@@ -80,14 +80,30 @@
 
   .infoBox {
     width: 75vw;
-    height: 100px;
+    height: fit-content;
 
     background: $degrade1;
     border-radius: 10px;
 
+    padding: 1rem;
+
     @include media-breakpoint-up(xl) {
       width: 939px;
       height: 216px;
+      padding: 21px 0px 23px 71px;
+    }
+
+    .customButton {
+      border: 2px solid #ffffff;
+      border-radius: 5px;
+      font-size: 20px;
+      font-family: $headings-font-family;
+      width: 169px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0.06em;
     }
   }
 }
@@ -107,16 +123,40 @@
   .title {
     font-size: 32px;
     color: #ffffff;
+    line-height: 1;
 
+    position: relative;
+    z-index: 2;
     @include media-breakpoint-up(xxl) {
       font-size: 56px;
+    }
+  }
+
+  .titleDecore {
+    width: 52%;
+    height: 10px;
+
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    z-index: 1;
+
+    @include media-breakpoint-up(xl) {
+      height: auto;
+      bottom: 22.5px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      bottom: 10px;
     }
   }
 
   .proyect {
     width: fit-content;
     height: fit-content;
-
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
     background: $degrade2;
 
     border-radius: 10px;
@@ -124,12 +164,62 @@
     @include media-breakpoint-up(xl) {
       width: 942px;
       height: 216px;
+      flex-direction: row;
+      column-gap: 24px;
     }
 
     .imgProyect {
       @include media-breakpoint-down(sm) {
-        width: 200px;
+        width: 100%;
       }
+    }
+
+    .right {
+      padding: 0px 1rem 1rem;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+
+      @include media-breakpoint-up(xl) {
+        padding: 20px 0px 0px 0px;
+      }
+      .tag {
+        color: #000000;
+        padding: 2px 22px 0px;
+        font-size: 13px;
+        background: #ffffff;
+        border-radius: 13px;
+        display: flex;
+        letter-spacing: 0.06em;
+        align-items: center;
+        width: fit-content;
+        height: 19px;
+      }
+
+      .proyectDescription {
+        font-size: 14px;
+        letter-spacing: 0.06em;
+      }
+    }
+  }
+
+  .customButton {
+    width: 153px;
+    height: 50px;
+    letter-spacing: 0.06em;
+    font-size: 20px;
+    font-family: $headings-font-family;
+
+    transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+
+    .innerText {
+      line-height: 1;
+      transform: skewX(20deg);
+      -webkit-transform: skewX(20deg);
+      -moz-transform: skewX(20deg);
     }
   }
 }

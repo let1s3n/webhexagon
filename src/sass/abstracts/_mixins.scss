@@ -32,6 +32,8 @@ $spacers: map-merge($spacers, $custom-spacers);
 $custom-theme-colors: (
   "terciary": $terciary,
   "cuaternary": $cuaternary,
+  "black": $black,
+  "white": $white,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
@@ -40,8 +42,6 @@ $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
 $utilities-text: map-merge(
   $utilities-colors,
   (
-    "black": to-rgb($black),
-    "white": to-rgb($white),
     "body": to-rgb($body-color),
     "desactivado": to-rgb($desactivado),
   )
