@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import usePathName from "@/hooks/usePathName";
 import styles from "./navbar.module.scss";
 const NavBar = () => {
+  const currentPath = usePathName();
+  useEffect(() => {
+    console.log("styles: ", styles);
+  }, [styles]);
+
   return (
     <Navbar
       className={styles.customNavbar + " p-0 position-fixed top-0 w-100"}
@@ -23,23 +29,32 @@ const NavBar = () => {
             style={{ height: "auto" }}
           />
 
-          <p className={styles.textLogo + " fw-bold text-white kalekoBold"}>
+          <p
+            className={
+              styles.textLogo +
+              (currentPath === "/" ? " text-white" : " text-black") +
+              " fw-bold kalekoBold"
+            }
+          >
             <span className="fs-6 fs-xl-4">Hexagon</span> Studio
           </p>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Nav.Link className="text-white" href="/">
+            <Nav.Link
+              className={currentPath === "/" ? "text-white" : "text-black"}
+              href="/"
+            >
               Inicio
             </Nav.Link>
-            <Nav.Link className="text-white" href="/proyectos">
+            <Nav.Link className={currentPath === "/" ? "text-white" : "text-black"} href="/proyectos">
               Proyectos
             </Nav.Link>
-            <Nav.Link className="text-white" href="/servicios">
+            <Nav.Link className={currentPath === "/" ? "text-white" : "text-black"} href="/servicios">
               Servicios
             </Nav.Link>
-            <Nav.Link className="text-white" href="/contacto">
+            <Nav.Link className={currentPath === "/" ? "text-white" : "text-black"} href="/contacto">
               Contacto
             </Nav.Link>
           </Nav>

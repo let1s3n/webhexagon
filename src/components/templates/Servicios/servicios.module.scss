@@ -1,0 +1,12 @@
+@import "@/sass/abstracts/variables";
+@import "bootstrap/scss/mixins";
+
+.introduction {
+  height: fit-content;
+  min-height: fit-content;
+  padding: 100px 0px 16px 0px;
+
+  @include media-breakpoint-up(xl) {
+    padding: 100px 0px 168px 0px;
+  }
+}
