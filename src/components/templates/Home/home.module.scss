@@ -4,8 +4,8 @@
 .introduction {
   height: fit-content;
   min-height: fit-content;
-  padding: 100px 0px 16px 0px;
-
+  padding: 100px 0px 100px 0px;
+  position: relative;
   background: linear-gradient(
       rgba(21, 21, 21, 0.56) 100%,
       rgba(21, 21, 21, 0.56) 100%
@@ -53,7 +53,7 @@
       }
 
       .customButton {
-        background: linear-gradient(90deg, #2de5fd 0%, #4c7ff5 136.88%);
+        background: $degradeButton1;
         color: #ffffff;
         width: 263px;
         height: 54px;
@@ -74,6 +74,61 @@
         clip-path: polygon(0 62%, 0 0, 100% 0, 100% 100%, 16% 100%);
         position: absolute;
         left: 0px;
+      }
+    }
+  }
+
+  .infoBox {
+    width: 75vw;
+    height: 100px;
+
+    background: $degrade1;
+    border-radius: 10px;
+
+    @include media-breakpoint-up(xl) {
+      width: 939px;
+      height: 216px;
+    }
+  }
+}
+
+.proyects {
+  padding: 150px 0px 78px 0px;
+  background: $degradeProyectSection;
+
+  @include media-breakpoint-up(xxl) {
+    padding: 200px 0px 78px 0px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 252px 0px 78px 0px;
+  }
+
+  .title {
+    font-size: 32px;
+    color: #ffffff;
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 56px;
+    }
+  }
+
+  .proyect {
+    width: fit-content;
+    height: fit-content;
+
+    background: $degrade2;
+
+    border-radius: 10px;
+
+    @include media-breakpoint-up(xl) {
+      width: 942px;
+      height: 216px;
+    }
+
+    .imgProyect {
+      @include media-breakpoint-down(sm) {
+        width: 200px;
       }
     }
   }

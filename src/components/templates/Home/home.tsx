@@ -23,10 +23,16 @@ const Home = () => {
           </div>
           <div className={styles.right}>
             <div>
-              <h1 className={styles.title + " text-white pb-3 text-center text-xl-end"}>
+              <h1
+                className={
+                  styles.title + " text-white pb-3 text-center text-xl-end"
+                }
+              >
                 Lorem ipsum dolor sit amet
               </h1>
-              <h1 className={styles.title + " text-white text-center text-xl-end"}>
+              <h1
+                className={styles.title + " text-white text-center text-xl-end"}
+              >
                 Lorem ipsum
               </h1>
             </div>
@@ -50,6 +56,55 @@ const Home = () => {
                 CONTACTAR AHORA
               </Button>
               <div className={styles.buttonDecoration}></div>
+            </div>
+          </div>
+        </Container>
+
+        <div
+          className={
+            styles.infoBox +
+            " position-absolute top-100 start-50 translate-middle"
+          }
+        ></div>
+      </section>
+
+      <section className={styles.proyects}>
+        <Container className="g-0 mx-auto" style={{ width: "fit-content" }}>
+          <h1 className={styles.title}>PROYECTOS DESTACADOS</h1>
+
+          <div
+            className="d-flex flex-column mt-8 align-items-center align-items-xxl-stretch"
+            style={{ rowGap: "48px" }}
+          >
+            <div className={styles.proyect}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome1.png`}
+                alt="Proyecto Home 1"
+                width={362}
+                height={0}
+                className={styles.imgProyect}
+                style={{ height: "auto" }}
+              />
+            </div>
+            <div className={styles.proyect}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome2.png`}
+                alt="Proyecto Home 2"
+                width={362}
+                height={0}
+                className={styles.imgProyect}
+                style={{ height: "auto" }}
+              />
+            </div>
+            <div className={styles.proyect}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome3.png`}
+                alt="Proyecto Home 3"
+                width={362}
+                height={0}
+                className={styles.imgProyect}
+                style={{ height: "auto" }}
+              />
             </div>
           </div>
         </Container>
