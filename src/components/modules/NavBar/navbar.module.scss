@@ -1,0 +1,13 @@
+.customNavbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(
+    108.46deg,
+    rgba(255, 255, 255, 0.0099) 0%,
+    rgba(255, 255, 255, 0.066) 100%
+  );
+  backdrop-filter: blur(10px);
+}
