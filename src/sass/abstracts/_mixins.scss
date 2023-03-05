@@ -1,6 +1,15 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/maps";
 
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file);
+  }
+}
+
+@include font("kaleko-bold", $cdn + "fonts/kaleko/kalekoBold.ttf");
+
 $custom-spacers: (
   6: $spacer * 4,
   7: $spacer * 4.5,
@@ -9,6 +18,16 @@ $custom-spacers: (
   10: $spacer * 6,
 );
 $spacers: map-merge($spacers, $custom-spacers);
+
+$utilities: (
+  "font-size": (
+    responsive: true,
+    rfs: false,
+    property: font-size,
+    class: fs,
+    values: $font-sizes,
+  ),
+);
 
 @import "bootstrap/scss/utilities";
 

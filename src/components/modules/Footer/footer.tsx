@@ -6,10 +6,11 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <Image
-        src={`${process.env.NEXT_PUBLIC_CDN}images/logo.png`}
+        src={`${process.env.NEXT_PUBLIC_CDN}images/logo2.png`}
         alt="Hexagon Logo"
         width={53}
-        height={60}
+        height={0}
+        style={{ height: "auto" }}
       />
 
       <div className="d-flex" style={{ columnGap: "1rem" }}>
@@ -48,7 +49,10 @@ const Footer = () => {
       </div>
 
       <div>
-        <ul className="d-flex list-unstyled pt-2 justify-content-center" style={{ columnGap: "32px" }}>
+        <ul
+          className="d-flex list-unstyled pt-2 justify-content-center"
+          style={{ columnGap: "32px" }}
+        >
           <li className={styles.listSection}>
             <Link href="/proyectos" className="text-decoration-none text-white">
               Proyectos
@@ -72,7 +76,6 @@ const Footer = () => {
       <p className={styles.text}>
         Copyright © 2023 Hexagon Studio. All rights reserved.
       </p>
-      
     </div>
   );
 };
