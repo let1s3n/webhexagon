@@ -2,6 +2,7 @@
 @import "bootstrap/scss/mixins";
 
 .customNavbar {
+  z-index: 99999;
   height: 100px;
   display: flex;
   align-items: center;

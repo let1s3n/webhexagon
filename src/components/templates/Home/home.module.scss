@@ -13,7 +13,8 @@
     url($cdn + "images/bgHome1.png") left top/cover no-repeat;
 
   @include media-breakpoint-up(xl) {
-    height: 100vh;
+    /* height: 100vh; */
+    padding: 100px 0px 168px 0px;
   }
 
   .imageContainer {

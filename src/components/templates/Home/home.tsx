@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <section className={styles.introduction}>
-        <Container className="g-0 d-flex flex-column flex-xl-row p-3 px-xxl-10 pt-xxl-9 pb-xxl-0 justify-content-between align-items-center align-items-xl-stretch">
+        <Container className="g-0 d-flex flex-column flex-xl-row p-3 px-xxl-10 pt-xxl-9 justify-content-between align-items-center align-items-xl-stretch">
           <div className={styles.imageContainer}>
             <Image
               src={`${process.env.NEXT_PUBLIC_CDN}images/illustrationHome1.png`}
