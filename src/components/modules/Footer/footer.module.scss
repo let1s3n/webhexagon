@@ -1,5 +1,5 @@
-@import "@/sass/abstracts/variables";
-@import "bootstrap/scss/mixins";
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
 
 .footer {
   display: flex;
@@ -12,7 +12,7 @@
 
   color: white;
   flex-direction: column;
-  /* justify-content: center; */
+
   align-items: center;
   row-gap: 40px;
 
