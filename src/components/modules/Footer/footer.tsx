@@ -1,7 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./footer.module.scss";
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './footer.module.scss';
 const Footer = () => {
   return (
     <div className={styles.footer}>
@@ -10,10 +9,10 @@ const Footer = () => {
         alt="Hexagon Logo"
         width={53}
         height={0}
-        style={{ height: "auto" }}
+        style={{ height: 'auto' }}
       />
 
-      <div className="d-flex" style={{ columnGap: "1rem" }}>
+      <div className="d-flex" style={{ columnGap: '1rem' }}>
         <div className={styles.icon}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/fbIcon.svg`}
@@ -51,7 +50,7 @@ const Footer = () => {
       <div>
         <ul
           className="d-flex list-unstyled pt-2 justify-content-center"
-          style={{ columnGap: "32px" }}
+          style={{ columnGap: '32px' }}
         >
           <li className={styles.listSection}>
             <Link href="/proyectos" className="text-decoration-none text-white">
