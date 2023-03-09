@@ -8,13 +8,18 @@ const Home = () => {
   return (
     <>
       <section className={styles.introduction}>
-        <Container className="g-0 d-flex flex-column flex-xl-row p-3 px-xxl-10 pt-xxl-9 justify-content-between align-items-center align-items-xl-stretch">
+        <Container
+          className="g-0 d-flex flex-column flex-xl-row p-3 px-xxl-10 pt-xxl-9 justify-content-between align-items-center align-items-xl-stretch"
+          style={{ rowGap: '1.5rem' }}
+        >
           <div className={styles.imageContainer}>
             <Image
               src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
               alt="Illustration Home 1"
               fill
               style={{ objectFit: 'contain' }}
+              priority
+              sizes="1492px"
             />
           </div>
           <div className={styles.right}>

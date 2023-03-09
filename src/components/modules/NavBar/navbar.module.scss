@@ -1,9 +1,9 @@
-@import "@/sass/abstracts/variables";
-@import "bootstrap/scss/mixins";
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
 
 .customNavbar {
   z-index: 99999;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +14,10 @@
     rgba(255, 255, 255, 0.066) 100%
   );
   backdrop-filter: blur(10px);
+
+  @include media-breakpoint-up(xl) {
+    height: 100px;
+  }
 
   .textLogo {
     font-size: 14px;

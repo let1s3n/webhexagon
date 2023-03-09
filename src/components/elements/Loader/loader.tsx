@@ -13,9 +13,10 @@ const Loader = (props: any) => {
       }
     >
       <Image
-        className="logo-loader"
         src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo.png`}
         alt="logo loader"
+        width={200}
+        height={200}
       />
     </div>
   );
