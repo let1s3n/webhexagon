@@ -1,5 +1,5 @@
-@import "@/sass/abstracts/variables";
-@import "bootstrap/scss/mixins";
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
 
 .introduction {
   height: fit-content;
@@ -10,7 +10,7 @@
       rgba(21, 21, 21, 0.56) 100%,
       rgba(21, 21, 21, 0.56) 100%
     ),
-    url($cdn + "images/home/bgHome1.png") left top/cover no-repeat;
+    url($cdn + 'images/home/bgHome1.png') left top/cover no-repeat;
 
   @include media-breakpoint-up(xl) {
     /* height: 100vh; */
@@ -87,6 +87,8 @@
 
     padding: 1rem;
 
+    z-index: 2;
+
     @include media-breakpoint-up(xl) {
       width: 939px;
       height: 216px;
@@ -111,7 +113,8 @@
 .proyects {
   padding: 150px 0px 78px 0px;
   background: $degradeProyectSection;
-
+  position: relative;
+  overflow: hidden;
   @include media-breakpoint-up(xxl) {
     padding: 200px 0px 78px 0px;
   }
@@ -158,9 +161,8 @@
     flex-direction: column;
     row-gap: 1rem;
     background: $degrade2;
-
     border-radius: 10px;
-
+    z-index: 2;
     @include media-breakpoint-up(xl) {
       width: 942px;
       height: 216px;
@@ -221,5 +223,15 @@
       -webkit-transform: skewX(20deg);
       -moz-transform: skewX(20deg);
     }
+  }
+
+  .circleDecore {
+    width: 905px;
+    height: 878px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -79px;
+    right: -235px;
   }
 }

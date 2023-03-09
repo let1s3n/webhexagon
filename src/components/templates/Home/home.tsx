@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { Container, Button } from "react-bootstrap";
-import styles from "./home.module.scss";
+import { Button, Container } from 'react-bootstrap';
+import styles from './home.module.scss';
 
 const Home = () => {
-  useEffect(() => {
-    console.log("styles: ", styles);
-  }, [styles]);
-
   return (
     <>
       <section className={styles.introduction}>
@@ -19,20 +14,20 @@ const Home = () => {
               src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
               alt="Illustration Home 1"
               fill
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: 'contain' }}
             />
           </div>
           <div className={styles.right}>
             <div>
               <h1
                 className={
-                  styles.title + " text-white pb-3 text-center text-xl-end"
+                  styles.title + ' text-white pb-3 text-center text-xl-end'
                 }
               >
                 Lorem ipsum dolor sit amet
               </h1>
               <h1
-                className={styles.title + " text-white text-center text-xl-end"}
+                className={styles.title + ' text-white text-center text-xl-end'}
               >
                 Lorem ipsum
               </h1>
@@ -51,7 +46,7 @@ const Home = () => {
               </p>
             </div>
             <div
-              className={styles.customButtonContainer + " position-relative"}
+              className={styles.customButtonContainer + ' position-relative'}
             >
               <Link href="/contacto" passHref>
                 <Button variant="link" className={styles.customButton}>
@@ -66,7 +61,7 @@ const Home = () => {
         <div
           className={
             styles.infoBox +
-            " position-absolute top-100 start-50 translate-middle text-white"
+            ' position-absolute top-100 start-50 translate-middle text-white'
           }
         >
           <h4 className="fs-6 fs-xl-4 mb-3">
@@ -76,7 +71,7 @@ const Home = () => {
 
           <p
             className="d-none d-xl-block fs-14 mb-4"
-            style={{ maxWidth: "362px" }}
+            style={{ maxWidth: '362px' }}
           >
             Nos apasiona ayudar a las marcas con propósito a ganar en Internet y
             aumentar su impacto positivo.
@@ -92,18 +87,18 @@ const Home = () => {
             width={277}
             height={0}
             className="position-absolute d-none d-xl-block"
-            style={{ top: "-33px", right: "109px", height: "auto" }}
+            style={{ top: '-33px', right: '109px', height: 'auto' }}
           />
         </div>
       </section>
 
       <section className={styles.proyects}>
-        <Container className="g-0 mx-auto" style={{ width: "fit-content" }}>
+        <Container className="g-0 mx-auto" style={{ width: 'fit-content' }}>
           <div
             className="d-flex flex-column align-items-center align-items-xl-stretch flex-xl-row justify-content-between"
-            style={{ rowGap: "1rem" }}
+            style={{ rowGap: '1rem' }}
           >
-            <div className="position-relative" style={{ width: "fit-content" }}>
+            <div className="position-relative" style={{ width: 'fit-content' }}>
               <h1 className={styles.title}>PROYECTOS DESTACADOS</h1>
               <Image
                 src={`${process.env.NEXT_PUBLIC_CDN}images/general/titleDecore.svg`}
@@ -118,7 +113,7 @@ const Home = () => {
               <Button
                 variant="black"
                 className={
-                  styles.customButton + " border-white border-2 rounded-0"
+                  styles.customButton + ' border-white border-2 rounded-0'
                 }
               >
                 <p className={styles.innerText}>VER PROYECTOS</p>
@@ -128,7 +123,7 @@ const Home = () => {
 
           <div
             className="d-flex flex-column mt-8 align-items-center align-items-xxl-stretch"
-            style={{ rowGap: "48px" }}
+            style={{ rowGap: '48px' }}
           >
             <div className={styles.proyect}>
               <Image
@@ -137,11 +132,11 @@ const Home = () => {
                 width={362}
                 height={0}
                 className={styles.imgProyect}
-                style={{ height: "auto" }}
+                style={{ height: 'auto' }}
               />
 
               <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: "12px" }}>
+                <div className="d-flex" style={{ columnGap: '12px' }}>
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
@@ -162,16 +157,16 @@ const Home = () => {
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: "1rem", paddingTop: "27px" }}
+                  style={{ columnGap: '1rem', paddingTop: '27px' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: "12px" }}>
+                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
                       width={39}
                       height={0}
-                      style={{ height: "auto" }}
+                      style={{ height: 'auto' }}
                     />
                   </Link>
                 </div>
@@ -184,11 +179,11 @@ const Home = () => {
                 width={362}
                 height={0}
                 className={styles.imgProyect}
-                style={{ height: "auto" }}
+                style={{ height: 'auto' }}
               />
 
               <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: "12px" }}>
+                <div className="d-flex" style={{ columnGap: '12px' }}>
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
@@ -209,16 +204,16 @@ const Home = () => {
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: "1rem", paddingTop: "27px" }}
+                  style={{ columnGap: '1rem', paddingTop: '27px' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: "12px" }}>
+                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
                       width={39}
                       height={0}
-                      style={{ height: "auto" }}
+                      style={{ height: 'auto' }}
                     />
                   </Link>
                 </div>
@@ -231,11 +226,11 @@ const Home = () => {
                 width={362}
                 height={0}
                 className={styles.imgProyect}
-                style={{ height: "auto" }}
+                style={{ height: 'auto' }}
               />
 
               <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: "12px" }}>
+                <div className="d-flex" style={{ columnGap: '12px' }}>
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
@@ -256,16 +251,16 @@ const Home = () => {
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: "1rem", paddingTop: "27px" }}
+                  style={{ columnGap: '1rem', paddingTop: '27px' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: "12px" }}>
+                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
                       width={39}
                       height={0}
-                      style={{ height: "auto" }}
+                      style={{ height: 'auto' }}
                     />
                   </Link>
                 </div>
@@ -273,6 +268,8 @@ const Home = () => {
             </div>
           </div>
         </Container>
+
+        <div className={styles.circleDecore}></div>
       </section>
     </>
   );
