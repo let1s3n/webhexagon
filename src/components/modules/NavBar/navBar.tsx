@@ -18,11 +18,13 @@ const NavBar = () => {
           style={{ columnGap: '20px' }}
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo.png`}
+            src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
             alt="Hexagon Logo"
             width={53}
             height={0}
             style={{ height: 'auto' }}
+            priority
+            quality={100}
           />
 
           <p

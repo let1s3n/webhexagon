@@ -34,6 +34,47 @@
     justify-content: center;
 
     border: 1px solid #ffffff;
+
+    &--fb {
+      &:hover {
+        /* background-color: #3b5998; */
+        background: linear-gradient(120deg, #3b5998, #ffffff);
+      }
+    }
+
+    &--ig {
+      &:hover {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d
+        );
+      }
+    }
+
+    &--ws {
+      &:hover {
+        background: linear-gradient(
+          45deg,
+          #e5ffcc,
+          #1ebea5,
+          #00e676,
+          #d0e9ea,
+          #edf8f5,
+          #ffffff
+        );
+      }
+    }
+
+    &--yt {
+      &:hover {
+        background: linear-gradient(120deg, #ff0000, #282828);
+      }
+    }
   }
 
   .listSection {

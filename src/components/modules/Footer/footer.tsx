@@ -5,15 +5,16 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <Image
-        src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo.png`}
+        src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
         alt="Hexagon Logo"
         width={53}
         height={0}
         style={{ height: 'auto' }}
+        quality={100}
       />
 
       <div className="d-flex" style={{ columnGap: '1rem' }}>
-        <div className={styles.icon}>
+        <div className={styles.icon + ' ' + styles['icon--fb']}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/fbIcon.svg`}
             alt="Facebook Icon"
@@ -21,7 +22,7 @@ const Footer = () => {
             height={24}
           />
         </div>
-        <div className={styles.icon}>
+        <div className={styles.icon + ' ' + styles['icon--ig']}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/igIcon.svg`}
             alt="Instagram Icon"
@@ -29,7 +30,7 @@ const Footer = () => {
             height={24}
           />
         </div>
-        <div className={styles.icon}>
+        <div className={styles.icon + ' ' + styles['icon--ws']}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/whatsappIcon.svg`}
             alt="Whatsapp Icon"
@@ -37,7 +38,7 @@ const Footer = () => {
             height={24}
           />
         </div>
-        <div className={styles.icon}>
+        <div className={styles.icon + ' ' + styles['icon--yt']}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/ytIcon.svg`}
             alt="Youtube Icon"

@@ -1,8 +1,8 @@
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
 
-import { SSRProvider } from 'react-bootstrap';
 import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
 import '@/sass/app.scss';
+import { SSRProvider } from 'react-bootstrap';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

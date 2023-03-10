@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button, Container } from 'react-bootstrap';
 import styles from './home.module.scss';
 
-const Home = () => {
+const Home = ({ imageProps }: any) => {
   return (
     <>
       <section className={styles.introduction}>
@@ -14,12 +14,16 @@ const Home = () => {
         >
           <div className={styles.imageContainer}>
             <Image
-              src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
+              /* src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`} */
+              src={imageProps[0].src}
               alt="Illustration Home 1"
               fill
               style={{ objectFit: 'contain' }}
               priority
               sizes="1492px"
+              placeholder="blur"
+              blurDataURL={imageProps[0].blurDataURL}
+              quality={100}
             />
           </div>
           <div className={styles.right}>
@@ -87,12 +91,16 @@ const Home = () => {
           </Button>
 
           <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/home/cubosHome.png`}
+            /* src={`${process.env.NEXT_PUBLIC_CDN}images/home/cubosHome.png`} */
+            src={imageProps[1].src}
             alt="Cubos Home"
             width={277}
             height={0}
             className="position-absolute d-none d-xl-block"
             style={{ top: '-33px', right: '109px', height: 'auto' }}
+            placeholder="blur"
+            blurDataURL={imageProps[1].blurDataURL}
+            quality={100}
           />
         </div>
       </section>
@@ -114,7 +122,7 @@ const Home = () => {
               />
             </div>
 
-            <Link href="/proyectos" passHref>
+            <Link href="/proyectos" passHref style={{ zIndex: '2' }}>
               <Button
                 variant="black"
                 className={
