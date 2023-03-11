@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button, Container } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import styles from './home.module.scss';
 
 const Home = ({ imageProps }: any) => {
@@ -283,6 +283,71 @@ const Home = ({ imageProps }: any) => {
         </Container>
 
         <div className={styles.circleDecore}></div>
+      </section>
+
+      <section className={styles.contact}>
+        <div className={styles.main}>
+          <Container className="g-0 text-white text-center">
+            <h2>¿TODO LISTO PARA EMPEZAR?</h2>
+            <p>Dejanos un mensaje y te contactaremos lo más pronto posible.</p>
+
+            <Form className={styles.customForm}>
+              <Row
+                className="g-0 mb-5"
+                style={{
+                  marginBottom: '36px',
+                  columnGap: '1.5rem',
+                  rowGap: '1.5rem',
+                }}
+              >
+                <Col xs={12} xl="auto" className="position-relative">
+                  <Form.Label>Nombre completo</Form.Label>
+                  <Form.Control type="text" placeholder="Nombre completo" />
+                </Col>
+
+                <Col xs={12} xl="auto" className="position-relative">
+                  <Form.Label>Company</Form.Label>
+                  <Form.Control type="text" placeholder="Company" />
+                </Col>
+
+                <Col xs={12} xl="auto" className="position-relative">
+                  <Form.Label>Correo eléctronico</Form.Label>
+                  <Form.Control type="email" placeholder="Correo eléctronico" />
+                </Col>
+
+                <Col xs={12} xl="auto" className="position-relative">
+                  <Form.Label>Número de contacto</Form.Label>
+                  <Form.Control type="text" placeholder="Número de contacto" />
+                </Col>
+
+                <Col xs={12} className="position-relative">
+                  <Form.Label>Mensaje</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    placeholder="Mensaje"
+                    style={{ height: '126px' }}
+                  />
+                </Col>
+              </Row>
+
+              <div
+                className={styles.customButtonContainer + ' position-relative'}
+              >
+                {/* <Link href="/contacto" passHref> */}
+                <Button
+                  type="submit"
+                  variant="link"
+                  className={styles.customButton}
+                >
+                  ENVIAR AHORA
+                </Button>
+                {/* </Link> */}
+                <div className={styles.buttonDecoration}></div>
+              </div>
+            </Form>
+          </Container>
+        </div>
+        <div className={styles.outsideClip}></div>
       </section>
     </>
   );

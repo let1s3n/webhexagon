@@ -15,9 +15,33 @@ dl {
 }
 
 .kalekoBold {
-  font-family: "kaleko-bold";
+  font-family: 'kaleko-bold';
 }
 
 .fs-14 {
   font-size: $font-size-sm;
+}
+
+.form-label {
+  margin: 0 !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: 16px !important;
+  background: #11121b !important;
+  color: #ffffff !important;
+}
+
+.form-control {
+  background: #11121b !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+
+  &:not(textarea) {
+    height: 56px !important;
+
+    @include media-breakpoint-up(xl) {
+      width: 362px !important;
+    }
+  }
 }

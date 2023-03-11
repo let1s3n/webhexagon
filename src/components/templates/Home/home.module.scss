@@ -240,3 +240,92 @@
     right: -235px;
   }
 }
+
+.contact {
+  /* height: fit-content; */
+
+  position: relative;
+
+  .main {
+    /* z-index: 1; */
+    /* height: 715px; */
+    height: fit-content;
+    min-height: fit-content;
+    padding: 100px 0px 100px 0px;
+    /* background: url($cdn + 'images/home/bgHome2.png') left top/cover no-repeat
+      rgba(21, 21, 21, 0.96); */
+
+    background: url($cdn + 'images/home/bgHome2.png') left top/cover no-repeat
+      #11121b;
+
+    /* clip-path: polygon(50% 10%, 0 0, 100% 0); */
+    clip-path: polygon(0 100%, 0 0, 50% 2%, 100% 0, 100% 100%);
+
+    @include media-breakpoint-up(xl) {
+      padding: 108px 0px 69px 0px;
+    }
+
+    .customForm {
+      margin: 54px auto 0px;
+
+      width: 80%;
+      /* width: fit-content; */
+
+      @include media-breakpoint-up(xl) {
+        width: 748px;
+      }
+
+      .customButtonContainer {
+        position: relative;
+        width: 100%;
+        height: 56px;
+        align-self: center;
+        @include media-breakpoint-up(xl) {
+          align-self: end;
+        }
+
+        .customButton {
+          background: #1e1e1e;
+          color: #4b4b4b;
+          width: calc(100% - 3px);
+          height: 54px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0px;
+          text-decoration: none;
+          clip-path: polygon(0 62%, 0 0, 100% 0, 100% 100%, 16% 100%);
+          position: absolute;
+          right: 0px;
+          z-index: 2;
+          font-size: 20px;
+        }
+        .buttonDecoration {
+          width: 100%;
+          height: 100%;
+          background: #000000;
+          clip-path: polygon(0 62%, 0 0, 100% 0, 100% 100%, 16% 100%);
+          position: absolute;
+          left: 0px;
+        }
+      }
+    }
+  }
+  .outsideClip {
+    clip-path: polygon(50% 5%, 0 0, 100% 0);
+    /* z-index: 10; */
+    position: absolute;
+    width: 100%;
+    height: 715px;
+    top: 0;
+    left: 0;
+    /* background: linear-gradient(
+      180deg,
+      #0f111a 0%,
+      #161a2d 40.11%,
+      #222b53 78.13%,
+      #192866 100%
+    ); */
+    background: #192866;
+  }
+}
