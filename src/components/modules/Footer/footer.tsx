@@ -9,7 +9,7 @@ const Footer = () => {
         alt="Hexagon Logo"
         width={53}
         height={0}
-        style={{ height: 'auto' }}
+        className={styles.footerLogo}
         quality={100}
       />
 
