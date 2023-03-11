@@ -3,20 +3,11 @@ import TechGrid from '@/components/modules/TechGrid/techGrid';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
 import styles from './home.module.scss';
 const Home = ({ imageProps }: any) => {
   const { width, height } = useWindowDimensions();
-  const [mainContactHeight, setMainContactHeight] = useState('715px');
-
-  useEffect(() => {
-    setMainContactHeight(
-      document.getElementById('contactMain')?.offsetHeight?.toString() + 'px'
-    );
-  }, []);
-
   return (
     <>
       <section className={styles.introduction}>
