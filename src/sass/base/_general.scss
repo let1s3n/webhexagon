@@ -38,7 +38,7 @@ dl {
   color: #ffffff !important;
 
   &:not(textarea) {
-    height: 56px !important;
+    height: 58px !important;
 
     @include media-breakpoint-up(xl) {
       width: 362px !important;
