@@ -1,6 +1,7 @@
 import usePathName from '@/hooks/usePathName';
 import Image from 'next/image';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+
 import styles from './navbar.module.scss';
 const NavBar = () => {
   const currentPath = usePathName();
@@ -39,30 +40,75 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
+          <Nav className="align-items-center" style={{ columnGap: '32px' }}>
             <Nav.Link
-              className={currentPath === '/' ? 'text-white' : 'text-black'}
+              className={
+                'position-relative p-0 ' +
+                (currentPath === '/' ? 'text-white' : 'text-black')
+              }
               href="/"
             >
               Inicio
+              {currentPath === '/' ? (
+                <div className={styles.locationDecorator}></div>
+              ) : null}
             </Nav.Link>
             <Nav.Link
-              className={currentPath === '/' ? 'text-white' : 'text-black'}
+              className={
+                'position-relative p-0 ' +
+                (currentPath === '/' ? 'text-white' : 'text-black')
+              }
               href="/proyectos"
             >
               Proyectos
+              {currentPath === '/proyectos' ? (
+                <div className={styles.locationDecorator}></div>
+              ) : null}
             </Nav.Link>
             <Nav.Link
-              className={currentPath === '/' ? 'text-white' : 'text-black'}
+              className={
+                'position-relative p-0 ' +
+                (currentPath === '/' ? 'text-white' : 'text-black')
+              }
               href="/servicios"
             >
               Servicios
+              {currentPath === '/servicios' ? (
+                <div className={styles.locationDecorator}></div>
+              ) : null}
             </Nav.Link>
             <Nav.Link
-              className={currentPath === '/' ? 'text-white' : 'text-black'}
+              className={
+                'position-relative border p-0 d-flex align-items-center justify-content-center ' +
+                (currentPath === '/' ? 'text-white' : 'text-black')
+              }
               href="/contacto"
+              style={{
+                marginLeft: '12px',
+                width: '153px',
+                height: '42px',
+                borderColor: '#0059FF !important',
+                transform: 'skewX(-20deg)',
+              }}
             >
-              Contacto
+              <p
+                className="lh-1 m-0"
+                style={{
+                  transform: 'skewX(20deg)',
+                }}
+              >
+                Contacto
+              </p>
+
+              {currentPath === '/contacto' ? (
+                <div
+                  className={styles.locationDecorator}
+                  style={{
+                    transform:
+                      'translateX(-50%) skewX(20deg) rotate(-45deg)  !important',
+                  }}
+                ></div>
+              ) : null}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
