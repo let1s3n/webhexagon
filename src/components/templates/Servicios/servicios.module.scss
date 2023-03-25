@@ -2,11 +2,82 @@
 @import "bootstrap/scss/mixins";
 
 .introduction {
-  height: fit-content;
+  // height: fit-content;
+  height: 652px;
+  // height: 100vh;
   min-height: fit-content;
   padding: 100px 0px 16px 0px;
   background-color: $cuaternary;
+  position: relative;
   @include media-breakpoint-up(xl) {
     padding: 100px 0px 168px 0px;
+  }
+
+  .title {
+    font-size: 32px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 48px;
+      letter-spacing: 0.06em;
+    }
+  }
+  .introductionHero {
+    z-index: 2;
+  }
+  .backgroundHero {
+    width: 942px;
+    height: 428px;
+    position: absolute;
+    align-items: center;
+    translate: -173.5px -400px;
+    border-radius: 20px;
+    background: linear-gradient(108.46deg, rgba(255, 255, 255, 0.264) 0%, rgba(255, 255, 255, 0.066) 100%);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+
+  .customButton {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    /* font-family: $headings-font-family; */
+    width: 169px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.06em;
+
+    &:hover {
+      background-color: #ffffff !important;
+      color: $cuaternary !important;
+    }
+  }
+
+  .circleDashedDecore {
+    width: 612px;
+    height: 595px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.35);
+    position: absolute;
+    top: -5px;
+    left: 70px;
+  }
+}
+
+.services {
+  padding: 435px 0px 78px 0px;
+  background: $degradeProyectSection;
+  position: relative;
+  overflow: hidden;
+
+  .circleDecore {
+    width: 905px;
+    height: 878px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -79px;
+    right: -235px;
   }
 }

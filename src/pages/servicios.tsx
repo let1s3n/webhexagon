@@ -1,12 +1,20 @@
 import Servicios from '@/components/templates/Servicios/servicios';
 import type { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import { getPlaiceholder } from 'plaiceholder';
 import React from 'react';
 
 const servicios: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   imageProps,
 }) => {
-  return <Servicios imageProps={imageProps} />;
+  return (
+    <>
+      <Head>
+        <title>Servicios</title>
+      </Head>
+      <Servicios imageProps={imageProps} />
+    </>
+  );
 };
 
 export const getStaticProps = async () => {
