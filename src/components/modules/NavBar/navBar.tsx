@@ -28,36 +28,21 @@ const NavBar = () => {
             quality={100}
           />
 
-          <p
-            className={
-              styles.textLogo +
-              (currentPath === '/' ? ' text-white' : ' text-black') +
-              ' fw-bold kalekoBold'
-            }
-          >
+          <p className={styles.textLogo + ' text-white fw-bold kalekoBold'}>
             <span className="fs-6 fs-xl-4">Hexagon</span> Studio
           </p>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="align-items-center" style={{ columnGap: '32px' }}>
-            <Nav.Link
-              className={
-                'position-relative p-0 ' +
-                (currentPath === '/' ? 'text-white' : 'text-black')
-              }
-              href="/"
-            >
+            <Nav.Link className="position-relative p-0 text-white" href="/">
               Inicio
               {currentPath === '/' ? (
                 <div className={styles.locationDecorator}></div>
               ) : null}
             </Nav.Link>
             <Nav.Link
-              className={
-                'position-relative p-0 ' +
-                (currentPath === '/' ? 'text-white' : 'text-black')
-              }
+              className="position-relative p-0 text-white"
               href="/proyectos"
             >
               Proyectos
@@ -66,10 +51,7 @@ const NavBar = () => {
               ) : null}
             </Nav.Link>
             <Nav.Link
-              className={
-                'position-relative p-0 ' +
-                (currentPath === '/' ? 'text-white' : 'text-black')
-              }
+              className="position-relative p-0 text-white"
               href="/servicios"
             >
               Servicios
@@ -79,8 +61,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link
               className={
-                'position-relative border p-0 d-flex align-items-center justify-content-center ' +
-                (currentPath === '/' ? 'text-white' : 'text-black')
+                'position-relative border border-2 p-0 d-flex align-items-center justify-content-center text-white'
               }
               href="/contacto"
               style={{
