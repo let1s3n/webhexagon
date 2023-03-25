@@ -7,14 +7,14 @@ const Servicios = ({ imageProps }: any) => {
     <>
       <section className={styles.introduction}>
         <Container className="px-6 px-xxl-12">
-          <Row className="text-white pt-8 pb-5">
+          <Row className="text-white pt-8 pb-5 g-0">
             <Col xl={7}>
               <h1 className={styles.title}>
                 somos un estudio creativo para dar soluciones a tus problemas
               </h1>
             </Col>
             <Col xl={5}>
-              <p>
+              <p className="m-0" style={{ maxWidth: '362px' }}>
                 Lorem ipsum dolor sit amet consectetur. Ipsum vulputate integer
                 suspendisse ut suspendisse dignissim sit mauris. Pulvinar cursus
                 aliquet consequat.
@@ -54,9 +54,10 @@ const Servicios = ({ imageProps }: any) => {
 
         <div className={styles.circleDashedDecore}></div>
       </section>
+
       <section className={styles.services}>
-        <Container className="px-6 px-xxl-12">
-          <Row className="text-white">
+        <Container className="g-0" style={{ width: '934px' }}>
+          <Row className="text-white g-0">
             <Col>
               <h1>podemos ayudarte a crear tus sueños.</h1>
             </Col>
@@ -66,6 +67,67 @@ const Servicios = ({ imageProps }: any) => {
                 suspendisse ut suspendisse dignissim sit mauris. Pulvinar cursus
                 aliquet consequat.
               </p>
+            </Col>
+          </Row>
+
+          <Row
+            className="g-0"
+            style={{ marginTop: '80px', columnGap: '1rem', rowGap: '40px' }}
+          >
+            <Col xs="auto">
+              <div
+                className={
+                  styles.serviceBox + ' ' + styles['serviceBox--first']
+                }
+              >
+                <Image
+                  alt="service box 1 illustration"
+                  className={styles.serviceBoxIllustration}
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration1.png`}
+                  width={200}
+                  height={0}
+                />
+              </div>
+            </Col>
+
+            <Col xs="auto">
+              <div
+                className={
+                  styles.serviceBox + ' ' + styles['serviceBox--second']
+                }
+              >
+                <Image
+                  alt="service box 1 illustration"
+                  className={styles.serviceBoxIllustration}
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration2.png`}
+                  width={200}
+                  height={0}
+                />
+              </div>
+            </Col>
+
+            <Col xs="auto">
+              <div className={styles.serviceBox}>
+                <Image
+                  alt="service box 1 illustration"
+                  className={styles.serviceBoxIllustration}
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration3.png`}
+                  width={200}
+                  height={0}
+                />
+              </div>
+            </Col>
+
+            <Col xs="auto">
+              <div className={styles.serviceBox}>
+                <Image
+                  alt="service box 1 illustration"
+                  className={styles.serviceBoxIllustration}
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration4.png`}
+                  width={200}
+                  height={0}
+                />
+              </div>
             </Col>
           </Row>
         </Container>
