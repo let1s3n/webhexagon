@@ -69,6 +69,8 @@
         position: absolute;
         right: 0px;
         z-index: 2;
+        font-size: 20px;
+        letter-spacing: 0.06em;
       }
       .buttonDecoration {
         width: 100%;
@@ -104,7 +106,7 @@
       border: 2px solid #ffffff;
       border-radius: 5px;
       font-size: 20px;
-      font-family: $headings-font-family;
+      /* font-family: $headings-font-family; */
       width: 169px;
       height: 50px;
       display: flex;
@@ -221,8 +223,6 @@
     height: 50px;
     letter-spacing: 0.06em;
     font-size: 20px;
-    font-family: $headings-font-family;
-
     transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg);
     -moz-transform: skewX(-20deg);

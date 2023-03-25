@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
+import { bebasNeue } from '../../../lib/fonts';
 import styles from './home.module.scss';
 const Home = ({ imageProps }: any) => {
   const { width, height } = useWindowDimensions();
@@ -62,7 +63,9 @@ const Home = ({ imageProps }: any) => {
             >
               <Link href="/contacto" passHref>
                 <Button variant="link" className={styles.customButton}>
-                  CONTACTAR AHORA
+                  <p className={bebasNeue.className + ' m-0 lh-1'}>
+                    CONTACTAR AHORA
+                  </p>
                 </Button>
               </Link>
               <div className={styles.buttonDecoration}></div>
@@ -90,7 +93,7 @@ const Home = ({ imageProps }: any) => {
           </p>
 
           <Button variant="outline-white" className={styles.customButton}>
-            VER SERVICIOS
+            <p className={bebasNeue.className + ' m-0 lh-1'}>VER SERVICIOS</p>
           </Button>
 
           <Image
@@ -132,7 +135,9 @@ const Home = ({ imageProps }: any) => {
                   styles.customButton + ' border-white border-2 rounded-0'
                 }
               >
-                <p className={styles.innerText}>VER PROYECTOS</p>
+                <p className={styles.innerText + ' ' + bebasNeue.className}>
+                  VER PROYECTOS
+                </p>
               </Button>
             </Link>
           </div>
