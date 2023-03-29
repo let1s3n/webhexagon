@@ -27,24 +27,24 @@
   "dependencies": {
     "@plaiceholder/next": "^2.5.0",
     "bootstrap": "^5.2.3",
-    "next": "13.2.3",
+    "next": "13.2.4",
     "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-parallax": "^3.5.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.0",
-    "@types/react": "^18.0.28",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
-    "eslint": "^8.35.0",
-    "eslint-config-next": "^13.2.3",
+    "eslint": "^8.37.0",
+    "eslint-config-next": "^13.2.4",
     "husky": "^8.0.3",
-    "prettier": "^2.8.4",
-    "sass": "^1.58.3",
-    "typescript": "^4.9.5"
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0",
+    "typescript": "^5.0.2"
   }
 }

@@ -1,4 +1,4 @@
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 /* $font-family-sans-serif: 'Rubik', sans-serif; */
 /* $headings-font-family: 'Arial'; */
@@ -23,9 +23,12 @@ $grid-breakpoints: (
   xxxl: 1920px,
 );
 
-@import "bootstrap/scss/variables";
+@import 'bootstrap/scss/variables';
 
-$cdn: "https://d2fap8ni6v2bu4.cloudfront.net/";
+// Esto se tiene que poner en bootstrap 5.3
+/* @import 'bootstrap/scss/variables-dark'; */
+
+$cdn: 'https://d2fap8ni6v2bu4.cloudfront.net/';
 
 //Typography
 /* $font-family-primary: $font-family-sans-serif; */
@@ -48,4 +51,10 @@ $degrade6: linear-gradient(90deg, #ff00fc -15%, #2428d1 85.8%);
 
 $degradeButton1: linear-gradient(90deg, #2de5fd 0%, #4c7ff5 136.88%);
 
-$degradeProyectSection: linear-gradient(180deg, #0f111a 0%, #161a2d 40.11%, #222b53 78.13%, #192866 100%);
+$degradeProyectSection: linear-gradient(
+  180deg,
+  #0f111a 0%,
+  #161a2d 40.11%,
+  #222b53 78.13%,
+  #192866 100%
+);

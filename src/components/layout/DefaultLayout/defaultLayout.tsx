@@ -11,7 +11,9 @@ export default function DefaultLayout({ children }: LayoutProps) {
   return (
     <>
       <NavBar />
-      <main className="main-container">{children}</main>
+      <main className="main-container" style={{ overflowX: 'hidden' }}>
+        {children}
+      </main>
       <Footer />
     </>
   );
