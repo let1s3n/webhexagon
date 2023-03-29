@@ -2,11 +2,209 @@
 @import "bootstrap/scss/mixins";
 
 .introduction {
-  height: fit-content;
+  height: 624px;
   min-height: fit-content;
   padding: 100px 0px 16px 0px;
+  background: $degradeProyectSection;
+  position: relative;
+  // overflow: hidden;
 
   @include media-breakpoint-up(xl) {
     padding: 100px 0px 168px 0px;
+    height: 524px;
+  }
+
+  .title {
+    font-size: 32px;
+    max-width: 500px;
+    @include media-breakpoint-up(xl) {
+      font-size: 48px;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  .customButton {
+    border: 2px solid $primary;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 169px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.06em;
+
+    &:hover {
+      background-color: $primary !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .circleDashedDecore {
+    width: 580px;
+    height: 564px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: 70px;
+
+    --d: 3deg; /* distance between dashes */
+    --n: 50; /* number of dashes */
+    --c: rgba(255, 255, 255, 0.35); /* color of dashes */
+    --b: 2px; /* control the thickness of border*/
+
+    background: repeating-conic-gradient(
+      var(--c) 0 calc(360deg / var(--n) - var(--d)),
+      transparent 0 calc(360deg / var(--n))
+    );
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+  }
+
+  .infoBox {
+    width: 75vw;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 1rem;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint-up(xl) {
+      display: block;
+      width: 939px;
+    }
+
+    .smallBoxleft {
+      background: $degrade6;
+      width: 362px;
+      height: 118px;
+      box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.25);
+      padding: 30px 31px;
+      .cardTitle {
+        width: fit-content;
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+    .smallBoxRight {
+      background: $degrade4;
+      width: 362px;
+      height: 118px;
+      box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.25);
+      padding: 30px 31px;
+      .cardTitle {
+        width: fit-content;
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+  }
+}
+
+.contactForm {
+  padding: 170px 0px 78px 0px;
+  background: $primary;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  @include media-breakpoint-up(xl) {
+    padding: 120px 0px 78px 0px;
+  }
+
+  .title {
+    font-size: 32px;
+    @include media-breakpoint-up(xl) {
+      font-size: 38px;
+    }
+  }
+
+  .circleDashedSmallDecore {
+    width: 441px;
+    height: 429px;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+    left: 20px;
+
+    --d: 3deg; /* distance between dashes */
+    --n: 50; /* number of dashes */
+    --c: rgba(255, 255, 255, 0.24); /* color of dashes */
+    --b: 2px; /* control the thickness of border*/
+
+    background: repeating-conic-gradient(
+      var(--c) 0 calc(360deg / var(--n) - var(--d)),
+      transparent 0 calc(360deg / var(--n))
+    );
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+  }
+
+  .circleDecore {
+    width: 659px;
+    height: 638px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -79px;
+    right: -235px;
+  }
+
+  .serviceBox {
+    position: relative;
+    width: 459px;
+    height: 336px;
+    background: linear-gradient(180deg, #4c7ff5 32.6%, #ff00fc 156.03%);
+    /* Sombra cards - servicios */
+
+    box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.25);
+    &--first {
+      clip-path: polygon(0 100%, 0 0, 100% 10%, 100% 100%);
+    }
+    &--second {
+      clip-path: polygon(0 100%, 0 10%, 100% 0, 100% 100%);
+    }
+    .serviceBoxIllustration {
+      position: absolute;
+      top: 68px;
+      right: 16px;
+      height: auto;
+    }
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ffffff;
+
+    &--fb {
+      &:hover {
+        background: linear-gradient(120deg, #3b5998, #ffffff);
+      }
+    }
+
+    &--ig {
+      &:hover {
+        background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+      }
+    }
+
+    &--ws {
+      &:hover {
+        background: linear-gradient(45deg, #e5ffcc, #1ebea5, #00e676, #d0e9ea, #edf8f5, #ffffff);
+      }
+    }
+
+    &--yt {
+      &:hover {
+        background: linear-gradient(120deg, #ff0000, #282828);
+      }
+    }
   }
 }

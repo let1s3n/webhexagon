@@ -1,4 +1,4 @@
-@import 'bootstrap/scss/functions';
+@import "bootstrap/scss/functions";
 
 /* $font-family-sans-serif: 'Rubik', sans-serif; */
 /* $headings-font-family: 'Arial'; */
@@ -23,9 +23,9 @@ $grid-breakpoints: (
   xxxl: 1920px,
 );
 
-@import 'bootstrap/scss/variables';
+@import "bootstrap/scss/variables";
 
-$cdn: 'https://d2fap8ni6v2bu4.cloudfront.net/';
+$cdn: "https://d2fap8ni6v2bu4.cloudfront.net/";
 
 //Typography
 /* $font-family-primary: $font-family-sans-serif; */
@@ -36,6 +36,7 @@ $font-family-tertiary: 'Montserrat', sans-serif; */
 
 //Colors
 $desactivado: #898989;
+$black1: #11121b;
 
 //Degrade
 $degrade1: linear-gradient(90deg, #4c7ff5 58.06%, #ff00fc 140.42%);
@@ -43,13 +44,8 @@ $degrade2: linear-gradient(90deg, #25293a 40.16%, #333f7e 100%);
 $degrade3: linear-gradient(180deg, #4c7ff5 32.6%, #ff00fc 156.03%);
 $degrade4: linear-gradient(90deg, #2428d1 17.32%, #ff00fc 134.99%);
 $degrade5: linear-gradient(180deg, #fe7c59 0%, #ff00fc 153.7%);
+$degrade6: linear-gradient(90deg, #ff00fc -15%, #2428d1 85.8%);
 
 $degradeButton1: linear-gradient(90deg, #2de5fd 0%, #4c7ff5 136.88%);
 
-$degradeProyectSection: linear-gradient(
-  180deg,
-  #0f111a 0%,
-  #161a2d 40.11%,
-  #222b53 78.13%,
-  #192866 100%
-);
+$degradeProyectSection: linear-gradient(180deg, #0f111a 0%, #161a2d 40.11%, #222b53 78.13%, #192866 100%);

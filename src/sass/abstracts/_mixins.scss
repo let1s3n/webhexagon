@@ -34,6 +34,7 @@ $custom-theme-colors: (
   "cuaternary": $cuaternary,
   "black": $black,
   "white": $white,
+  "black1": $black1,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);

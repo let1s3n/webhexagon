@@ -317,7 +317,7 @@ const Home = ({ imageProps }: any) => {
 
               <TechGrid />
 
-              <CustomForm />
+              <CustomForm bgInput="bg-black1" />
             </Container>
           </div>
 
