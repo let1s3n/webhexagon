@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(lg) {
       display: block;
       /* width: 939px; */
     }
