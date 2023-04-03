@@ -38,6 +38,8 @@
     display: none;
     width: 942px;
     height: 428px;
+    position: absolute;
+    bottom: 0;
     /* position: absolute; */
     align-items: center;
     /* translate: -173.5px -400px; */
@@ -51,7 +53,7 @@
     z-index: 1;
 
     @include media-breakpoint-up(xl) {
-      display: block;
+      display: flex;
     }
   }
 
@@ -105,10 +107,16 @@
 }
 
 .services {
-  padding: 200px 0px 78px 0px;
+  padding: 150px 0px 78px 0px;
   background: $degradeProyectSection;
   position: relative;
   overflow: hidden;
+
+  &__cardsContainer {
+    margin-top: 80px;
+    column-gap: 1rem;
+    row-gap: 40px;
+  }
 
   @include media-breakpoint-up(xl) {
     padding: 435px 0px 78px 0px;

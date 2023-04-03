@@ -7,7 +7,7 @@ const Servicios = ({ imageProps }: any) => {
     <>
       <section className={styles.introduction}>
         <Container className="px-6 px-xxl-12">
-          <Row className="text-white pt-8 pb-5 g-0">
+          <Row className="text-white p-0 g-0">
             <Col xl={7}>
               <h1 className={styles.title}>
                 somos un estudio creativo para dar soluciones a tus problemas
@@ -37,7 +37,7 @@ const Servicios = ({ imageProps }: any) => {
           <div
             className={
               styles.introductionHero +
-              ' position-absolute top-100 start-50 translate-middle m-0 my-xl-5'
+              ' position-absolute top-100 start-50 translate-middle m-0'
             }
           >
             <Image
@@ -49,7 +49,9 @@ const Servicios = ({ imageProps }: any) => {
               quality={100}
               className={styles.teamworkImage}
             />
-            <div className={styles.backgroundHero}></div>
+            <div
+              className={styles.backgroundHero + ' start-50 translate-middle-x'}
+            ></div>
           </div>
         </Container>
 
@@ -58,12 +60,14 @@ const Servicios = ({ imageProps }: any) => {
 
       <section className={styles.services}>
         <Container className="g-0">
-          <Row xs={1} className="text-white g-0">
+          <Row xs={1} className="text-white g-0" style={{ rowGap: '1rem' }}>
             <Col>
-              <h1>podemos ayudarte a crear tus sueños.</h1>
+              <h1 className="text-center">
+                Podemos ayudarte a crear tus sueños.
+              </h1>
             </Col>
             <Col>
-              <p>
+              <p className="text-center">
                 Lorem ipsum dolor sit amet consectetur. Ipsum vulputate integer
                 suspendisse ut suspendisse dignissim sit mauris. Pulvinar cursus
                 aliquet consequat.
@@ -72,8 +76,9 @@ const Servicios = ({ imageProps }: any) => {
           </Row>
 
           <Row
-            className="g-0"
-            style={{ marginTop: '80px', columnGap: '1rem', rowGap: '40px' }}
+            className={
+              styles.services__cardsContainer + ' g-0 justify-content-center'
+            }
           >
             <Col xs="auto">
               <div
