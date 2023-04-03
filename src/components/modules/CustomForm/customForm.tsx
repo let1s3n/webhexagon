@@ -1,6 +1,6 @@
 import { Button, Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import styles from './customForm.module.scss';
-const CustomForm = () => {
+const CustomForm = ({ bgInput }: any) => {
   return (
     <Form className={styles.customForm}>
       <Row
@@ -17,7 +17,11 @@ const CustomForm = () => {
             label="Nombre completo"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="Nombre completo" />
+            <Form.Control
+              type="text"
+              placeholder="Nombre completo"
+              className={bgInput}
+            />
           </FloatingLabel>
         </Col>
 
@@ -27,7 +31,11 @@ const CustomForm = () => {
             label="Company"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="Company" />
+            <Form.Control
+              type="text"
+              placeholder="Company"
+              className={bgInput}
+            />
           </FloatingLabel>
         </Col>
 
@@ -37,7 +45,11 @@ const CustomForm = () => {
             label="Correo eléctronico"
             className="mb-3"
           >
-            <Form.Control type="email" placeholder="Correo eléctronico" />
+            <Form.Control
+              type="email"
+              placeholder="Correo eléctronico"
+              className={bgInput}
+            />
           </FloatingLabel>
         </Col>
 
@@ -47,7 +59,11 @@ const CustomForm = () => {
             label="Número de contacto"
             className="mb-3"
           >
-            <Form.Control type="text" placeholder="Número de contacto" />
+            <Form.Control
+              type="text"
+              placeholder="Número de contacto"
+              className={bgInput}
+            />
           </FloatingLabel>
         </Col>
 
@@ -61,6 +77,7 @@ const CustomForm = () => {
               as="textarea"
               placeholder="Mensaje"
               style={{ height: '126px' }}
+              className={bgInput}
             />
           </FloatingLabel>
         </Col>
