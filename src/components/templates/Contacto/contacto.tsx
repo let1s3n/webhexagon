@@ -76,43 +76,6 @@ const Contacto = () => {
 
       <section className={styles.contactForm}>
         <Container className="g-0">
-          {/* <div
-            className="d-flex justify-content-center"
-            style={{ columnGap: '1rem' }}
-          >
-            <div className={styles.icon + ' ' + styles['icon--fb']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/fbIcon.svg`}
-                alt="Facebook Icon"
-                width={24}
-                height={24}
-              />
-            </div>
-            <div className={styles.icon + ' ' + styles['icon--ig']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/igIcon.svg`}
-                alt="Instagram Icon"
-                width={24}
-                height={24}
-              />
-            </div>
-            <div className={styles.icon + ' ' + styles['icon--ws']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/whatsappIcon.svg`}
-                alt="Whatsapp Icon"
-                width={24}
-                height={24}
-              />
-            </div>
-            <div className={styles.icon + ' ' + styles['icon--yt']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/social/ytIcon.svg`}
-                alt="Youtube Icon"
-                width={24}
-                height={24}
-              />
-            </div>
-          </div> */}
           <div className="text-white pt-6">
             <h1>HABLEMOS. Déjanos un mensaje</h1>
 
