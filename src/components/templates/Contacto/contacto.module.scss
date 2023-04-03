@@ -1,16 +1,15 @@
-@import "@/sass/abstracts/variables";
-@import "bootstrap/scss/mixins";
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
 
 .introduction {
-  height: 624px;
   min-height: fit-content;
-  padding: 100px 0px 16px 0px;
+  padding: 80px 0px 16px 0px;
   background: $degradeProyectSection;
   position: relative;
-  // overflow: hidden;
 
   @include media-breakpoint-up(xl) {
-    padding: 100px 0px 168px 0px;
+    height: 624px;
+    padding: 80px 0px 168px 0px;
     height: 524px;
   }
 
@@ -57,15 +56,23 @@
       var(--c) 0 calc(360deg / var(--n) - var(--d)),
       transparent 0 calc(360deg / var(--n))
     );
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
   }
 
   .infoBox {
-    width: 75vw;
+    /* min-width: 75vw; */
     height: fit-content;
     border-radius: 10px;
-    padding: 1rem;
+    /* padding: 1rem; */
     z-index: 2;
 
     display: flex;
@@ -74,15 +81,18 @@
 
     @include media-breakpoint-up(xl) {
       display: block;
-      width: 939px;
+      /* width: 939px; */
     }
 
     .smallBoxleft {
       background: $degrade6;
-      width: 362px;
+
       height: 118px;
       box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.25);
       padding: 30px 31px;
+      @include media-breakpoint-up(xl) {
+        width: 362px;
+      }
       .cardTitle {
         width: fit-content;
         border-bottom: 1px solid #ffffff;
@@ -90,10 +100,13 @@
     }
     .smallBoxRight {
       background: $degrade4;
-      width: 362px;
+
       height: 118px;
       box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.25);
       padding: 30px 31px;
+      @include media-breakpoint-up(xl) {
+        width: 362px;
+      }
       .cardTitle {
         width: fit-content;
         border-bottom: 1px solid #ffffff;
@@ -103,11 +116,12 @@
 }
 
 .contactForm {
-  padding: 170px 0px 78px 0px;
+  padding: 40px 0px;
   background: $primary;
   position: relative;
   overflow: hidden;
   text-align: center;
+  z-index: 2;
   @include media-breakpoint-up(xl) {
     padding: 120px 0px 78px 0px;
   }
@@ -136,8 +150,16 @@
       var(--c) 0 calc(360deg / var(--n) - var(--d)),
       transparent 0 calc(360deg / var(--n))
     );
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - var(--b)), #fff calc(100% - var(--b) + 1px));
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
   }
 
   .circleDecore {
@@ -191,13 +213,29 @@
 
     &--ig {
       &:hover {
-        background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d
+        );
       }
     }
 
     &--ws {
       &:hover {
-        background: linear-gradient(45deg, #e5ffcc, #1ebea5, #00e676, #d0e9ea, #edf8f5, #ffffff);
+        background: linear-gradient(
+          45deg,
+          #e5ffcc,
+          #1ebea5,
+          #00e676,
+          #d0e9ea,
+          #edf8f5,
+          #ffffff
+        );
       }
     }
 

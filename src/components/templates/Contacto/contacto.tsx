@@ -1,14 +1,16 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 import Image from 'next/image';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './contacto.module.scss';
 const Contacto = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <>
       <section className={styles.introduction}>
-        <Container className="px-6 px-xxl-12">
-          <Row className="text-white pt-8 pb-5">
+        <Container className="px-xxl-12">
+          <Row className="text-white pt-8 pb-5 g-0">
             <Col xl={7}>
               <h1 className={styles.title}>
                 Tu nos escribes, nosotros respondemos
@@ -38,11 +40,16 @@ const Contacto = () => {
           <div
             className={
               styles.infoBox +
-              ' position-absolute top-100 start-50 translate-middle text-white'
+              (width >= 600
+                ? ' position-absolute top-100 start-50 translate-middle text-white'
+                : ' position-relative text-white')
             }
           >
-            <Row style={{ rowGap: '16px' }}>
-              <Col className="d-flex justify-content-center">
+            <Row
+              className="g-0 justify-content-center"
+              style={{ rowGap: '16px' }}
+            >
+              <Col xs="auto" className="d-flex justify-content-center">
                 <div className={styles.smallBoxleft}>
                   <div className={styles.cardTitle}>
                     <h4 className="fs-6 fs-xl-4">Correo general</h4>
@@ -50,7 +57,7 @@ const Contacto = () => {
                   <p className="py-2">general@hexagon-studios.com</p>
                 </div>
               </Col>
-              <Col className="d-flex justify-content-center">
+              <Col xs="auto" className="d-flex justify-content-center">
                 <div className={styles.smallBoxRight}>
                   <div className={styles.cardTitle}>
                     <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
