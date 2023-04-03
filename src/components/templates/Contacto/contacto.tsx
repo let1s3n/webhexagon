@@ -1,6 +1,5 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
-import Image from 'next/image';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './contacto.module.scss';
@@ -47,7 +46,7 @@ const Contacto = () => {
           >
             <Row
               className="g-0 justify-content-center"
-              style={{ rowGap: '16px' }}
+              style={{ rowGap: '1rem', columnGap: '1rem' }}
             >
               <Col xs="auto" className="d-flex justify-content-center">
                 <div className={styles.smallBoxleft}>
@@ -77,7 +76,7 @@ const Contacto = () => {
 
       <section className={styles.contactForm}>
         <Container className="g-0">
-          <div
+          {/* <div
             className="d-flex justify-content-center"
             style={{ columnGap: '1rem' }}
           >
@@ -113,7 +112,7 @@ const Contacto = () => {
                 height={24}
               />
             </div>
-          </div>
+          </div> */}
           <div className="text-white pt-6">
             <h1>HABLEMOS. Déjanos un mensaje</h1>
 

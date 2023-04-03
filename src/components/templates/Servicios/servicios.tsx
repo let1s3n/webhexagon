@@ -37,16 +37,17 @@ const Servicios = ({ imageProps }: any) => {
           <div
             className={
               styles.introductionHero +
-              ' position-absolute top-100 start-50 translate-middle my-5'
+              ' position-absolute top-100 start-50 translate-middle m-0 my-xl-5'
             }
           >
             <Image
               alt="teamwork image"
               src={imageProps[0].src}
               width={595}
-              height={538}
+              height={0}
               blurDataURL={imageProps[0].blurDataURL}
               quality={100}
+              className={styles.teamworkImage}
             />
             <div className={styles.backgroundHero}></div>
           </div>
@@ -56,8 +57,8 @@ const Servicios = ({ imageProps }: any) => {
       </section>
 
       <section className={styles.services}>
-        <Container className="g-0" style={{ width: '934px' }}>
-          <Row className="text-white g-0">
+        <Container className="g-0">
+          <Row xs={1} className="text-white g-0">
             <Col>
               <h1>podemos ayudarte a crear tus sueños.</h1>
             </Col>

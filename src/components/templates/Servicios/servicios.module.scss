@@ -23,13 +23,24 @@
   }
   .introductionHero {
     z-index: 2;
+    .teamworkImage {
+      position: relative;
+      display: block;
+      z-index: 2;
+      height: auto;
+      width: 200px;
+      @include media-breakpoint-up(xl) {
+        width: 595px;
+      }
+    }
   }
   .backgroundHero {
+    display: none;
     width: 942px;
     height: 428px;
-    position: absolute;
+    /* position: absolute; */
     align-items: center;
-    translate: -173.5px -400px;
+    /* translate: -173.5px -400px; */
     border-radius: 20px;
     background: linear-gradient(
       108.46deg,
@@ -37,7 +48,11 @@
       rgba(255, 255, 255, 0.066) 100%
     );
     backdrop-filter: blur(10px);
-    z-index: -1;
+    z-index: 1;
+
+    @include media-breakpoint-up(xl) {
+      display: block;
+    }
   }
 
   .customButton {
@@ -90,10 +105,14 @@
 }
 
 .services {
-  padding: 435px 0px 78px 0px;
+  padding: 200px 0px 78px 0px;
   background: $degradeProyectSection;
   position: relative;
   overflow: hidden;
+
+  @include media-breakpoint-up(xl) {
+    padding: 435px 0px 78px 0px;
+  }
 
   .circleDecore {
     width: 905px;
