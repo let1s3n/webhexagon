@@ -37,7 +37,7 @@ const Servicios = ({ imageProps }: any) => {
           <div
             className={
               styles.introductionHero +
-              ' position-absolute top-100 start-50 translate-middle m-0'
+              ' position-absolute top-100 top-md-90 top-xl-100 start-50 translate-middle m-0'
             }
           >
             <Image
@@ -82,9 +82,7 @@ const Servicios = ({ imageProps }: any) => {
           >
             <Col xs="auto">
               <div
-                className={
-                  styles.serviceBox + ' ' + styles['serviceBox--first']
-                }
+                className={styles.serviceBox + ' ' + styles['serviceBox--odd']}
               >
                 <Image
                   alt="service box 1 illustration"
@@ -98,9 +96,7 @@ const Servicios = ({ imageProps }: any) => {
 
             <Col xs="auto">
               <div
-                className={
-                  styles.serviceBox + ' ' + styles['serviceBox--second']
-                }
+                className={styles.serviceBox + ' ' + styles['serviceBox--even']}
               >
                 <Image
                   alt="service box 1 illustration"
@@ -113,7 +109,9 @@ const Servicios = ({ imageProps }: any) => {
             </Col>
 
             <Col xs="auto">
-              <div className={styles.serviceBox}>
+              <div
+                className={styles.serviceBox + ' ' + styles['serviceBox--odd']}
+              >
                 <Image
                   alt="service box 1 illustration"
                   className={styles.serviceBoxIllustration}
@@ -125,7 +123,9 @@ const Servicios = ({ imageProps }: any) => {
             </Col>
 
             <Col xs="auto">
-              <div className={styles.serviceBox}>
+              <div
+                className={styles.serviceBox + ' ' + styles['serviceBox--even']}
+              >
                 <Image
                   alt="service box 1 illustration"
                   className={styles.serviceBoxIllustration}

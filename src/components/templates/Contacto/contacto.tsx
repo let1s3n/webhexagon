@@ -36,39 +36,39 @@ const Contacto = () => {
               </Row>
             </Col>
           </Row>
-          <div
+          <Row
             className={
               styles.infoBox +
               (width >= 600
-                ? ' position-absolute top-100 start-50 translate-middle text-white'
-                : ' position-relative text-white')
+                ? ' g-0 position-absolute top-100 start-50 translate-middle text-white'
+                : ' g-0 position-relative text-white')
             }
           >
-            <Row
+            {/* <Row
               className="g-0 justify-content-center"
               style={{ rowGap: '1rem', columnGap: '1rem' }}
-            >
-              <Col xs="auto" className="d-flex justify-content-center">
-                <div className={styles.smallBoxleft}>
-                  <div className={styles.cardTitle}>
-                    <h4 className="fs-6 fs-xl-4">Correo general</h4>
-                  </div>
-                  <p className="py-2">general@hexagon-studios.com</p>
+            > */}
+            <Col xs="auto" className="d-flex justify-content-center">
+              <div className={styles.smallBoxleft}>
+                <div className={styles.cardTitle}>
+                  <h4 className="fs-6 fs-xl-4">Correo general</h4>
                 </div>
-              </Col>
-              <Col xs="auto" className="d-flex justify-content-center">
-                <div className={styles.smallBoxRight}>
-                  <div className={styles.cardTitle}>
-                    <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
-                  </div>
-                  <div className="py-2 d-flex justify-content-between">
-                    <p>+51 993455698</p>
-                    <p>+51 994531344</p>
-                  </div>
+                <p className="py-2">general@hexagon-studios.com</p>
+              </div>
+            </Col>
+            <Col xs="auto" className="d-flex justify-content-center">
+              <div className={styles.smallBoxRight}>
+                <div className={styles.cardTitle}>
+                  <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
-              </Col>
-            </Row>
-          </div>
+                <div className="py-2 d-flex justify-content-between">
+                  <p>+51 993455698</p>
+                  <p>+51 994531344</p>
+                </div>
+              </div>
+            </Col>
+            {/* </Row> */}
+          </Row>
         </Container>
 
         <div className={styles.circleDashedDecore}></div>

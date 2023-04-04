@@ -6,11 +6,11 @@
   height: 652px;
   // height: 100vh;
   min-height: fit-content;
-  padding: 100px 0px 16px 0px;
+  padding: 150px 0px 16px 0px;
   background-color: $cuaternary;
   position: relative;
   @include media-breakpoint-up(xl) {
-    padding: 100px 0px 168px 0px;
+    padding: 150px 0px 168px 0px;
   }
 
   .title {
@@ -29,6 +29,11 @@
       z-index: 2;
       height: auto;
       width: 200px;
+
+      @include media-breakpoint-up(md) {
+        width: 350px;
+      }
+
       @include media-breakpoint-up(xl) {
         width: 595px;
       }
@@ -141,10 +146,16 @@
 
     box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.25);
     /* transform: matrix(-1, 0, 0, 1, 0, 0); */
-    &--first {
+    /* &:nth-child(odd) {
       clip-path: polygon(0 100%, 0 0, 100% 10%, 100% 100%);
     }
-    &--second {
+    &:nth-child(even) {
+      clip-path: polygon(0 100%, 0 10%, 100% 0, 100% 100%);
+    } */
+    &--odd {
+      clip-path: polygon(0 100%, 0 0, 100% 10%, 100% 100%);
+    }
+    &--even {
       clip-path: polygon(0 100%, 0 10%, 100% 0, 100% 100%);
     }
     .serviceBoxIllustration {

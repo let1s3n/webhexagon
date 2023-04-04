@@ -2,7 +2,7 @@
 @import 'bootstrap/scss/mixins';
 
 .customNavbar {
-  z-index: 99999;
+  z-index: 500;
   height: 80px;
   display: flex;
   align-items: center;
@@ -27,21 +27,59 @@
     }
   }
 
-  .locationDecorator {
+  .customCollapsedContainer {
+    width: 100%;
+    max-width: 100%;
     position: absolute;
-    top: 130% !important;
-    left: 50% !important;
-    transform: translateX(-50%) rotate(-45deg);
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+  }
+  .toggler {
+    padding: 0px !important;
+    border: none !important;
+    color: #ffffff !important;
+  }
+  .logo {
+    width: 40px;
 
-    width: 10.79px !important;
-    height: 10.79px !important;
+    @include media-breakpoint-up(md) {
+      width: 53px;
+    }
+  }
+}
 
-    max-width: 10.79px !important;
-    max-height: 10.79px !important;
+.locationDecorator {
+  position: absolute;
+  top: 130% !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-45deg);
 
-    background: #ffffff;
-    /* background: rgba(255, 255, 255, 0.41); */
+  width: 10.79px !important;
+  height: 10.79px !important;
 
-    box-shadow: 0px 0px 0px 3px rgb(100, 100, 100) inset;
+  max-width: 10.79px !important;
+  max-height: 10.79px !important;
+
+  background: #ffffff;
+  /* background: rgba(255, 255, 255, 0.41); */
+
+  box-shadow: 0px 0px 0px 3px rgb(100, 100, 100) inset;
+}
+
+.contactNavLink {
+  position: relative;
+  border: 2px solid $blue1;
+  padding: 0px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 153px;
+  height: 42px;
+  transform: skewX(-20deg);
+
+  @include media-breakpoint-up(md) {
+    margin-left: 12px;
   }
 }

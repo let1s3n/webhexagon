@@ -35,6 +35,7 @@ $custom-theme-colors: (
   'black': $black,
   'white': $white,
   'black1': $black1,
+  'blue1': $blue1,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
@@ -50,6 +51,20 @@ $utilities-text: map-merge(
 $utilities-text-colors: map-loop($utilities-text, rgba-css-var, '$key', 'text');
 $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, '$key', 'bg');
 
+$utilities-border: map-merge(
+  $utilities-colors,
+  (
+    'white': to-rgb($white),
+  )
+);
+
+$utilities-border-colors: map-loop(
+  $utilities-border,
+  rgba-css-var,
+  '$key',
+  'border'
+);
+
 $utilities: (
   'font-size': (
     responsive: true,
@@ -62,3 +77,29 @@ $utilities: (
 
 @import 'bootstrap/scss/root';
 @import 'bootstrap/scss/utilities';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'top':
+      map-merge(
+        map-get($utilities, 'top'),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
