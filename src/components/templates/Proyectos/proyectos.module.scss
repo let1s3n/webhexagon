@@ -1,12 +1,81 @@
-@import "@/sass/abstracts/variables";
-@import "bootstrap/scss/mixins";
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
 
+.commonContainer {
+  background: $degradeProyectSection;
+}
 .introduction {
-  height: fit-content;
-  min-height: fit-content;
-  padding: 100px 0px 16px 0px;
+  /* height: fit-content; */
+  min-height: 831px;
+  padding: 208px 0px 16px 0px;
 
+  position: relative;
+  overflow-x: hidden;
   @include media-breakpoint-up(xl) {
-    padding: 100px 0px 168px 0px;
+    padding: 208px 0px 168px 0px;
+  }
+
+  .title {
+    font-size: 32px;
+    color: $terciary;
+    width: 359px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 56px;
+    }
+  }
+  .presentationTextContainer {
+    height: 395px;
+    border-left: 2px solid $terciary;
+    padding: 0px 0px 0px 2rem;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    .presentationText {
+      width: 459px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $terciary;
+      position: absolute;
+      /* top: 100%; */
+      bottom: -4px;
+      left: -4.5px;
+      /* transform: translate(-50%, -50%); */
+    }
+  }
+
+  .projectIllustration {
+    position: absolute;
+    right: 200px;
+    top: 208px;
+    z-index: 3;
+  }
+}
+
+.projects {
+  padding: 0px 0px 100px;
+}
+
+.outerCircle {
+  width: 859px;
+  height: 831px;
+  border-radius: 50%;
+  background: $degrade3;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, 0);
+  .innerCircle {
+    width: 747px;
+    height: 724px;
+    border-radius: 50%;
+    border: 1px solid $terciary;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

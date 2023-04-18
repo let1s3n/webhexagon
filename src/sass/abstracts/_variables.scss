@@ -35,6 +35,17 @@ $position-values: (
 
 $navbar-toggler-focus-width: 0;
 
+$nav-tabs-border-width: 0px;
+
+$nav-tabs-link-active-color: #ffffff;
+$nav-tabs-link-active-bg: none;
+$nav-tabs-link-active-border-color: transparent;
+$nav-tabs-link-hover-border-color: transparent;
+
+$nav-link-hover-color: #ffffff;
+$nav-link-color: #474d66;
+$nav-link-padding-x: 0px;
+
 @import 'bootstrap/scss/variables';
 
 // Esto se tiene que poner en bootstrap 5.3

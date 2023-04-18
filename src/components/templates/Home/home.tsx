@@ -111,7 +111,7 @@ const Home = ({ imageProps }: any) => {
         </div>
       </section>
 
-      <section className={styles.proyects}>
+      <section className={styles.projects}>
         <Container className="g-0 mx-auto" style={{ width: 'fit-content' }}>
           <div
             className="d-flex flex-column align-items-center align-items-xl-stretch flex-xl-row justify-content-between"
