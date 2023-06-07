@@ -1,8 +1,9 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './servicios.module.scss';
-const Servicios = ({ imageProps }: any) => {
+const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <>
       <section className={styles.introduction}>

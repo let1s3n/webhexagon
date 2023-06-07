@@ -12,7 +12,7 @@ const tabs = () => {
     >
       <Tab eventKey="web" title="DESARROLLO WEB" style={{ rowGap: "72px" }} className="overflow-hidden">
         {/* <h1 className="text-black">WEB</h1> */}
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -35,7 +35,7 @@ const tabs = () => {
           </Row>
         </Fade>
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -60,7 +60,7 @@ const tabs = () => {
 
       </Tab>
       <Tab eventKey="software" title="DESARROLLO DE SOFTWARE" style={{ rowGap: "72px" }} className="overflow-hidden">
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -83,7 +83,7 @@ const tabs = () => {
           </Row>
         </Fade>
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -108,7 +108,7 @@ const tabs = () => {
       </Tab>
       <Tab eventKey="moviles" title="APLICACIONES MÓVILES" style={{ rowGap: "72px" }} className="overflow-hidden">
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -131,7 +131,7 @@ const tabs = () => {
           </Row>
         </Fade>
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -156,7 +156,7 @@ const tabs = () => {
       </Tab>
       <Tab eventKey="redes" title="REDES SOCIALES" style={{ rowGap: "72px" }} className="overflow-hidden">
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
@@ -179,7 +179,7 @@ const tabs = () => {
           </Row>
         </Fade>
 
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row className={styles.customRow + " g-0"} style={{ columnGap: "118px" }}>
 
             <Col xs="auto">
