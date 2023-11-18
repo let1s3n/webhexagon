@@ -38,26 +38,25 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   styles.title + ' text-white pb-3 text-center text-xl-end'
                 }
               >
-                Lorem ipsum dolor sit amet
+                Define tu presencia digital.
               </h1>
-              <h1
+              {/* <h1
                 className={styles.title + ' text-white text-center text-xl-end'}
               >
                 Lorem ipsum
-              </h1>
+              </h1> */}
             </div>
             <div className={styles.textContainer}>
-              <p className="text-white pb-3 text-center text-xl-end">
-                Lorem ipsum dolor sit amet consectetur. Congue dis et mattis eu.
-                Felis ipsum elit nunc sit mollis orci vestibulum. Turpis
-                malesuada dui ut nisi et rutrum fermentum mattis.
+              <p className="text-white pb-3">
+                Que te encuentren en todos los canales digitales para que
+                <strong> crezcas sin límites.</strong>
               </p>
-              <p className="text-white text-center text-xl-end">
+              {/* <p className="text-white text-center text-xl-end">
                 Morbi ac consequat eu lobortis sed vel. Eu feugiat nibh
                 vulputate congue mattis tristique. Urna dictumst est viverra
                 lacus dictumst tristique ut maecenas. Integer ac tristique
                 sapien dignissim
-              </p>
+              </p> */}
             </div>
             <div
               className={styles.customButtonContainer + ' position-relative'}
@@ -149,9 +148,9 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
           >
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome1.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/showcaseALR2.png`}
                 alt="Proyecto Home 1"
-                width={362}
+                width={400}
                 height={0}
                 className={styles.imgProyect}
                 style={{ height: 'auto' }}
@@ -162,24 +161,27 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
-                  <div className={styles.tag}>
+                  {/* <div className={styles.tag}>
                     <p className="lh-1">IOS</p>
                   </div>
                   <div className={styles.tag}>
                     <p className="lh-1">Android</p>
-                  </div>
+                  </div> */}
                 </div>
 
-                <h3 className="pt-2">DUNDER MIFFLIN</h3>
+                <h3 className="lh-1">SMRL ALR</h3>
 
                 <p className={styles.proyectDescription}>
-                  Nos apasiona ayudar a las marcas con propósito a ganar en
-                  Internet y aumentar su impacto positivo.
+                  Sitio web de empresa minera SMRL ALR. Cuenta con todas las
+                  secciones requeridas por el cliente, diseño moderno, uso de
+                  tecnologías modernas de desarrollo, características
+                  internacionales - multilenguaje, además de servicios backend
+                  de contacto por email.
                 </p>
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: '1rem', paddingTop: '27px' }}
+                  style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
                   <Link href="/" passHref style={{ lineHeight: '12px' }}>
@@ -196,9 +198,9 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome2.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/showcaseREPORTESALR3.png`}
                 alt="Proyecto Home 2"
-                width={362}
+                width={400}
                 height={0}
                 className={styles.imgProyect}
                 style={{ height: 'auto' }}
@@ -209,24 +211,24 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
-                  <div className={styles.tag}>
+                  {/* <div className={styles.tag}>
                     <p className="lh-1">IOS</p>
                   </div>
                   <div className={styles.tag}>
                     <p className="lh-1">Android</p>
-                  </div>
+                  </div> */}
                 </div>
 
-                <h3 className="pt-2">DUNDER MIFFLIN</h3>
+                <h3 className="lh-1">Reportes ALR</h3>
 
                 <p className={styles.proyectDescription}>
-                  Nos apasiona ayudar a las marcas con propósito a ganar en
-                  Internet y aumentar su impacto positivo.
+                  Aplicativo web de reportes, dashboards y monitoreo de métricas
+                  de empresa minera SMRL ALR.
                 </p>
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: '1rem', paddingTop: '27px' }}
+                  style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
                   <Link href="/" passHref style={{ lineHeight: '12px' }}>
@@ -243,9 +245,9 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/proyects/proyectoHome3.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/showcaseAMARANTE2.png`}
                 alt="Proyecto Home 3"
-                width={362}
+                width={400}
                 height={0}
                 className={styles.imgProyect}
                 style={{ height: 'auto' }}
@@ -256,15 +258,15 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   <div className={styles.tag}>
                     <p className="lh-1">WEB</p>
                   </div>
-                  <div className={styles.tag}>
+                  {/* <div className={styles.tag}>
                     <p className="lh-1">IOS</p>
                   </div>
                   <div className={styles.tag}>
                     <p className="lh-1">Android</p>
-                  </div>
+                  </div> */}
                 </div>
 
-                <h3 className="pt-2">DUNDER MIFFLIN</h3>
+                <h3 className="lh-1">AMARANTE GROUP</h3>
 
                 <p className={styles.proyectDescription}>
                   Nos apasiona ayudar a las marcas con propósito a ganar en
@@ -273,7 +275,54 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
 
                 <div
                   className="d-flex align-items-center"
-                  style={{ columnGap: '1rem', paddingTop: '27px' }}
+                  style={{ columnGap: '1rem' }}
+                >
+                  <p className="lh-1">Ir al proyecto</p>
+                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                      alt="Arrow"
+                      width={39}
+                      height={0}
+                      style={{ height: 'auto' }}
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className={styles.proyect}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/showcaseLUSITANO2.png`}
+                alt="Proyecto Home 4"
+                width={400}
+                height={0}
+                className={styles.imgProyect}
+                style={{ height: 'auto' }}
+              />
+
+              <div className={styles.right}>
+                <div className="d-flex" style={{ columnGap: '12px' }}>
+                  <div className={styles.tag}>
+                    <p className="lh-1">WEB</p>
+                  </div>
+                  {/* <div className={styles.tag}>
+                    <p className="lh-1">IOS</p>
+                  </div>
+                  <div className={styles.tag}>
+                    <p className="lh-1">Android</p>
+                  </div> */}
+                </div>
+
+                <h3 className="lh-1">LUSITANO MARITIME</h3>
+
+                <p className={styles.proyectDescription}>
+                  Nos apasiona ayudar a las marcas con propósito a ganar en
+                  Internet y aumentar su impacto positivo.
+                </p>
+
+                <div
+                  className="d-flex align-items-center"
+                  style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
                   <Link href="/" passHref style={{ lineHeight: '12px' }}>
