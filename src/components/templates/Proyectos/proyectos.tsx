@@ -23,7 +23,7 @@ const Proyectos = () => {
           </div>
           <Image
             alt="project 1 illustration"
-            src={`${process.env.NEXT_PUBLIC_CDN}images/projects/illustrationProject1.png`}
+            src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/illustrationProject1.png`}
             width={442}
             height={492}
             className={styles.projectIllustration}
