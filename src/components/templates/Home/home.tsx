@@ -198,7 +198,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/sshowcaseREPORTESALR3.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseREPORTESALR3.png`}
                 alt="Proyecto Home 2"
                 width={400}
                 height={0}
