@@ -1,5 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './servicios.module.scss';
@@ -92,6 +93,41 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   width={200}
                   height={0}
                 />
+                <div className="text-white pt-6 pb-5 px-4">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloWebIcon.svg`}
+                    alt="web development"
+                    width={40}
+                    height={0}
+                    style={{ height: 'auto' }}
+                  />
+                  <h4 className="pt-4">DESARROLLO WEB</h4>
+                  <p className="w-75 pt-2">
+                    Lorem ipsum dolor sit amet consectetur. Tortor gravida
+                    convallis aliquet suspendisse quam placerat purus sit.
+                  </p>
+                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
+                    <p
+                      style={{
+                        height: 50 + 'px',
+                        width: 50 + 'px',
+                      }}
+                      className="position-absolute opacity-25 border border-white rounded-circle"
+                    ></p>
+                    <div className="d-flex gap-3 align-items-center ps-3">
+                      <p>Ver proyectos web</p>
+                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          alt="Arrow"
+                          width={39}
+                          height={0}
+                          style={{ height: 'auto' }}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Col>
 
@@ -106,12 +142,51 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   width={200}
                   height={0}
                 />
+                <div className="text-white pt-6 pb-5 px-4">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloAplicacionesIcon.svg`}
+                    alt="web development"
+                    width={40}
+                    height={0}
+                    style={{ height: 'auto' }}
+                  />
+                  <h4 className="pt-4">DESARROLLO DE APLICACIONES</h4>
+                  <p className="w-75 pt-2">
+                    Lorem ipsum dolor sit amet consectetur. Tortor gravida
+                    convallis aliquet suspendisse quam placerat purus sit.
+                  </p>
+                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
+                    <p
+                      style={{
+                        height: 50 + 'px',
+                        width: 50 + 'px',
+                      }}
+                      className="position-absolute opacity-25 border border-white rounded-circle"
+                    ></p>
+                    <div className="d-flex gap-3 align-items-center ps-3">
+                      <p>Ver proyectos App</p>
+                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          alt="Arrow"
+                          width={39}
+                          height={0}
+                          style={{ height: 'auto' }}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Col>
 
             <Col xs="auto">
               <div
-                className={styles.serviceBox + ' ' + styles['serviceBox--odd']}
+                className={
+                  styles.serviceBoxDown +
+                  ' ' +
+                  styles['serviceBoxDown--odd-down']
+                }
               >
                 <Image
                   alt="service box 1 illustration"
@@ -120,12 +195,51 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   width={200}
                   height={0}
                 />
+                <div className="text-white pt-4 pb-5 px-4">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloSoftwareIcon.svg`}
+                    alt="web development"
+                    width={40}
+                    height={0}
+                    style={{ height: 'auto' }}
+                  />
+                  <h4 className="pt-4">DESARROLLO DE SOFTWARE</h4>
+                  <p className="w-75 pt-2">
+                    Lorem ipsum dolor sit amet consectetur. Tortor gravida
+                    convallis aliquet suspendisse quam placerat purus sit.
+                  </p>
+                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
+                    <p
+                      style={{
+                        height: 50 + 'px',
+                        width: 50 + 'px',
+                      }}
+                      className="position-absolute opacity-25 border border-white rounded-circle"
+                    ></p>
+                    <div className="d-flex gap-3 align-items-center ps-3">
+                      <p>Ver proyectos Software</p>
+                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          alt="Arrow"
+                          width={39}
+                          height={0}
+                          style={{ height: 'auto' }}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Col>
 
             <Col xs="auto">
               <div
-                className={styles.serviceBox + ' ' + styles['serviceBox--even']}
+                className={
+                  styles.serviceBoxDown +
+                  ' ' +
+                  styles['serviceBoxDown--even-down']
+                }
               >
                 <Image
                   alt="service box 1 illustration"
@@ -134,6 +248,41 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   width={200}
                   height={0}
                 />
+                <div className="text-white pt-4 pb-5 px-4">
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/redesSocialesIcon.svg`}
+                    alt="web development"
+                    width={40}
+                    height={0}
+                    style={{ height: 'auto' }}
+                  />
+                  <h4 className="pt-4">REDES SOCIALES</h4>
+                  <p className="w-75 pt-2">
+                    Lorem ipsum dolor sit amet consectetur. Tortor gravida
+                    convallis aliquet suspendisse quam placerat purus sit.
+                  </p>
+                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
+                    <p
+                      style={{
+                        height: 50 + 'px',
+                        width: 50 + 'px',
+                      }}
+                      className="position-absolute opacity-25 border border-white rounded-circle"
+                    ></p>
+                    <div className="d-flex gap-3 align-items-center ps-3">
+                      <p>Ver proyectos Redes sociales</p>
+                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          alt="Arrow"
+                          width={39}
+                          height={0}
+                          style={{ height: 'auto' }}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Col>
           </Row>

@@ -53,7 +53,7 @@ const Contacto = () => {
                 <div className={styles.cardTitle}>
                   <h4 className="fs-6 fs-xl-4">Correo general</h4>
                 </div>
-                <p className="py-2">general@hexagon-studios.com</p>
+                <p className="py-2">info@hexagonstudio.pe</p>
               </div>
             </Col>
             <Col xs="auto" className="d-flex justify-content-center">
@@ -62,8 +62,8 @@ const Contacto = () => {
                   <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
                 <div className="py-2 d-flex justify-content-between">
-                  <p>+51 993455698</p>
-                  <p>+51 994531344</p>
+                  <p>+51 907 190 881</p>
+                  <p>+51 927 575 917</p>
                 </div>
               </div>
             </Col>
