@@ -26,17 +26,25 @@ const tabs = () => {
             <Col xs="auto">
               <Image
                 alt="project 1 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
-                width={364}
-                height={279}
+                /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`} */
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseALR2.png`}
+                width={500}
+                /* height={279} */
+                height={0}
+                className={styles.tabImage}
+                quality={100}
               />
             </Col>
             <Col xs="auto">
               <Image
                 alt="project 2 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
-                width={364}
-                height={279}
+                /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`} */
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseAMARANTE2.png`}
+                width={500}
+                /* height={279} */
+                height={0}
+                className={styles.tabImage}
+                quality={100}
               />
             </Col>
           </Row>
@@ -50,23 +58,31 @@ const tabs = () => {
             <Col xs="auto">
               <Image
                 alt="project 3 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
-                width={364}
-                height={279}
+                /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`} */
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseLUSITANO2.png`}
+                width={500}
+                /* height={279} */
+                height={0}
+                className={styles.tabImage}
+                quality={100}
               />
             </Col>
             <Col xs="auto">
               <Image
                 alt="project 4 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
-                width={364}
-                height={279}
+                /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`} */
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseREPORTESALR3.png`}
+                width={500}
+                /* height={279} */
+                height={0}
+                className={styles.tabImage}
+                quality={100}
               />
             </Col>
           </Row>
         </Fade>
       </Tab>
-      <Tab
+      {/* <Tab
         eventKey="software"
         title="DESARROLLO DE SOFTWARE"
         style={{ rowGap: '72px' }}
@@ -81,7 +97,7 @@ const tabs = () => {
               <Image
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -89,7 +105,7 @@ const tabs = () => {
               <Image
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -105,7 +121,7 @@ const tabs = () => {
               <Image
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -113,13 +129,13 @@ const tabs = () => {
               <Image
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
           </Row>
         </Fade>
-      </Tab>
+      </Tab> */}
       <Tab
         eventKey="moviles"
         title="APLICACIONES MÓVILES"
@@ -135,7 +151,7 @@ const tabs = () => {
               <Image
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -143,7 +159,7 @@ const tabs = () => {
               <Image
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -159,7 +175,7 @@ const tabs = () => {
               <Image
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -167,7 +183,7 @@ const tabs = () => {
               <Image
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -189,7 +205,7 @@ const tabs = () => {
               <Image
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -197,7 +213,7 @@ const tabs = () => {
               <Image
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -213,7 +229,7 @@ const tabs = () => {
               <Image
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>
@@ -221,7 +237,7 @@ const tabs = () => {
               <Image
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
-                width={364}
+                width={500}
                 height={279}
               />
             </Col>

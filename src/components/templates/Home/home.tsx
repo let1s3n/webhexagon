@@ -148,7 +148,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
           >
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseALR2.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseALR2.png`}
                 alt="Proyecto Home 1"
                 width={400}
                 height={0}
@@ -198,7 +198,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseREPORTESALR3.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseREPORTESALR3.png`}
                 alt="Proyecto Home 2"
                 width={400}
                 height={0}
@@ -245,7 +245,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseAMARANTE2.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseAMARANTE2.png`}
                 alt="Proyecto Home 3"
                 width={400}
                 height={0}
@@ -292,7 +292,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             </div>
             <div className={styles.proyect}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseLUSITANO2.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseLUSITANO2.png`}
                 alt="Proyecto Home 4"
                 width={400}
                 height={0}
