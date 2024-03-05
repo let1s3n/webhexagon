@@ -227,6 +227,10 @@
     -webkit-transform: skewX(-20deg);
     -moz-transform: skewX(-20deg);
 
+    &:hover {
+      background: $degradeButton1;
+    }
+
     .innerText {
       line-height: 1;
       transform: skewX(20deg);

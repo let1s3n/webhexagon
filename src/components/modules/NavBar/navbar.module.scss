@@ -79,6 +79,10 @@
   height: 42px;
   transform: skewX(-20deg);
 
+  &:hover {
+    background-color: $blue1;
+  }
+
   @include media-breakpoint-up(md) {
     margin-left: 12px;
   }

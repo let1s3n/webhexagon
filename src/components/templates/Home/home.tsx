@@ -1,15 +1,18 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
-import TechGrid from '@/components/modules/TechGrid/techGrid';
+import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './home.module.scss';
 const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
   const { width, height } = useWindowDimensions();
+  const [isFormComplete, setFormComplete] = useState<boolean>(true);
+  const [isSendForm, setIsSendForm] = useState<boolean>(false);
   return (
     <>
       <section className={styles.introduction}>
@@ -47,16 +50,19 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
               </h1> */}
             </div>
             <div className={styles.textContainer}>
-              <p className="text-white pb-3">
+              <p className="text-white pb-3 text-center text-lg-end">
                 Que te encuentren en todos los canales digitales para que
                 <strong> crezcas sin límites.</strong>
               </p>
-              {/* <p className="text-white text-center text-xl-end">
-                Morbi ac consequat eu lobortis sed vel. Eu feugiat nibh
-                vulputate congue mattis tristique. Urna dictumst est viverra
-                lacus dictumst tristique ut maecenas. Integer ac tristique
-                sapien dignissim
-              </p> */}
+              <p className="text-white pb-3 text-center text-lg-end">
+                En nuestro apasionado equipo, nos especializamos en dar vida a
+                tus ideas y aspiraciones a través de servicios integrales. Desde
+                la creación de páginas web impactantes que cautivarán a tu
+                audiencia hasta el desarrollo de aplicaciones móviles
+                innovadoras que llevarán tu negocio al siguiente nivel, estamos
+                aquí para transformar tu visión en una realidad digital
+                vibrante.
+              </p>
             </div>
             <div
               className={styles.customButtonContainer + ' position-relative'}
@@ -184,7 +190,11 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                  <Link
+                    href="/proyectos"
+                    passHref
+                    style={{ lineHeight: '12px' }}
+                  >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
@@ -231,7 +241,11 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                  <Link
+                    href="/proyectos"
+                    passHref
+                    style={{ lineHeight: '12px' }}
+                  >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
@@ -278,7 +292,11 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                  <Link
+                    href="/proyectos"
+                    passHref
+                    style={{ lineHeight: '12px' }}
+                  >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
@@ -325,7 +343,11 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                   style={{ columnGap: '1rem' }}
                 >
                   <p className="lh-1">Ir al proyecto</p>
-                  <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                  <Link
+                    href="/proyectos"
+                    passHref
+                    style={{ lineHeight: '12px' }}
+                  >
                     <Image
                       src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
                       alt="Arrow"
@@ -360,14 +382,23 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
         <section className={styles.contact}>
           <div id="contactMain" className={styles.main}>
             <Container className="g-0 text-white text-center">
-              <h2>¿TODO LISTO PARA EMPEZAR?</h2>
-              <p>
-                Dejanos un mensaje y te contactaremos lo más pronto posible.
-              </p>
+              {/* <TechGrid /> */}
 
-              <TechGrid />
-
-              <CustomForm bgInput="bg-black1" />
+              {!isSendForm ? (
+                <div className="text-white pt-6">
+                  <h2>¿TODO LISTO PARA EMPEZAR?</h2>
+                  <p>
+                    Dejanos un mensaje y te contactaremos lo más pronto posible.
+                  </p>
+                  <CustomForm
+                    bgInput="bg-black1"
+                    isFormComplete={isFormComplete}
+                    setIsSendForm={setIsSendForm}
+                  />
+                </div>
+              ) : (
+                <SuccessMessage />
+              )}
             </Container>
           </div>
 

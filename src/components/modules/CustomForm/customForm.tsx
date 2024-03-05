@@ -1,6 +1,7 @@
 import { Button, Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import styles from './customForm.module.scss';
-const CustomForm = ({ bgInput }: any) => {
+
+const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
   return (
     <Form className={styles.customForm}>
       <Row
@@ -85,7 +86,17 @@ const CustomForm = ({ bgInput }: any) => {
 
       <div className={styles.customButtonContainer + ' position-relative'}>
         {/* <Link href="/contacto" passHref> */}
-        <Button type="submit" variant="link" className={styles.customButton}>
+        <Button
+          type="submit"
+          variant="link"
+          className={
+            styles.customButton +
+            ' ' +
+            (isFormComplete && styles.customButtonColored)
+          }
+          onClick={() => setIsSendForm(true)}
+          disabled={!isFormComplete}
+        >
           ENVIAR AHORA
         </Button>
         {/* </Link> */}
