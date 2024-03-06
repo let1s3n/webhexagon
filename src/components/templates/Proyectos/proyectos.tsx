@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 
+import CardWithUs from '@/components/modules/CardWithUs/cardWithUs';
 import Tabs from '../../modules/Tabs/tabs';
 import styles from './proyectos.module.scss';
 const Proyectos = () => {
@@ -39,6 +40,10 @@ const Proyectos = () => {
         <Container className="g-0">
           <Tabs />
         </Container>
+      </section>
+
+      <section className="pb-8">
+        <CardWithUs />
       </section>
     </div>
   );

@@ -23,7 +23,7 @@
 
     .customButton {
       background: #1e1e1e;
-      color: #4b4b4b;
+      color: #949494;
       width: calc(100% - 3px);
       height: 54px;
       display: flex;
@@ -36,6 +36,10 @@
       right: 0px;
       z-index: 2;
       font-size: 20px;
+    }
+    .customButtonColored {
+      background: $degrade5;
+      color: #ffffff;
     }
     .buttonDecoration {
       width: 100%;

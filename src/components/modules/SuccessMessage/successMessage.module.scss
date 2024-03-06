@@ -1,0 +1,43 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.successMessageContainer {
+  .circleDashedSmallDecore {
+    width: 441px;
+    height: 429px;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+    left: 20px;
+
+    --d: 3deg; /* distance between dashes */
+    --n: 50; /* number of dashes */
+    --c: rgba(255, 255, 255, 0.24); /* color of dashes */
+    --b: 2px; /* control the thickness of border*/
+
+    background: repeating-conic-gradient(
+      var(--c) 0 calc(360deg / var(--n) - var(--d)),
+      transparent 0 calc(360deg / var(--n))
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--b)),
+      #fff calc(100% - var(--b) + 1px)
+    );
+  }
+
+  .circleDecore {
+    width: 659px;
+    height: 638px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -79px;
+    right: -235px;
+  }
+}
