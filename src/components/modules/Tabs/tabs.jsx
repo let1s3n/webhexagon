@@ -82,7 +82,7 @@ const tabs = () => {
           </Row>
         </Fade>
       </Tab>
-      {/* <Tab
+      <Tab
         eventKey="software"
         title="DESARROLLO DE SOFTWARE"
         style={{ rowGap: '72px' }}
@@ -96,7 +96,7 @@ const tabs = () => {
             <Col xs="auto">
               <Image
                 alt="project 1 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM1.png`}
                 width={500}
                 height={279}
               />
@@ -104,7 +104,7 @@ const tabs = () => {
             <Col xs="auto">
               <Image
                 alt="project 2 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM2.png`}
                 width={500}
                 height={279}
               />
@@ -120,22 +120,22 @@ const tabs = () => {
             <Col xs="auto">
               <Image
                 alt="project 3 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM3.png`}
                 width={500}
                 height={279}
               />
             </Col>
-            <Col xs="auto">
+            {/* <Col xs="auto">
               <Image
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
                 width={500}
                 height={279}
               />
-            </Col>
+            </Col> */}
           </Row>
         </Fade>
-      </Tab> */}
+      </Tab>
       <Tab
         eventKey="moviles"
         title="APLICACIONES MÓVILES"
