@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 import styles from './successMessage.module.scss';
 
@@ -10,6 +11,15 @@ const SuccessMessage = () => {
           !Gracias por contactarnos! Nos comunicaremos contigo a la brevedad
           posible.
         </p>
+      </div>
+      <div>
+        <Image
+          src={`${process.env.NEXT_PUBLIC_CDN}images/general/heroMessageSuccess.png`}
+          alt="Hero Message Success"
+          width={400}
+          height={0}
+          style={{ height: 'auto' }}
+        />
       </div>
       <div className={styles.circleDashedSmallDecore}></div>
       <div className={styles.circleDecore}></div>

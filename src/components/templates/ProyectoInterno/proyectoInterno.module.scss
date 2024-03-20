@@ -1,0 +1,73 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.introduction {
+  height: 100vh;
+  min-height: fit-content;
+  padding: 150px 0px 16px 0px;
+  position: relative;
+  background: rgba(36, 40, 209, 0.4);
+  @include media-breakpoint-up(xl) {
+    padding: 150px 0px 168px 0px;
+  }
+
+  .title {
+    font-size: 32px;
+    max-width: 500px;
+    @include media-breakpoint-up(xl) {
+      font-size: 48px;
+      letter-spacing: 0.06em;
+    }
+  }
+
+  .arrowDouble {
+    position: absolute;
+    animation: bounce 1s alternate infinite ease-out;
+  }
+
+  @keyframes bounce {
+    from {
+      bottom: 0;
+    }
+    to {
+      bottom: 20px;
+    }
+  }
+
+  .circleDashedDecore {
+    @include media-breakpoint-up(md) {
+      width: 612px;
+      height: 595px;
+      border-radius: 50%;
+      /* border: 1px dashed rgba(255, 255, 255, 0.35); */
+      position: absolute;
+      top: -5px;
+      left: 70px;
+
+      --d: 3deg; /* distance between dashes */
+      --n: 50; /* number of dashes */
+      --c: rgba(255, 255, 255, 0.35); /* color of dashes */
+      --b: 2px; /* control the thickness of border*/
+
+      background: repeating-conic-gradient(
+        var(--c) 0 calc(360deg / var(--n) - var(--d)),
+        transparent 0 calc(360deg / var(--n))
+      );
+      -webkit-mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - var(--b)),
+        #fff calc(100% - var(--b) + 1px)
+      );
+      mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - var(--b)),
+        #fff calc(100% - var(--b) + 1px)
+      );
+    }
+  }
+}
+
+.projectInfo {
+  background: $degradeProyectSection;
+  color: #ffffff;
+}

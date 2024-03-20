@@ -304,7 +304,7 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                 />
                 <div className="text-white pt-4 pb-5 px-4 position-relative">
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/redesSocialesIcon.svg`}
+                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/redSocialesIcon.svg`}
                     alt="web development"
                     width={40}
                     height={0}
