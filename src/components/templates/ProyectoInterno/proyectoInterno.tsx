@@ -1,8 +1,17 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './proyectoInterno.module.scss';
-const ProyectoInterno = () => {
+
+const ProyectoInterno = ({
+  selectedProjectData,
+}: InferGetStaticPropsType<GetStaticProps>) => {
+  useEffect(() => {
+    console.log('selectedProjectData', selectedProjectData);
+  }, [selectedProjectData]);
+
   return (
     <>
       <section className={styles.introduction}>
@@ -175,7 +184,23 @@ const ProyectoInterno = () => {
               </div>
             </Col>
             <Col className="px-7">
-              <div>Test</div>
+              <div className="d-flex gap-2 flex-wrap">
+                {[
+                  'web',
+                  'HTML5',
+                  'javascript',
+                  'Android',
+                  'HTML5',
+                  'javascript',
+                  'Android',
+                ].map((ele, index) => {
+                  return (
+                    <p key={index} className={styles.tag}>
+                      {ele}
+                    </p>
+                  );
+                })}
+              </div>
               <p className="py-5">
                 Lorem ipsum dolor sit amet consectetur. Ipsum vulputate integer
                 suspendisse ut suspendisse dignissim sit mauris. Pulvinar cursus

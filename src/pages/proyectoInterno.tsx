@@ -1,6 +1,10 @@
 import ProyectoInterno from '@/components/templates/ProyectoInterno/proyectoInterno';
+import { selectedProjectContext } from '@/pages/_app';
+import { useContext } from 'react';
+
 const proyectoInterno = () => {
-  return <ProyectoInterno />;
+  const selectedProjectData = useContext(selectedProjectContext);
+  return <ProyectoInterno selectedProjectData={selectedProjectData} />;
 };
 
 export default proyectoInterno;

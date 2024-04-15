@@ -4,15 +4,45 @@ import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
 import { bebasNeue } from '../../../lib/fonts';
 import styles from './home.module.scss';
-const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
+
+interface Props {
+  imageProps: InferGetStaticPropsType<GetStaticProps>;
+  setSelectedProjectData: Dispatch<SetStateAction<string>>;
+}
+
+const Home = ({ imageProps, setSelectedProjectData }: Props) => {
   const { width, height } = useWindowDimensions();
   const [isFormComplete, setFormComplete] = useState<boolean>(true);
   const [isSendForm, setIsSendForm] = useState<boolean>(false);
+  const [projects, setProjects] = useState([] as any[]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log('PROJECTS', projects);
+  }, [projects]);
+
+  useEffect(() => {
+    console.log('pasoooooo');
+    setSelectedProjectData('hola');
+    // localStorage.setItem("favorited-jobs", JSON.stringify('hola'));
+    console.log('confirmado');
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch('/api/storeJSONData');
+    const data = await response.json();
+    console.log(data.projects);
+    console.log(data.projects[0].project_types);
+    setProjects(data.projects);
+  };
   return (
     <>
       <section className={styles.introduction}>
@@ -22,7 +52,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
         >
           <div className={styles.imageContainer}>
             <Image
-              /* src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`} */
+              // src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
               src={imageProps[0].src}
               alt="Illustration Home 1"
               fill
@@ -359,6 +389,63 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                 </div>
               </div>
             </div>
+
+            <h1>SEPARACION TEST</h1>
+            {projects.length > 0 &&
+              projects.map((project, index) => {
+                return (
+                  <div key={index} className={styles.proyect}>
+                    <Image
+                      src={process.env.NEXT_PUBLIC_CDN + project['hero_image']}
+                      alt="Proyecto Home 1"
+                      width={400}
+                      height={0}
+                      className={styles.imgProyect}
+                      style={{ height: 'auto' }}
+                    />
+
+                    <div className={styles.right}>
+                      <div className="d-flex" style={{ columnGap: '12px' }}>
+                        {project['project_types'].map(
+                          (tag: any, index: any) => {
+                            return (
+                              <div key={index} className={styles.tag}>
+                                <p className="lh-1">{tag}</p>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+
+                      <h3 className="lh-1">{project['company_name']}</h3>
+
+                      <p className={styles.proyectDescription}>
+                        {project['description']}
+                      </p>
+
+                      <div
+                        className="d-flex align-items-center"
+                        style={{ columnGap: '1rem' }}
+                      >
+                        <p className="lh-1">Ir al proyecto</p>
+                        <Link
+                          href="/proyectos"
+                          passHref
+                          style={{ lineHeight: '12px' }}
+                        >
+                          <Image
+                            src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                            alt="Arrow"
+                            width={39}
+                            height={0}
+                            style={{ height: 'auto' }}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </Container>
 
