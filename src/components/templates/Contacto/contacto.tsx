@@ -17,13 +17,24 @@ const Contacto = () => {
       <section className={styles.introduction}>
         <Container className="px-xxl-12">
           <Row className="text-white pt-8 pb-5 g-0">
-            <Col xl={7}>
-              <h1 className={styles.title}>
+            <Col
+              lg={6}
+              xl={7}
+              className="d-flex justify-content-center justify-content-lg-start text-center text-lg-start"
+            >
+              <h1 className={styles.title + ' ps-lg-5 ps-xl-0'}>
                 Tu nos escribes, nosotros respondemos
               </h1>
             </Col>
-            <Col xl={5}>
-              <p className="m-0" style={{ maxWidth: '362px' }}>
+            <Col
+              lg={6}
+              xl={5}
+              className=" d-flex align-items-center align-items-lg-start flex-column pt-3 pt-lg-0"
+            >
+              <p
+                className="m-0 text-center text-lg-start"
+                style={{ maxWidth: '362px' }}
+              >
                 Creamos plataformas que impactan y conectan con tu audiencia.{' '}
                 <br />
                 ¡Simplifica, automatiza y alcanza tus metas con nuestro enfoque
@@ -46,7 +57,7 @@ const Contacto = () => {
                     </Button>
                   </Link>
                 </Col>
-                <Col></Col>
+                {/* <Col></Col> */}
               </Row>
             </Col>
           </Row>
@@ -55,7 +66,7 @@ const Contacto = () => {
               styles.infoBox +
               (width >= 600
                 ? ' g-0 position-absolute top-100 start-50 translate-middle text-white'
-                : ' g-0 position-relative text-white')
+                : ' g-0 position-relative text-white d-flex flex-column mx-auto')
             }
           >
             {/* <Row
@@ -76,8 +87,8 @@ const Contacto = () => {
                   <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
                 <div className="py-2 d-flex justify-content-between">
-                  <p>+51 907 190 881</p>
-                  <p>+51 927 575 917</p>
+                  <small className="fs-md-6">+51 907 190 881</small>
+                  <small className="fs-md-6">+51 927 575 917</small>
                 </div>
               </div>
             </Col>
@@ -85,7 +96,7 @@ const Contacto = () => {
           </Row>
         </Container>
 
-        <div className={styles.circleDashedDecore}></div>
+        <div className={styles.circleDashedDecore + ' d-none d-md-flex'}></div>
       </section>
 
       <section className={styles.contactForm}>

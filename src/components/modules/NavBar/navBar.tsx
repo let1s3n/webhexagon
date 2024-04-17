@@ -68,7 +68,11 @@ const NavBar = () => {
             ) : null}
           </Nav.Link>
           <Nav.Link
-            className={styles.contactNavLink + ' text-lg-white'}
+            className={
+              styles.contactNavLink +
+              ' text-lg-white ' +
+              (currentPath === '/contacto' && styles.currentPath)
+            }
             href="/contacto"
           >
             <p
@@ -82,7 +86,7 @@ const NavBar = () => {
 
             {currentPath === '/contacto' ? (
               <div
-                className={styles.locationDecorator}
+                // className={styles.locationDecorator}
                 style={{
                   transform:
                     'translateX(-50%) skewX(20deg) rotate(-45deg)  !important',
@@ -128,7 +132,12 @@ const NavBar = () => {
                 ) : null}
               </Nav.Link>
               <Nav.Link
-                className={styles.contactNavLink + ' text-lg-white'}
+                className={
+                  styles.contactNavLink +
+                  ' text-lg-white ' +
+                  (currentPath === '/contacto' &&
+                    styles.currentPath + ' text-white')
+                }
                 href="/contacto"
               >
                 <p
@@ -142,7 +151,7 @@ const NavBar = () => {
 
                 {currentPath === '/contacto' ? (
                   <div
-                    className={styles.locationDecorator}
+                    // className={styles.locationDecorator}
                     style={{
                       transform:
                         'translateX(-50%) skewX(20deg) rotate(-45deg)  !important',

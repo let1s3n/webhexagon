@@ -83,6 +83,10 @@
     background-color: $blue1;
   }
 
+  &.currentPath {
+    background-color: $blue1;
+  }
+
   @include media-breakpoint-up(md) {
     margin-left: 12px;
   }

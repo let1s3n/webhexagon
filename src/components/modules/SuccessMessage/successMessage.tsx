@@ -1,8 +1,10 @@
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 import styles from './successMessage.module.scss';
 
 const SuccessMessage = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <Container className={styles.successMessageContainer + ' pt-5'}>
       <div className="text-white">
@@ -12,11 +14,11 @@ const SuccessMessage = () => {
           posible.
         </p>
       </div>
-      <div>
+      <div className="pt-5">
         <Image
           src={`${process.env.NEXT_PUBLIC_CDN}images/general/heroMessageSuccess.png`}
           alt="Hero Message Success"
-          width={400}
+          width={width >= 600 ? 400 : 250}
           height={0}
           style={{ height: 'auto' }}
         />
