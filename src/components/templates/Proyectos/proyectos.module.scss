@@ -6,13 +6,14 @@
 }
 .introduction {
   /* height: fit-content; */
-  min-height: 831px;
-  padding: 208px 0px 16px 0px;
+  min-height: 631px;
+  padding: 120px 0px 16px 0px;
 
   position: relative;
   overflow-x: hidden;
   @include media-breakpoint-up(xl) {
     padding: 208px 0px 168px 0px;
+    min-height: 831px;
   }
 
   .title {
@@ -49,9 +50,29 @@
 
   .projectIllustration {
     position: absolute;
-    right: 200px;
+    right: 16px;
     top: 208px;
     z-index: 3;
+    width: 152px;
+    height: 202px;
+    @include media-breakpoint-up(md) {
+      right: 100px;
+      top: 208px;
+      width: 222px;
+      height: 272px;
+    }
+    @include media-breakpoint-up(lg) {
+      right: 130px;
+      top: 208px;
+      width: 352px;
+      height: 402px;
+    }
+    @include media-breakpoint-up(xl) {
+      right: 200px;
+      top: 208px;
+      width: 442px;
+      height: 492px;
+    }
   }
 }
 

@@ -8,13 +8,12 @@ const tabs = () => {
     <Tabs
       defaultActiveKey="web"
       id="uncontrolled-tab-example"
-      className="mb-10"
-      style={{ columnGap: '56px' }}
+      className={styles.customTab + ' mb-10'}
     >
       <Tab
         eventKey="web"
         title="DESARROLLO WEB"
-        style={{ rowGap: '72px' }}
+        style={{ rowGap: '72px', whiteSpace: 'nowrap' }}
         className="overflow-hidden"
       >
         {/* <h1 className="text-black">WEB</h1> */}
@@ -52,7 +51,7 @@ const tabs = () => {
 
         <Fade direction="down" triggerOnce="true" cascade>
           <Row
-            className={styles.customRow + ' g-0'}
+            className={styles.customRow + ' g-0 pt-6 pt-xl-0'}
             style={{ columnGap: '118px' }}
           >
             <Col xs="auto">
@@ -98,7 +97,8 @@ const tabs = () => {
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM1.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             <Col xs="auto">
@@ -106,7 +106,8 @@ const tabs = () => {
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM2.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
           </Row>
@@ -114,7 +115,7 @@ const tabs = () => {
 
         <Fade direction="down" triggerOnce="true" cascade>
           <Row
-            className={styles.customRow + ' g-0'}
+            className={styles.customRow + ' g-0 pt-6 pt-xl-0'}
             style={{ columnGap: '118px' }}
           >
             <Col xs="auto">
@@ -122,7 +123,8 @@ const tabs = () => {
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/desktop/SIM3.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             {/* <Col xs="auto">
@@ -152,7 +154,8 @@ const tabs = () => {
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             <Col xs="auto">
@@ -160,7 +163,8 @@ const tabs = () => {
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
           </Row>
@@ -168,7 +172,7 @@ const tabs = () => {
 
         <Fade direction="down" triggerOnce="true" cascade>
           <Row
-            className={styles.customRow + ' g-0'}
+            className={styles.customRow + ' g-0 pt-6 pt-xl-0'}
             style={{ columnGap: '118px' }}
           >
             <Col xs="auto">
@@ -176,7 +180,8 @@ const tabs = () => {
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             <Col xs="auto">
@@ -184,7 +189,8 @@ const tabs = () => {
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
           </Row>
@@ -206,7 +212,8 @@ const tabs = () => {
                 alt="project 1 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto1.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             <Col xs="auto">
@@ -214,7 +221,8 @@ const tabs = () => {
                 alt="project 2 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
           </Row>
@@ -222,7 +230,7 @@ const tabs = () => {
 
         <Fade direction="down" triggerOnce="true" cascade>
           <Row
-            className={styles.customRow + ' g-0'}
+            className={styles.customRow + ' g-0 pt-6 pt-xl-0'}
             style={{ columnGap: '118px' }}
           >
             <Col xs="auto">
@@ -230,7 +238,8 @@ const tabs = () => {
                 alt="project 3 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
             <Col xs="auto">
@@ -238,7 +247,8 @@ const tabs = () => {
                 alt="project 4 image"
                 src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
                 width={500}
-                height={279}
+                height={0}
+                className={styles.tabImage}
               />
             </Col>
           </Row>
