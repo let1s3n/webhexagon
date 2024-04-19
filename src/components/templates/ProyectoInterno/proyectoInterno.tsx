@@ -1,13 +1,11 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { selectedProjectContext } from '@/pages/_app';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './proyectoInterno.module.scss';
-
-const ProyectoInterno = ({
-  selectedProjectData,
-}: InferGetStaticPropsType<GetStaticProps>) => {
+const ProyectoInterno = () => {
+  const selectedProjectData = useContext(selectedProjectContext);
   useEffect(() => {
     console.log('selectedProjectData', selectedProjectData);
   }, [selectedProjectData]);
