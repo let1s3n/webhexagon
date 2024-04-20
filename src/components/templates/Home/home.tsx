@@ -16,24 +16,14 @@ interface Props {
 }
 
 const Home = ({ imageProps, setSelectedProjectData }: Props) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const [isFormComplete, setFormComplete] = useState<boolean>(true);
   const [isSendForm, setIsSendForm] = useState<boolean>(false);
   const [projects, setProjects] = useState([] as any[]);
 
   useEffect(() => {
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    console.log('PROJECTS', projects);
-  }, [projects]);
-
-  useEffect(() => {
-    console.log('pasoooooo');
     setSelectedProjectData('hola');
-    // localStorage.setItem("favorited-jobs", JSON.stringify('hola'));
-    console.log('confirmado');
   }, []);
 
   const fetchData = async () => {
