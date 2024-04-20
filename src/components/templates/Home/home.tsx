@@ -37,11 +37,15 @@ const Home = ({ imageProps, setSelectedProjectData }: Props) => {
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch('/api/storeJSONData');
-    const data = await response.json();
-    console.log(data.projects);
-    console.log(data.projects[0].project_types);
-    setProjects(data.projects);
+    try {
+      const response = await fetch('/api/storeJSONData');
+      const data = await response.json();
+      console.log(data.projects);
+      console.log(data.projects[0].project_types);
+      setProjects(data.projects);
+    } catch (error) {
+      console.log('Error:', error);
+    }
   };
   return (
     <>
