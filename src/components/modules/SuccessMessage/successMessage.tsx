@@ -1,4 +1,4 @@
-import useWindowDimensions from '@/hooks/useWindowDimensions';
+import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 import styles from './successMessage.module.scss';

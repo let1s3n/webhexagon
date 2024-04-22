@@ -3,7 +3,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { bebasNeue } from '../../../lib/fonts';
+import { bebasNeue } from '../../../utils/fonts';
 import styles from './servicios.module.scss';
 const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
   return (

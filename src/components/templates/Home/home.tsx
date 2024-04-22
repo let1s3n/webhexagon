@@ -1,13 +1,13 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
 import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
+import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
-import { bebasNeue } from '../../../lib/fonts';
+import { bebasNeue } from '../../../utils/fonts';
 import styles from './home.module.scss';
 
 interface Props {
@@ -22,21 +22,11 @@ const Home = ({ imageProps, setSelectedProjectData }: Props) => {
   const [projects, setProjects] = useState([] as any[]);
 
   useEffect(() => {
-    fetchData();
+    console.log('projects:', projects);
+    setProjects(projects);
     setSelectedProjectData('hola');
-  }, []);
+  }, [projects]);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('/api/storeJSONData');
-      const data = await response.json();
-      console.log(data.projects);
-      console.log(data.projects[0].project_types);
-      setProjects(data.projects);
-    } catch (error) {
-      console.log('Error:', error);
-    }
-  };
   return (
     <>
       <section className={styles.introduction}>

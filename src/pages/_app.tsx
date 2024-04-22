@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { createContext, useEffect, useState } from 'react';
 import { SSRProvider } from 'react-bootstrap';
-import { bebasNeue, rubik } from '../lib/fonts';
+import { bebasNeue, rubik } from '../utils/fonts';
 
 import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
 import '@/sass/app.scss';

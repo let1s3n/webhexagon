@@ -1,11 +1,11 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
 import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
+import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { bebasNeue } from '../../../lib/fonts';
+import { bebasNeue } from '../../../utils/fonts';
 import styles from './contacto.module.scss';
 const Contacto = () => {
   const { width, height } = useWindowDimensions();

@@ -1,4 +1,4 @@
-import usePathName from '@/hooks/usePathName';
+import usePathName from '@/utils/hooks/usePathName';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
@@ -27,8 +27,7 @@ const NavBar = () => {
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
             alt="Hexagon Logo"
             width={53}
-            height={0}
-            style={{ height: 'auto' }}
+            height={61}
             priority
             quality={100}
           />
