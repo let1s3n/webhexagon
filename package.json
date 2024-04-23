@@ -27,13 +27,18 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@plaiceholder/next": "^2.5.0",
+    "aws-sdk": "^2.1604.0",
     "bootstrap": "^5.2.3",
+    "dotenv": "^16.4.5",
+    "handlebars": "^4.7.8",
     "next": "13.2.4",
+    "nodemailer": "^6.9.13",
     "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-awesome-reveal": "^4.2.3",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.51.3",
     "react-icons": "^4.8.0",
     "react-parallax": "^3.5.1",
     "sharp": "^0.32.0"

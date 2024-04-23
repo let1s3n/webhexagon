@@ -1,9 +1,71 @@
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { Button, Col, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import styles from './customForm.module.scss';
 
-const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
+const CustomForm = ({ bgInput, setIsSendForm }: any) => {
+  const [isFormComplete, setFormComplete] = useState<boolean>(true);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState,
+    formState: { isSubmitSuccessful, errors, isDirty, dirtyFields },
+  } = useForm({
+    defaultValues: {
+      full_name: '',
+      email: '',
+      company: '',
+      phone_number: '',
+      project: '',
+      /* privacy_policies: false, */
+    },
+  });
+
+  const onSubmit = async (data: any) => {
+    console.log('data: ', data);
+    const JSONdata = JSON.stringify(data);
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSONdata,
+    };
+
+    const response = await fetch('/api/contact', options);
+    const result = await response.json();
+    /* setIsSendForm(true); */
+  };
+  const handleOnKeyDown = (e: any) => {
+    var ASCIICode = e.which ? e.which : e.keyCode;
+
+    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+      return e.preventDefault();
+    return true;
+  };
+
+  useEffect(() => {
+    let count = Object.keys(dirtyFields).length;
+
+    if (count === 5) {
+      setFormComplete(true);
+    } else {
+      setFormComplete(false);
+    }
+
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [formState, reset]);
   return (
-    <Form className={styles.customForm}>
+    <Form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className={styles.customForm}
+    >
       <Row
         className="g-0 mb-5"
         style={{
@@ -22,7 +84,22 @@ const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
               type="text"
               placeholder="Nombre completo"
               className={bgInput}
+              {...register('full_name', { required: true })}
             />
+            {errors.full_name?.type === 'required' && (
+              <div className="d-flex mt-2" style={{ columnGap: 0.5 + 'rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Por favor ingrese su nombre completo
+                </p>
+              </div>
+            )}
           </FloatingLabel>
         </Col>
 
@@ -36,6 +113,7 @@ const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
               type="text"
               placeholder="Company"
               className={bgInput}
+              {...register('company')}
             />
           </FloatingLabel>
         </Col>
@@ -50,7 +128,39 @@ const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
               type="email"
               placeholder="Correo eléctronico"
               className={bgInput}
+              {...register('email', {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              })}
             />
+            {errors.email?.type === 'required' && (
+              <div className="d-flex mt-2" style={{ columnGap: 0.5 + 'rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Tiene que ingresar un correo
+                </p>
+              </div>
+            )}
+            {errors.email?.type === 'pattern' && (
+              <div className="d-flex mt-2" style={{ columnGap: 0.5 + 'rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Por favor ingrese un formato de correo válido
+                </p>
+              </div>
+            )}
           </FloatingLabel>
         </Col>
 
@@ -64,7 +174,42 @@ const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
               type="text"
               placeholder="Número de contacto"
               className={bgInput}
+              minLength={9}
+              maxLength={12}
+              onKeyDown={handleOnKeyDown}
+              {...register('phone_number', {
+                required: true,
+                pattern: /[9][0-9]{8,11}$/i,
+              })}
             />
+            {errors.phone_number?.type === 'required' && (
+              <div className="d-flex mt-2" style={{ columnGap: '.5rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Tiene que ingresar un número de celular
+                </p>
+              </div>
+            )}
+            {errors.phone_number?.type === 'pattern' && (
+              <div className="d-flex mt-2" style={{ columnGap: 0.5 + 'rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Número de teléfono inválido
+                </p>
+              </div>
+            )}
           </FloatingLabel>
         </Col>
 
@@ -79,7 +224,22 @@ const CustomForm = ({ bgInput, isFormComplete, setIsSendForm }: any) => {
               placeholder="Mensaje"
               style={{ height: '126px' }}
               className={bgInput}
+              {...register('project', { required: true })}
             />
+            {errors.project?.type === 'required' && (
+              <div className="d-flex mt-2" style={{ columnGap: 0.5 + 'rem' }}>
+                <Image
+                  alt="error icon"
+                  src="/images/error-icon.svg"
+                  width={16}
+                  height={16}
+                  sizes="16px"
+                />
+                <p className="error-text m-0 fs-14 fw-600 lh-1">
+                  Por favor ingrese un mensaje
+                </p>
+              </div>
+            )}
           </FloatingLabel>
         </Col>
       </Row>

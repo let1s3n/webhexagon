@@ -18,8 +18,12 @@ dl {
   font-family: 'kaleko-bold';
 }
 
+.font-xsm {
+  font-size: $font-size-xsm !important;
+}
+
 .fs-14 {
-  font-size: $font-size-sm;
+  font-size: $font-size-sm !important;
 }
 
 .form-label {
