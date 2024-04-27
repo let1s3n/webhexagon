@@ -1,4 +1,5 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
+import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
 import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -136,12 +137,12 @@ const Contacto = () => {
           </div>
         </Container>
         <Container className="g-0">
-          <div className="text-white pt-6">
+          {/* <div className="text-white pt-6">
             <h1>HABLEMOS. Déjanos un mensaje</h1>
 
             <CustomForm bgInput="bg-primary" setIsSendForm={setIsSendForm} />
-          </div>
-          {/* {!isSendForm ? (
+          </div> */}
+          {!isSendForm ? (
             <div className="text-white pt-6">
               <h1>HABLEMOS. Déjanos un mensaje</h1>
 
@@ -149,7 +150,7 @@ const Contacto = () => {
             </div>
           ) : (
             <SuccessMessage />
-          )} */}
+          )}
         </Container>
         <div className={styles.circleDashedSmallDecore}></div>
         <div className={styles.circleDecore}></div>

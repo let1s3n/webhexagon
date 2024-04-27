@@ -5,6 +5,7 @@ import styles from './successMessage.module.scss';
 
 const SuccessMessage = () => {
   const { width, height } = useWindowDimensions();
+
   return (
     <Container className={styles.successMessageContainer + ' pt-5'}>
       <div className="text-white">
@@ -18,7 +19,8 @@ const SuccessMessage = () => {
         <Image
           src={`${process.env.NEXT_PUBLIC_CDN}images/general/heroMessageSuccess.png`}
           alt="Hero Message Success"
-          width={width >= 600 ? 400 : 250}
+          /* width={width >= 600 ? 400 : 250} */
+          width={200}
           height={0}
           style={{ height: 'auto' }}
         />

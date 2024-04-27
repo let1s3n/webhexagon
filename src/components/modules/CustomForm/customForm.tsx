@@ -37,7 +37,7 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
 
     const response = await fetch('/api/contact', options);
     const result = await response.json();
-    /* setIsSendForm(true); */
+    setIsSendForm(true);
   };
   const handleOnKeyDown = (e: any) => {
     var ASCIICode = e.which ? e.which : e.keyCode;
