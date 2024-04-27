@@ -34,6 +34,6 @@ export default async function handler(
     });
     res.status(200).json({ message: 'Message Sent' });
   } catch (error) {
-    res.status(500).json({ message: 'Message not sent' });
+    res.status(500).json({ message: error });
   }
 }
