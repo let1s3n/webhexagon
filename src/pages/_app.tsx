@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { SSRProvider } from 'react-bootstrap';
 import { bebasNeue, rubik } from '../utils/fonts';
 
@@ -13,9 +13,9 @@ export const selectedProjectContext = createContext(null);
 export default function App({ Component, pageProps }: AppProps) {
   const [selectedProjectData, setSelectedProjectData] = useState(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     console.log('APP: ', selectedProjectData);
-  }, [selectedProjectData]);
+  }, [selectedProjectData]); */
 
   return (
     <SSRProvider>

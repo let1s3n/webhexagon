@@ -1,11 +1,8 @@
-import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
 import styles from './successMessage.module.scss';
 
 const SuccessMessage = () => {
-  const { width, height } = useWindowDimensions();
-
   return (
     <Container className={styles.successMessageContainer + ' pt-5'}>
       <div className="text-white">

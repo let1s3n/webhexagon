@@ -1,14 +1,14 @@
 import { selectedProjectContext } from '@/pages/_app';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './proyectoInterno.module.scss';
 const ProyectoInterno = () => {
   const selectedProjectData = useContext(selectedProjectContext);
-  useEffect(() => {
+  /* useEffect(() => {
     console.log('selectedProjectData', selectedProjectData);
-  }, [selectedProjectData]);
+  }, [selectedProjectData]); */
 
   return (
     <>

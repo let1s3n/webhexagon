@@ -22,7 +22,7 @@ const Home = ({ imageProps, setSelectedProjectData }: Props) => {
   const [projects, setProjects] = useState([] as any[]);
 
   useEffect(() => {
-    console.log('projects:', projects);
+    /* console.log('projects:', projects); */
     setProjects(projects);
     setSelectedProjectData('hola');
   }, [projects]);

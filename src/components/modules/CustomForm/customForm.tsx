@@ -25,7 +25,7 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
   });
 
   const onSubmit = async (data: any) => {
-    console.log('data: ', data);
+    /* console.log('data: ', data); */
     const JSONdata = JSON.stringify(data);
     const options = {
       method: 'POST',
@@ -254,7 +254,6 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
             ' ' +
             (isFormComplete && styles.customButtonColored)
           }
-          onClick={() => setIsSendForm(true)}
           disabled={!isFormComplete}
         >
           ENVIAR AHORA

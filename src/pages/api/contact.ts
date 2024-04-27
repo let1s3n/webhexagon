@@ -13,8 +13,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log('req.body: ', req.body);
-  const { full_name, email, company, phone_number, project } = req.body;
+  /* console.log('req.body: ', req.body);
+  const { full_name, email, company, phone_number, project } = req.body; */
 
   const emailHtmlTemplate = await fs.readFileSync(
     path.resolve('./src', 'utils/emails/templates/contact.html'),
