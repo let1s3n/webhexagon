@@ -1,3 +1,25 @@
+@import '@/sass/abstracts/variables';
+@import 'bootstrap/scss/mixins';
+
+.customTab {
+  column-gap: 18px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  font-size: 12px;
+  li {
+    white-space: nowrap;
+  }
+  @include media-breakpoint-up(md) {
+    overflow-x: unset;
+    column-gap: 24px;
+    font-size: 14px;
+  }
+  @include media-breakpoint-up(lg) {
+    column-gap: 56px;
+    font-size: 16px;
+  }
+}
+
 .customRow {
   justify-content: center;
   & > div {
@@ -9,4 +31,9 @@
 
 .tabImage {
   height: auto;
+  /* width: calc(100vw - 32px); */
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 500px;
+  }
 }

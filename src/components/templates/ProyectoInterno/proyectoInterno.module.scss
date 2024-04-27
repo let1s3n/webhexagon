@@ -70,4 +70,17 @@
 .projectInfo {
   background: $degradeProyectSection;
   color: #ffffff;
+
+  .tag {
+    color: #ffffff;
+    padding: 2px 22px 2px;
+    font-size: 13px;
+    background: $blue2;
+    border-radius: 13px;
+    display: flex;
+    letter-spacing: 0.06em;
+    align-items: center;
+    width: fit-content;
+    height: 20px;
+  }
 }

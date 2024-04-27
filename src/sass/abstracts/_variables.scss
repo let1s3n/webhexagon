@@ -64,6 +64,7 @@ $font-family-tertiary: 'Montserrat', sans-serif; */
 $desactivado: #898989;
 $black1: #11121b;
 $blue1: #0059ff;
+$blue2: #2428d1;
 
 //Degrade
 $degrade1: linear-gradient(90deg, #4c7ff5 58.06%, #ff00fc 140.42%);
@@ -82,3 +83,5 @@ $degradeProyectSection: linear-gradient(
   #222b53 78.13%,
   #192866 100%
 );
+
+$font-size-xsm: $font-size-base * 0.625;

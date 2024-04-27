@@ -42,7 +42,7 @@
   }
   .logo {
     width: 40px;
-
+    height: auto;
     @include media-breakpoint-up(md) {
       width: 53px;
     }
@@ -80,6 +80,10 @@
   transform: skewX(-20deg);
 
   &:hover {
+    background-color: $blue1;
+  }
+
+  &.currentPath {
     background-color: $blue1;
   }
 

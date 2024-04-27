@@ -1,18 +1,32 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
 import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
+import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
-import { bebasNeue } from '../../../lib/fonts';
+import { bebasNeue } from '../../../utils/fonts';
 import styles from './home.module.scss';
-const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
-  const { width, height } = useWindowDimensions();
+
+interface Props {
+  imageProps: InferGetStaticPropsType<GetStaticProps>;
+  setSelectedProjectData: Dispatch<SetStateAction<string>>;
+}
+
+const Home = ({ imageProps, setSelectedProjectData }: Props) => {
+  const { width } = useWindowDimensions();
   const [isFormComplete, setFormComplete] = useState<boolean>(true);
   const [isSendForm, setIsSendForm] = useState<boolean>(false);
+  const [projects, setProjects] = useState([] as any[]);
+
+  useEffect(() => {
+    console.log('projects:', projects);
+    setProjects(projects);
+    setSelectedProjectData('hola');
+  }, [projects]);
+
   return (
     <>
       <section className={styles.introduction}>
@@ -22,7 +36,7 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
         >
           <div className={styles.imageContainer}>
             <Image
-              /* src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`} */
+              // src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
               src={imageProps[0].src}
               alt="Illustration Home 1"
               fill
@@ -152,213 +166,61 @@ const Home = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
             className="d-flex flex-column mt-8 align-items-center align-items-xxl-stretch"
             style={{ rowGap: '48px' }}
           >
-            <div className={styles.proyect}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseALR2.png`}
-                alt="Proyecto Home 1"
-                width={400}
-                height={0}
-                className={styles.imgProyect}
-                style={{ height: 'auto' }}
-              />
-
-              <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: '12px' }}>
-                  <div className={styles.tag}>
-                    <p className="lh-1">WEB</p>
-                  </div>
-                  {/* <div className={styles.tag}>
-                    <p className="lh-1">IOS</p>
-                  </div>
-                  <div className={styles.tag}>
-                    <p className="lh-1">Android</p>
-                  </div> */}
-                </div>
-
-                <h3 className="lh-1">SMRL ALR</h3>
-
-                <p className={styles.proyectDescription}>
-                  Sitio web de empresa minera SMRL ALR. Cuenta con todas las
-                  secciones requeridas por el cliente, diseño moderno, uso de
-                  tecnologías modernas de desarrollo, características
-                  internacionales - multilenguaje, además de servicios backend
-                  de contacto por email.
-                </p>
-
-                <div
-                  className="d-flex align-items-center"
-                  style={{ columnGap: '1rem' }}
-                >
-                  <p className="lh-1">Ir al proyecto</p>
-                  <Link
-                    href="/proyectos"
-                    passHref
-                    style={{ lineHeight: '12px' }}
-                  >
+            {projects.length > 0 &&
+              projects.map((project, index) => {
+                return (
+                  <div key={index} className={styles.proyect}>
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
-                      alt="Arrow"
-                      width={39}
+                      src={process.env.NEXT_PUBLIC_CDN + project['card_image']}
+                      alt="Proyecto Home 1"
+                      width={400}
                       height={0}
+                      className={styles.imgProyect}
                       style={{ height: 'auto' }}
                     />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={styles.proyect}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseREPORTESALR3.png`}
-                alt="Proyecto Home 2"
-                width={400}
-                height={0}
-                className={styles.imgProyect}
-                style={{ height: 'auto' }}
-              />
 
-              <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: '12px' }}>
-                  <div className={styles.tag}>
-                    <p className="lh-1">WEB</p>
+                    <div className={styles.right}>
+                      <div className="d-flex" style={{ columnGap: '12px' }}>
+                        {project['project_types'].map(
+                          (tag: any, index: any) => {
+                            return (
+                              <div key={index} className={styles.tag}>
+                                <p className="lh-1">{tag}</p>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+
+                      <h3 className="lh-1">{project['company_name']}</h3>
+
+                      <p className={styles.proyectDescription}>
+                        {project['description']}
+                      </p>
+
+                      <div
+                        className="d-flex align-items-center"
+                        style={{ columnGap: '1rem' }}
+                      >
+                        <p className="lh-1">Ir al proyecto</p>
+                        <Link
+                          href="/proyectos"
+                          passHref
+                          style={{ lineHeight: '12px' }}
+                        >
+                          <Image
+                            src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                            alt="Arrow"
+                            width={39}
+                            height={0}
+                            style={{ height: 'auto' }}
+                          />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  {/* <div className={styles.tag}>
-                    <p className="lh-1">IOS</p>
-                  </div>
-                  <div className={styles.tag}>
-                    <p className="lh-1">Android</p>
-                  </div> */}
-                </div>
-
-                <h3 className="lh-1">Reportes ALR</h3>
-
-                <p className={styles.proyectDescription}>
-                  Aplicativo web de reportes, dashboards y monitoreo de métricas
-                  de empresa minera SMRL ALR.
-                </p>
-
-                <div
-                  className="d-flex align-items-center"
-                  style={{ columnGap: '1rem' }}
-                >
-                  <p className="lh-1">Ir al proyecto</p>
-                  <Link
-                    href="/proyectos"
-                    passHref
-                    style={{ lineHeight: '12px' }}
-                  >
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
-                      alt="Arrow"
-                      width={39}
-                      height={0}
-                      style={{ height: 'auto' }}
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={styles.proyect}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseAMARANTE2.png`}
-                alt="Proyecto Home 3"
-                width={400}
-                height={0}
-                className={styles.imgProyect}
-                style={{ height: 'auto' }}
-              />
-
-              <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: '12px' }}>
-                  <div className={styles.tag}>
-                    <p className="lh-1">WEB</p>
-                  </div>
-                  {/* <div className={styles.tag}>
-                    <p className="lh-1">IOS</p>
-                  </div>
-                  <div className={styles.tag}>
-                    <p className="lh-1">Android</p>
-                  </div> */}
-                </div>
-
-                <h3 className="lh-1">AMARANTE GROUP</h3>
-
-                <p className={styles.proyectDescription}>
-                  Nos apasiona ayudar a las marcas con propósito a ganar en
-                  Internet y aumentar su impacto positivo.
-                </p>
-
-                <div
-                  className="d-flex align-items-center"
-                  style={{ columnGap: '1rem' }}
-                >
-                  <p className="lh-1">Ir al proyecto</p>
-                  <Link
-                    href="/proyectos"
-                    passHref
-                    style={{ lineHeight: '12px' }}
-                  >
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
-                      alt="Arrow"
-                      width={39}
-                      height={0}
-                      style={{ height: 'auto' }}
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={styles.proyect}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseLUSITANO2.png`}
-                alt="Proyecto Home 4"
-                width={400}
-                height={0}
-                className={styles.imgProyect}
-                style={{ height: 'auto' }}
-              />
-
-              <div className={styles.right}>
-                <div className="d-flex" style={{ columnGap: '12px' }}>
-                  <div className={styles.tag}>
-                    <p className="lh-1">WEB</p>
-                  </div>
-                  {/* <div className={styles.tag}>
-                    <p className="lh-1">IOS</p>
-                  </div>
-                  <div className={styles.tag}>
-                    <p className="lh-1">Android</p>
-                  </div> */}
-                </div>
-
-                <h3 className="lh-1">LUSITANO MARITIME</h3>
-
-                <p className={styles.proyectDescription}>
-                  Nos apasiona ayudar a las marcas con propósito a ganar en
-                  Internet y aumentar su impacto positivo.
-                </p>
-
-                <div
-                  className="d-flex align-items-center"
-                  style={{ columnGap: '1rem' }}
-                >
-                  <p className="lh-1">Ir al proyecto</p>
-                  <Link
-                    href="/proyectos"
-                    passHref
-                    style={{ lineHeight: '12px' }}
-                  >
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
-                      alt="Arrow"
-                      width={39}
-                      height={0}
-                      style={{ height: 'auto' }}
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+                );
+              })}
           </div>
         </Container>
 

@@ -9,7 +9,7 @@ const Proyectos = () => {
     <div className={styles.commonContainer}>
       <section className={styles.introduction}>
         <Container className="g-0">
-          <div>
+          <div className="px-5 px-lg-0">
             <h1 className={styles.title}>
               FÁCIL DE ENTENDER. <br />● IMPOSIBLE DE IGNORAR.
             </h1>
@@ -31,18 +31,18 @@ const Proyectos = () => {
           />
         </Container>
 
-        <div className={styles.outerCircle}>
+        <div className={styles.outerCircle + ' d-none d-lg-block'}>
           <div className={styles.innerCircle}></div>
         </div>
       </section>
 
       <section className={styles.projects}>
-        <Container className="g-0">
+        <Container className="g-0 px-3 px-lg-0">
           <Tabs />
         </Container>
       </section>
 
-      <section className="pb-8">
+      <section className="pb-8 mx-2 mx-md-5 mx-lg-10 mx-xl-0">
         <CardWithUs />
       </section>
     </div>

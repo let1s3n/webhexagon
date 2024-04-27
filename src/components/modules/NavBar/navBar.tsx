@@ -1,4 +1,4 @@
-import usePathName from '@/hooks/usePathName';
+import usePathName from '@/utils/hooks/usePathName';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
@@ -27,8 +27,7 @@ const NavBar = () => {
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
             alt="Hexagon Logo"
             width={53}
-            height={0}
-            style={{ height: 'auto' }}
+            height={61}
             priority
             quality={100}
           />
@@ -68,7 +67,11 @@ const NavBar = () => {
             ) : null}
           </Nav.Link>
           <Nav.Link
-            className={styles.contactNavLink + ' text-lg-white'}
+            className={
+              styles.contactNavLink +
+              ' text-lg-white ' +
+              (currentPath === '/contacto' && styles.currentPath)
+            }
             href="/contacto"
           >
             <p
@@ -82,7 +85,7 @@ const NavBar = () => {
 
             {currentPath === '/contacto' ? (
               <div
-                className={styles.locationDecorator}
+                // className={styles.locationDecorator}
                 style={{
                   transform:
                     'translateX(-50%) skewX(20deg) rotate(-45deg)  !important',
@@ -128,7 +131,12 @@ const NavBar = () => {
                 ) : null}
               </Nav.Link>
               <Nav.Link
-                className={styles.contactNavLink + ' text-lg-white'}
+                className={
+                  styles.contactNavLink +
+                  ' text-lg-white ' +
+                  (currentPath === '/contacto' &&
+                    styles.currentPath + ' text-white')
+                }
                 href="/contacto"
               >
                 <p
@@ -142,7 +150,7 @@ const NavBar = () => {
 
                 {currentPath === '/contacto' ? (
                   <div
-                    className={styles.locationDecorator}
+                    // className={styles.locationDecorator}
                     style={{
                       transform:
                         'translateX(-50%) skewX(20deg) rotate(-45deg)  !important',

@@ -2,15 +2,22 @@ import Home from '@/components/templates/Home/home';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import { getPlaiceholder } from 'plaiceholder';
-const index = ({
-  imageProps,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+import { Dispatch, SetStateAction } from 'react';
+interface Props {
+  imageProps: InferGetStaticPropsType<typeof getStaticProps>;
+  setSelectedProjectData: Dispatch<SetStateAction<string>>;
+}
+
+const index = ({ imageProps, setSelectedProjectData }: Props) => {
   return (
     <>
       <Head>
         <title>Hexagon Studio</title>
       </Head>
-      <Home imageProps={imageProps} />
+      <Home
+        imageProps={imageProps}
+        setSelectedProjectData={setSelectedProjectData}
+      />
     </>
   );
 };
