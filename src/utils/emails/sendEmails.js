@@ -1,4 +1,5 @@
 import AWS from 'aws-sdk';
+import '../envConfig';
 
 AWS.config.update({
   region: 'us-east-1',
