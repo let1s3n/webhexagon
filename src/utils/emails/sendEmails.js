@@ -14,7 +14,7 @@ const ses = new AWS.SES({ apiVersion: 'latest' });
 export async function sendEmail({ to, from, subject, message }) {
   const params = {
     Source: from,
-    Destination: { ToAddresses: [to] },
+    Destination: { ToAddresses: [...to] },
     Message: {
       Subject: { Data: subject },
       Body: { Html: { Data: message } },

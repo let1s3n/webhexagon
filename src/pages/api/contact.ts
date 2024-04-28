@@ -14,7 +14,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   /* console.log('req.body: ', req.body);
-  const { full_name, email, company, phone_number, project } = req.body; */
+  const { full_name, email, company, phone_number, project } = req.body;
+   */
 
   const emailHtmlTemplate = await fs.readFileSync(
     path.resolve('./src', 'utils/emails/templates/contact.html'),
@@ -27,11 +28,18 @@ export default async function handler(
   var bodyHtml = templateHtml(req.body);
   try {
     await sendEmail({
-      to: 'dhuaytalla@hexagonstudio.pe',
+      to: ['dhuaytalla@hexagonstudio.pe', 'jcarneiro@hexagonstudio.pe'],
       from: 'noreply@hexagonstudio.pe',
       subject: 'Contacto',
       message: bodyHtml,
     });
+
+    /* await sendEmail({
+      to: [email],
+      from: 'noreply@hexagonstudio.pe',
+      subject: 'Contacto',
+      message: `Hola ${full_name}, gracias por contactarnos! Estaremos respondiendo a la brevedad.`,
+    }); */
     res.status(200).json({ message: 'Message Sent' });
   } catch (error) {
     res.status(500).json({ message: error });
