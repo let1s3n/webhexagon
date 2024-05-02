@@ -38,7 +38,7 @@ const ProyectoInterno = () => {
               />
               <p className="pt-4 pb-3">Marketing, ecommerce, website.</p>
               <h1 className={styles.title}>OUTER HEAVEN</h1>
-              <h2>2023</h2>
+              <h2>2024</h2>
             </Col>
             <Col xl={5}>
               <Row className="pt-4">
