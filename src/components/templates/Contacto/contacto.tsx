@@ -8,7 +8,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { bebasNeue } from '../../../utils/fonts';
 import styles from './contacto.module.scss';
 const Contacto = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const [isSendForm, setIsSendForm] = useState<boolean>(false);
 

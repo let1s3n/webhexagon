@@ -5,14 +5,13 @@ import { useForm } from 'react-hook-form';
 import styles from './customForm.module.scss';
 
 const CustomForm = ({ bgInput, setIsSendForm }: any) => {
-  const [isFormComplete, setFormComplete] = useState<boolean>(true);
+  const [isFormComplete, setIsFormComplete] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
     reset,
-    watch,
     formState,
-    formState: { isSubmitSuccessful, errors, isDirty, dirtyFields },
+    formState: { isSubmitSuccessful, errors, dirtyFields },
   } = useForm({
     defaultValues: {
       full_name: '',
@@ -36,7 +35,6 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
     };
 
     const response = await fetch('/api/contact', options);
-    const result = await response.json();
     setIsSendForm(true);
   };
   const handleOnKeyDown = (e: any) => {
@@ -51,9 +49,9 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
     let count = Object.keys(dirtyFields).length;
 
     if (count === 5) {
-      setFormComplete(true);
+      setIsFormComplete(true);
     } else {
-      setFormComplete(false);
+      setIsFormComplete(false);
     }
 
     if (isSubmitSuccessful) {

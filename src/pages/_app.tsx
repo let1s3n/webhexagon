@@ -1,21 +1,11 @@
+import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
+import '@/sass/app.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { createContext, useState } from 'react';
 import { SSRProvider } from 'react-bootstrap';
 import { bebasNeue, rubik } from '../utils/fonts';
 
-import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
-import '@/sass/app.scss';
-
-export const selectedProjectContext = createContext(null);
-
 export default function App({ Component, pageProps }: AppProps) {
-  const [selectedProjectData, setSelectedProjectData] = useState(null);
-
-  /* useEffect(() => {
-    console.log('APP: ', selectedProjectData);
-  }, [selectedProjectData]); */
-
   return (
     <SSRProvider>
       <Head>
@@ -36,12 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
               font-family: ${bebasNeue.style.fontFamily};
             }
           `}</style>
-          <selectedProjectContext.Provider value={selectedProjectData}>
-            <Component
-              setSelectedProjectData={setSelectedProjectData}
-              {...pageProps}
-            />
-          </selectedProjectContext.Provider>
+
+          <Component {...pageProps} />
         </DefaultLayout>
       </main>
     </SSRProvider>

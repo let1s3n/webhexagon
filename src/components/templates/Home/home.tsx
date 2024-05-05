@@ -1,31 +1,18 @@
 import CustomForm from '@/components/modules/CustomForm/customForm';
 import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
 import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { imageProps, projectsProps } from '@/utils/types/generalProps';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Parallax } from 'react-parallax';
 import { bebasNeue } from '../../../utils/fonts';
 import styles from './home.module.scss';
 
-interface Props {
-  imageProps: InferGetStaticPropsType<GetStaticProps>;
-  setSelectedProjectData: Dispatch<SetStateAction<string>>;
-}
-
-const Home = ({ imageProps, setSelectedProjectData }: Props) => {
+const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
   const { width } = useWindowDimensions();
-  const [isFormComplete, setFormComplete] = useState<boolean>(true);
   const [isSendForm, setIsSendForm] = useState<boolean>(false);
-  const [projects, setProjects] = useState([] as any[]);
-
-  useEffect(() => {
-    /* console.log('projects:', projects); */
-    setProjects(projects);
-    setSelectedProjectData('hola');
-  }, [projects]);
 
   return (
     <>
@@ -204,7 +191,7 @@ const Home = ({ imageProps, setSelectedProjectData }: Props) => {
                       >
                         <p className="lh-1">Ir al proyecto</p>
                         <Link
-                          href="/proyectos"
+                          href={`/proyectos/${project.slug}`}
                           passHref
                           style={{ lineHeight: '12px' }}
                         >
@@ -254,7 +241,6 @@ const Home = ({ imageProps, setSelectedProjectData }: Props) => {
                   </p>
                   <CustomForm
                     bgInput="bg-black1"
-                    isFormComplete={isFormComplete}
                     setIsSendForm={setIsSendForm}
                   />
                 </div>

@@ -12,7 +12,7 @@ const tabs = () => {
     >
       <Tab
         eventKey="web"
-        title="DESARROLLO WEB"
+        title="APLICACIONES WEB"
         style={{ rowGap: '72px', whiteSpace: 'nowrap' }}
         className="overflow-hidden"
       >
@@ -81,7 +81,7 @@ const tabs = () => {
           </Row>
         </Fade>
       </Tab>
-      <Tab
+      {/* <Tab
         eventKey="software"
         title="DESARROLLO DE SOFTWARE"
         style={{ rowGap: '72px' }}
@@ -127,17 +127,9 @@ const tabs = () => {
                 className={styles.tabImage}
               />
             </Col>
-            {/* <Col xs="auto">
-              <Image
-                alt="project 4 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto4.png`}
-                width={500}
-                height={279}
-              />
-            </Col> */}
           </Row>
         </Fade>
-      </Tab>
+      </Tab> */}
       <Tab
         eventKey="moviles"
         title="APLICACIONES MÓVILES"

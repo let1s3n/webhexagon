@@ -1,20 +1,46 @@
-import { selectedProjectContext } from '@/pages/_app';
+import { projectProps, projectsProps } from '@/utils/types/generalProps';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import styles from './proyectoInterno.module.scss';
-const ProyectoInterno = () => {
-  const selectedProjectData = useContext(selectedProjectContext);
+const ProyectoInterno = ({ projects }: projectsProps) => {
   /* useEffect(() => {
-    console.log('selectedProjectData', selectedProjectData);
-  }, [selectedProjectData]); */
-
+    console.log('projectDayana: ', project);
+  }, [project]); */
+  const [project, setProject] = useState<projectProps>({
+    slug: '',
+    company_name: '',
+    project_types: [],
+    year: '',
+    services: [],
+    techtools: [],
+    techtags: [],
+    description: '',
+    hero_image: '',
+    card_image: '',
+    logo: '',
+    galery: [],
+    history: '',
+    solution: '',
+  });
+  const router = useRouter();
+  let { slug } = router.query;
+  useEffect(() => {
+    console.log('projects: ', projects);
+    if (projects) {
+      let currentProyect = projects.find((element) => element.slug == slug);
+      if (currentProyect) {
+        setProject(currentProyect);
+      }
+    }
+  }, [slug, projects]);
   return (
     <>
       <section className={styles.introduction}>
         <Image
-          src={`${process.env.NEXT_PUBLIC_CDN}images/home/projects/web/showcaseLUSITANO2.png`}
+          src={`${process.env.NEXT_PUBLIC_CDN}${project.hero_image}`}
           alt="Proyecto Home 4"
           width={400}
           height={0}
@@ -36,9 +62,11 @@ const ProyectoInterno = () => {
                 height={0}
                 style={{ height: 'auto' }}
               />
-              <p className="pt-4 pb-3">Marketing, ecommerce, website.</p>
-              <h1 className={styles.title}>OUTER HEAVEN</h1>
-              <h2>2024</h2>
+              <p className="pt-4 pb-3">
+                {project.project_types.map((type) => type)}
+              </p>
+              <h1 className={styles.title}>{project.company_name}</h1>
+              <h2>{project.year}</h2>
             </Col>
             <Col xl={5}>
               <Row className="pt-4">
@@ -146,20 +174,11 @@ const ProyectoInterno = () => {
                   </Link>
                 </div>
               </div>
-              <h2 className="pt-5 w-75">
-                Diseñamos una herramienta para respaldar un gran éxito y una
-                marca para recordar
-              </h2>
+              <h2 className="pt-5 w-75">{project.description}</h2>
               <div className="pt-5">
                 <p className="border-bottom lh-lg">Servicios proporcionados</p>
                 <Row className="py-3">
-                  {[
-                    'Research & Strategy',
-                    'Retail',
-                    'Brand Identity',
-                    'Digital Design',
-                    'Packaging',
-                  ].map((el, i) => {
+                  {project.services.map((el, i) => {
                     return (
                       <Col xs={6} key={i}>
                         <p className="pb-3">{el}</p>
@@ -171,7 +190,7 @@ const ProyectoInterno = () => {
               <div className="py-5">
                 <p className="border-bottom lh-lg">Tecnologías usadas</p>
                 <Row className="py-3">
-                  {['Android', 'Tec.2', 'AWS', 'HTML5'].map((el, i) => {
+                  {project.techtools.map((el, i) => {
                     return (
                       <Col xs={6} key={i}>
                         <p className="pb-3">{el}</p>
@@ -183,63 +202,38 @@ const ProyectoInterno = () => {
             </Col>
             <Col className="px-7">
               <div className="d-flex gap-2 flex-wrap">
-                {[
-                  'web',
-                  'HTML5',
-                  'javascript',
-                  'Android',
-                  'HTML5',
-                  'javascript',
-                  'Android',
-                ].map((ele, index) => {
+                {project.techtools.map((ele, index) => {
                   return (
                     <p key={index} className={styles.tag}>
                       {ele}
                     </p>
                   );
                 })}
+                {/* {project.techtags.map((ele, index) => {
+                  return (
+                    <p key={index} className={styles.tag}>
+                      {ele}
+                    </p>
+                  );
+                })} */}
               </div>
-              <p className="py-5">
-                Lorem ipsum dolor sit amet consectetur. Ipsum vulputate integer
-                suspendisse ut suspendisse dignissim sit mauris. Pulvinar cursus
-                aliquet consequat nunc dui sed lorem. Placerat felis gravida
-                quam iaculis euismod neque in. Risus suscipit mattis id
-                ultricies eu nec felis. Ornare varius velit purus vulputate in
-                cursus erat.
-              </p>
+              <p className="py-5">{project.description}</p>
               <div>
                 <h2 className="pb-4">Historia</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Ipsum vulputate
-                  integer suspendisse ut suspendisse dignissim sit mauris.
-                  Pulvinar cursus aliquet consequat nunc dui sed lorem. Placerat
-                  felis gravida quam iaculis euismod neque in. Risus suscipit
-                  mattis id ultricies eu nec felis. Ornare varius velit purus
-                  vulputate in cursus erat.
-                </p>
-                <p className="pt-3">
-                  Mollis aliquet eget aenean praesent velit ullamcorper nulla.
-                  Odio ullamcorper ut sapien amet risus sit. Sit magna nisl
-                  adipiscing sapien risus urna imperdiet neque ipsum. Tellus nam
-                  at tempus.
-                </p>
+                <p>{project.history}</p>
+                {/* <p className="pt-3">
+                {project.description}
+                </p> */}
               </div>
               <div>
                 <h2 className="pt-5 pb-4">Solución</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Ipsum vulputate
-                  integer suspendisse ut suspendisse dignissim sit mauris.
-                  Pulvinar cursus aliquet consequat nunc dui sed lorem. Placerat
-                  felis gravida quam iaculis euismod neque in. Risus suscipit
-                  mattis id ultricies eu nec felis. Ornare varius velit purus
-                  vulputate in cursus erat.
-                </p>
-                <p className="pt-3">
+                <p>{project.solution}</p>
+                {/* <p className="pt-3">
                   Mollis aliquet eget aenean praesent velit ullamcorper nulla.
                   Odio ullamcorper ut sapien amet risus sit. Sit magna nisl
                   adipiscing sapien risus urna imperdiet neque ipsum. Tellus nam
                   at tempus.
-                </p>
+                </p> */}
               </div>
             </Col>
           </Row>
