@@ -175,9 +175,21 @@
     background: $degrade2;
     border-radius: 10px;
     z-index: 2;
+    @include media-breakpoint-up(md) {
+      width: 95%;
+      height: 276px;
+      flex-direction: row;
+      column-gap: 12px;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 95%;
+      height: 216px;
+      flex-direction: row;
+      column-gap: 20px;
+    }
     @include media-breakpoint-up(xl) {
       width: 942px;
-      height: 216px;
+      height: 226px;
       flex-direction: row;
       column-gap: 24px;
     }
@@ -194,9 +206,11 @@
       display: flex;
       flex-direction: column;
       row-gap: 0.5rem;
-
+      @include media-breakpoint-up(md) {
+        padding: 20px 16px 12px 0px;
+      }
       @include media-breakpoint-up(xl) {
-        padding: 20px 0px 0px 0px;
+        padding: 20px 16px 0px 0px;
       }
       .tag {
         color: #000000;
@@ -214,6 +228,14 @@
       .proyectDescription {
         font-size: 14px;
         letter-spacing: 0.06em;
+        @include media-breakpoint-up(md) {
+          font-size: 12px;
+          letter-spacing: 0.06em;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: 14px;
+          letter-spacing: 0.06em;
+        }
       }
     }
   }
