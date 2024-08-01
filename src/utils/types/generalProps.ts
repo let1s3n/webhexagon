@@ -11,6 +11,7 @@ export interface projectsProps {
     services: string[];
     techtools: string[];
     techtags: string[];
+    service_slogan: string;
     description: string;
     hero_image: string;
     card_image: string;
@@ -29,6 +30,7 @@ export interface projectProps {
   services: string[];
   techtools: string[];
   techtags: string[];
+  service_slogan: string;
   description: string;
   hero_image: string;
   card_image: string;

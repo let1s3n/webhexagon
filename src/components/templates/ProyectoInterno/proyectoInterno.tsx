@@ -15,6 +15,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
     services: [],
     techtools: [],
     techtags: [],
+    service_slogan: '',
     description: '',
     hero_image: '',
     card_image: '',
@@ -63,7 +64,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
           <Row className="text-white p-0 g-0">
             <Col lg={6} xl={7}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/hexagon-logo-name.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}${project.logo}`}
                 alt="logo"
                 width={200}
                 height={0}
@@ -87,7 +88,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
                       }}
                       className={
                         (changeColor
-                          ? 'border-primary opacity-75'
+                          ? 'border-white opacity-75'
                           : 'border-white opacity-25') +
                         ' position-absolute border rounded-circle'
                       }
@@ -171,7 +172,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
       </section>
       <section className={styles.projectInfo}>
         <Container>
-          <Row className="py-8 border-bottom">
+          <Row className="py-8">
             <Col className="px-7">
               <div className="position-relative d-flex flex-column justify-content-center">
                 <p
@@ -194,7 +195,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
                   </Link>
                 </div>
               </div>
-              <h2 className="pt-5 w-75">{project.description}</h2>
+              <h2 className="pt-5 w-75">{project.service_slogan}</h2>
               <div className="pt-5">
                 <p className="border-bottom lh-lg">Servicios proporcionados</p>
                 <Row className="py-3">
@@ -257,11 +258,11 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
               </div>
             </Col>
           </Row>
-          <Row className="py-8">
+          {/* <Row className="py-8">
             <div className="px-7">
               <h2>Galeria</h2>
             </div>
-          </Row>
+          </Row> */}
         </Container>
       </section>
     </>
