@@ -78,7 +78,14 @@ const Contacto = () => {
                 <div className={styles.cardTitle}>
                   <h4 className="fs-6 fs-xl-4">Correo general</h4>
                 </div>
-                <p className="py-2">info@hexagonstudio.pe</p>
+                <div className="pt-2">
+                  <Link
+                    href="mailto:info@hexagonstudio.pe"
+                    className={styles.linkMail}
+                  >
+                    info@hexagonstudio.pe
+                  </Link>
+                </div>
               </div>
             </Col>
             <Col xs="auto" className="d-flex justify-content-center">
@@ -87,7 +94,7 @@ const Contacto = () => {
                   <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
                 <div className="py-2 d-flex justify-content-between">
-                  <small className="fs-md-6">+51 907 190 881</small>
+                  {/* <small className="fs-md-6">+51 907 190 881</small> */}
                   <small className="fs-md-6">+51 927 575 917</small>
                 </div>
               </div>

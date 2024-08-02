@@ -55,6 +55,18 @@
     z-index: 3;
     width: 152px;
     height: 202px;
+
+    animation: 3s linear 1s infinite alternate float-animation;
+
+    @keyframes float-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(8deg);
+      }
+    }
+
     @include media-breakpoint-up(md) {
       right: 100px;
       top: 208px;

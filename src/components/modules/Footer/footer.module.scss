@@ -54,8 +54,7 @@
 
     &--fb {
       &:hover {
-        /* background-color: #3b5998; */
-        background: linear-gradient(120deg, #3b5998, #ffffff);
+        background: #1977f2;
       }
     }
 
@@ -75,15 +74,7 @@
 
     &--ws {
       &:hover {
-        background: linear-gradient(
-          45deg,
-          #e5ffcc,
-          #1ebea5,
-          #00e676,
-          #d0e9ea,
-          #edf8f5,
-          // #ffffff
-        );
+        background: #00e676;
       }
     }
 

@@ -6,6 +6,7 @@ export interface projectsProps {
   projects: {
     slug: string;
     company_name: string;
+    link_web: string;
     project_types: string[];
     year: string;
     services: string[];
@@ -25,6 +26,7 @@ export interface projectsProps {
 export interface projectProps {
   slug: string;
   company_name: string;
+  link_web: string;
   project_types: string[];
   year: string;
   services: string[];
