@@ -74,6 +74,17 @@
       transparent calc(100% - var(--b)),
       #fff calc(100% - var(--b) + 1px)
     );
+
+    animation: 60s linear 1s infinite alternate float-animation;
+
+    @keyframes float-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   .infoBox {
@@ -112,6 +123,13 @@
       .cardTitle {
         width: fit-content;
         border-bottom: 1px solid #ffffff;
+      }
+      .linkMail {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
     .smallBoxRight {
@@ -184,6 +202,17 @@
       transparent calc(100% - var(--b)),
       #fff calc(100% - var(--b) + 1px)
     );
+
+    animation: 60s linear 1s infinite alternate float-animation;
+
+    @keyframes float-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   .circleDecore {
@@ -231,7 +260,7 @@
 
     &--fb {
       &:hover {
-        background: linear-gradient(120deg, #3b5998, #ffffff);
+        background: #1977f2;
       }
     }
 
@@ -251,15 +280,7 @@
 
     &--ws {
       &:hover {
-        background: linear-gradient(
-          45deg,
-          #e5ffcc,
-          #1ebea5,
-          #00e676,
-          #d0e9ea,
-          #edf8f5,
-          #ffffff
-        );
+        background: #00e676;
       }
     }
 

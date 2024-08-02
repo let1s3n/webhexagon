@@ -30,10 +30,15 @@
 }
 
 .tabImage {
-  height: auto;
-  /* width: calc(100vw - 32px); */
-  width: 100%;
+  // height: auto;
+  height: 155px;
+  width: calc(100vw - 32px);
+  // width: 100%;
+  &:hover {
+    opacity: 75%;
+  }
   @include media-breakpoint-up(md) {
+    height: 235px;
     width: 500px;
   }
 }

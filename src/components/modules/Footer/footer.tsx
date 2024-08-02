@@ -16,37 +16,55 @@ const Footer = () => {
 
       <div className="d-flex" style={{ columnGap: '1rem' }}>
         <div className={styles.icon + ' ' + styles['icon--fb']}>
-          <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/fbIcon.svg`}
-            alt="Facebook Icon"
-            width={24}
-            height={24}
-          />
+          <Link
+            href="https://www.facebook.com/HexagonStudioPeru"
+            target="_blank"
+            className="text-decoration-none text-white"
+          >
+            <Image
+              src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/fbIcon.svg`}
+              alt="Facebook Icon"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
         <div className={styles.icon + ' ' + styles['icon--ig']}>
-          <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/igIcon.svg`}
-            alt="Instagram Icon"
-            width={24}
-            height={24}
-          />
+          <Link
+            href="https://www.instagram.com/hexagonstudio_peru"
+            target="_blank"
+            className="text-decoration-none text-white"
+          >
+            <Image
+              src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/igIcon.svg`}
+              alt="Instagram Icon"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
         <div className={styles.icon + ' ' + styles['icon--ws']}>
-          <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/whatsappIcon.svg`}
-            alt="Whatsapp Icon"
-            width={24}
-            height={24}
-          />
+          <Link
+            href="https://api.whatsapp.com/send?phone=927575917"
+            target="_blank"
+            className="text-decoration-none text-white"
+          >
+            <Image
+              src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/whatsappIcon.svg`}
+              alt="Whatsapp Icon"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
-        <div className={styles.icon + ' ' + styles['icon--yt']}>
+        {/* <div className={styles.icon + ' ' + styles['icon--yt']}>
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/ytIcon.svg`}
             alt="Youtube Icon"
             width={24}
             height={24}
           />
-        </div>
+        </div> */}
       </div>
 
       <div>

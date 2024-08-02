@@ -6,13 +6,18 @@
   min-height: fit-content;
   padding: 150px 0px 16px 0px;
   position: relative;
-  background: rgba(36, 40, 209, 0.4);
+  background: rgba(36, 40, 209, 0.76);
+
   @include media-breakpoint-up(md) {
     padding: 140px 0px 16px 0px;
   }
   @include media-breakpoint-up(xl) {
     padding: 150px 0px 168px 0px;
   }
+
+  // .heroBg {
+  //   object-fit: cover;
+  // }
 
   .title {
     font-size: 32px;

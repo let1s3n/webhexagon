@@ -95,22 +95,24 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
             className="d-none d-xl-block fs-14 mb-4"
             style={{ maxWidth: '362px' }}
           >
-            Nos apasiona ayudar a las marcas con propósito a ganar en Internet y
-            aumentar su impacto positivo.
+            Nos apasiona apoyar a empresas, mejorando su presencia en línea y
+            multiplicando su impacto positivo.
           </p>
 
-          <Button variant="outline-white" className={styles.customButton}>
-            <p className={bebasNeue.className + ' m-0 lh-1'}>VER SERVICIOS</p>
-          </Button>
+          <Link href="/servicios" passHref className="text-decoration-none">
+            <Button variant="outline-white" className={styles.customButton}>
+              <p className={bebasNeue.className + ' m-0 lh-1'}>VER SERVICIOS</p>
+            </Button>
+          </Link>
 
           <Image
-            /* src={`${process.env.NEXT_PUBLIC_CDN}images/home/cubosHome.png`} */
             src={imageProps[1].src}
             alt="Cubos Home"
             width={277}
             height={0}
-            className="position-absolute d-none d-xl-block"
-            style={{ top: '-33px', right: '109px', height: 'auto' }}
+            className={
+              styles.puzzleImage + ' position-absolute d-none d-xl-block'
+            }
             placeholder="blur"
             blurDataURL={imageProps[1].blurDataURL}
             quality={100}
@@ -121,7 +123,7 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
       <section className={styles.projects}>
         <Container className="g-0 mx-auto" style={{ width: 'fit-content' }}>
           <div
-            className="d-flex flex-column align-items-center align-items-xl-stretch flex-xl-row justify-content-between"
+            className="d-flex flex-column align-items-center align-items-xl-stretch flex-md-row justify-content-between px-0 px-md-6 px-xl-0"
             style={{ rowGap: '1rem' }}
           >
             <div className="position-relative" style={{ width: 'fit-content' }}>
@@ -157,14 +159,22 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
               projects.map((project, index) => {
                 return (
                   <div key={index} className={styles.proyect}>
-                    <Image
-                      src={process.env.NEXT_PUBLIC_CDN + project['card_image']}
-                      alt="Proyecto Home 1"
-                      width={400}
-                      height={0}
-                      className={styles.imgProyect}
-                      style={{ height: 'auto' }}
-                    />
+                    <Link
+                      href={`/proyectos/${project.slug}`}
+                      passHref
+                      className="text-decoration-none"
+                    >
+                      <Image
+                        src={
+                          process.env.NEXT_PUBLIC_CDN + project['card_image']
+                        }
+                        alt="Proyecto Home 1"
+                        width={400}
+                        height={0}
+                        className={styles.imgProyect}
+                        style={{ height: '100%' }}
+                      />
+                    </Link>
 
                     <div className={styles.right}>
                       <div className="d-flex" style={{ columnGap: '12px' }}>
@@ -179,14 +189,22 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
                         )}
                       </div>
 
-                      <h3 className="lh-1">{project['company_name']}</h3>
+                      <Link
+                        href={`/proyectos/${project.slug}`}
+                        passHref
+                        className="text-decoration-none"
+                      >
+                        <h3 className="lh-1 text-white cursor-pointer">
+                          {project['company_name']}
+                        </h3>
+                      </Link>
 
                       <p className={styles.proyectDescription}>
                         {project['description']}
                       </p>
 
                       <div
-                        className="d-flex align-items-center"
+                        className="d-flex align-items-center py-2"
                         style={{ columnGap: '1rem' }}
                       >
                         <p className="lh-1">Ir al proyecto</p>
@@ -196,9 +214,9 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
                           style={{ lineHeight: '12px' }}
                         >
                           <Image
-                            src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                            src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                             alt="Arrow"
-                            width={39}
+                            width={30}
                             height={0}
                             style={{ height: 'auto' }}
                           />
