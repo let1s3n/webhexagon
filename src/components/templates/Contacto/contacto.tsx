@@ -78,7 +78,14 @@ const Contacto = () => {
                 <div className={styles.cardTitle}>
                   <h4 className="fs-6 fs-xl-4">Correo general</h4>
                 </div>
-                <p className="py-2">info@hexagonstudio.pe</p>
+                <div className="pt-2">
+                  <Link
+                    href="mailto:info@hexagonstudio.pe"
+                    className={styles.linkMail}
+                  >
+                    info@hexagonstudio.pe
+                  </Link>
+                </div>
               </div>
             </Col>
             <Col xs="auto" className="d-flex justify-content-center">
@@ -87,7 +94,7 @@ const Contacto = () => {
                   <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
                 <div className="py-2 d-flex justify-content-between">
-                  <small className="fs-md-6">+51 907 190 881</small>
+                  {/* <small className="fs-md-6">+51 907 190 881</small> */}
                   <small className="fs-md-6">+51 927 575 917</small>
                 </div>
               </div>
@@ -103,37 +110,55 @@ const Contacto = () => {
         <Container className="d-flex justify-content-center">
           <div className="d-flex" style={{ columnGap: '1rem' }}>
             <div className={styles.icon + ' ' + styles['icon--fb']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/fbIcon.svg`}
-                alt="Facebook Icon"
-                width={24}
-                height={24}
-              />
+              <Link
+                href="https://www.facebook.com/HexagonStudioPeru"
+                target="_blank"
+                className="text-decoration-none text-white"
+              >
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/fbIcon.svg`}
+                  alt="Facebook Icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
             </div>
             <div className={styles.icon + ' ' + styles['icon--ig']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/igIcon.svg`}
-                alt="Instagram Icon"
-                width={24}
-                height={24}
-              />
+              <Link
+                href="https://www.instagram.com/hexagonstudio_peru"
+                target="_blank"
+                className="text-decoration-none text-white"
+              >
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/igIcon.svg`}
+                  alt="Instagram Icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
             </div>
             <div className={styles.icon + ' ' + styles['icon--ws']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/whatsappIcon.svg`}
-                alt="Whatsapp Icon"
-                width={24}
-                height={24}
-              />
+              <Link
+                href="https://api.whatsapp.com/send?phone=927575917"
+                target="_blank"
+                className="text-decoration-none text-white"
+              >
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/whatsappIcon.svg`}
+                  alt="Whatsapp Icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
             </div>
-            <div className={styles.icon + ' ' + styles['icon--yt']}>
+            {/* <div className={styles.icon + ' ' + styles['icon--yt']}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/ytIcon.svg`}
                 alt="Youtube Icon"
                 width={24}
                 height={24}
               />
-            </div>
+            </div> */}
           </div>
         </Container>
         <Container className="g-0">

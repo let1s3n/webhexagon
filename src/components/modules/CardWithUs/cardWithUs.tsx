@@ -34,7 +34,7 @@ const CardWithUs = () => {
             <p>Empecemos a trabajar</p>
             <Link href="/contacto" passHref style={{ lineHeight: '12px' }}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                 alt="Arrow"
                 width={39}
                 height={0}

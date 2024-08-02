@@ -12,19 +12,24 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
         <Container className="px-6 px-xxl-12">
           <Row className="text-white p-0 g-0">
             <Col xl={7}>
-              <h1 className={styles.title}>
-                somos un estudio creativo para dar soluciones a tus problemas
+              <h1
+                className={
+                  styles.title + ' pb-4 pb-xl-0 text-center text-md-start'
+                }
+              >
+                Somos un estudio creativo que impulsa tu visión con soluciones
+                únicas.
               </h1>
             </Col>
             <Col xl={5}>
-              <p className="m-0">
+              <p className="m-0 text-center text-md-start">
                 ¡Eleva tu presencia digital con nosotros! Nuestro equipo se
                 destaca en el desarrollo de páginas web, aplicaciones móviles,
                 desarrollo de software, el desarrollo de marca distintivo y la
                 gestión efectiva de redes sociales, ofrecemos soluciones
                 completas.
               </p>
-              <Row className="pt-4">
+              <Row className="pt-5 pt-md-4 justify-content-center justify-content-md-start">
                 <Col xs="auto" lg={4} xl={6}>
                   <Link
                     href="/contacto"
@@ -56,10 +61,14 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                       className="position-absolute opacity-25 border border-white rounded-circle"
                     ></p>
                     <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos App</p>
-                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
+                      <p>Ver proyectos</p>
+                      <Link
+                        href="/proyectos"
+                        passHref
+                        style={{ lineHeight: '12px' }}
+                      >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                           alt="Arrow"
                           width={39}
                           height={0}
@@ -162,7 +171,7 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                         style={{ lineHeight: '12px' }}
                       >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                           alt="Arrow"
                           width={39}
                           height={0}
@@ -216,7 +225,7 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                         style={{ lineHeight: '12px' }}
                       >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                           alt="Arrow"
                           width={39}
                           height={0}
@@ -274,7 +283,7 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                         style={{ lineHeight: '12px' }}
                       >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                           alt="Arrow"
                           width={39}
                           height={0}
@@ -332,7 +341,7 @@ const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
                         style={{ lineHeight: '12px' }}
                       >
                         <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow.png`}
+                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
                           alt="Arrow"
                           width={39}
                           height={0}

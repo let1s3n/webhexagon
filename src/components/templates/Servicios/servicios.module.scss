@@ -3,14 +3,18 @@
 
 .introduction {
   // height: fit-content;
-  height: 652px;
+  height: 782px;
   // height: 100vh;
   min-height: fit-content;
   padding: 150px 0px 16px 0px;
   background-color: $cuaternary;
   position: relative;
+  @include media-breakpoint-up(md) {
+    height: 692px;
+  }
   @include media-breakpoint-up(xl) {
     padding: 150px 0px 168px 0px;
+    height: 652px;
   }
 
   .title {
@@ -172,6 +176,12 @@
       right: 16px;
       height: auto;
     }
+
+    -webkit-transition: transform 0.5s ease-in;
+    &:hover {
+      transform: scale(1.03);
+      -webkit-transition: transform 0.5s ease-in-out;
+    }
   }
   .serviceBoxDown {
     position: relative;
@@ -206,6 +216,12 @@
       top: 68px;
       right: 16px;
       height: auto;
+    }
+
+    -webkit-transition: transform 0.5s ease-in;
+    &:hover {
+      transform: scale(1.03);
+      -webkit-transition: transform 0.5s ease-in-out;
     }
   }
 }
