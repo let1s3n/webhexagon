@@ -4,7 +4,13 @@ const contacto = () => {
   return (
     <>
       <Head>
-        <title>Contacto</title>
+        <title>
+          Contáctanos | Desarrollo de Software a Medida | Hexagon Studio
+        </title>
+        <meta
+          name="description"
+          content="Estamos aquí para ayudarte. Ponte en contacto con Hexagon Studio para obtener soluciones digitales personalizadas y llevar tu negocio al siguiente nivel."
+        />
       </Head>
       <Contacto />
     </>
