@@ -1,9 +1,23 @@
 import ProyectoInterno from '@/components/templates/ProyectoInterno/proyectoInterno';
 import { projectsProps } from '@/utils/types/generalProps';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 
 const proyectoInterno = ({ projects }: projectsProps) => {
-  return <ProyectoInterno projects={projects} />;
+  return (
+    <>
+      <Head>
+        <title>
+          Casos de Éxito | Proyectos de Desarrollo Digital | Hexagon Studio
+        </title>
+        <meta
+          name="description"
+          content="Explora nuestros casos de éxito en desarrollo digital. Descubre cómo Hexagon Studio ha creado soluciones personalizadas con aplicaciones web, móviles y software a medida."
+        />
+      </Head>
+      <ProyectoInterno projects={projects} />
+    </>
+  );
 };
 
 export default proyectoInterno;

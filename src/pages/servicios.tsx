@@ -9,7 +9,13 @@ const servicios = ({
   return (
     <>
       <Head>
-        <title>Servicios</title>
+        <title>
+          Servicios | Desarrollo de Software a Medida | Hexagon Studio
+        </title>
+        <meta
+          name="description"
+          content="Descubre los servicios de Hexagon Studio: desarrollo de aplicaciones web, apps móviles y software a medida para empresas que buscan soluciones digitales eficientes e innovadoras."
+        />
       </Head>
       <Servicios imageProps={imageProps} />
     </>
