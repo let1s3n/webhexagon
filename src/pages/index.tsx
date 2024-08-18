@@ -8,12 +8,10 @@ const index = ({ imageProps, projects }: imageProps & projectsProps) => {
   return (
     <>
       <Head>
-        <title>
-          Desarrollo de Apps Web, Móviles y Software a Medida | Hexagon Studio
-        </title>
+        <title>Desarrollo de software a medida | Hexagon Studio</title>
         <meta
           name="description"
-          content="Hexagon Studio ofrece desarrollo de aplicaciones web, apps móviles y software ERP a medida. Impulsa tu negocio con nuestras soluciones digitales personalizadas e innovadoras."
+          content="Hexagon Studio ofrece desarrollo de páginas web, aplicaciones multiplataforma (web, móvil y escritorio), e-commerce, ERP y software a medida. Impulsa tu negocio con nuestras soluciones digitales personalizadas e innovadoras."
         />
       </Head>
       <Home imageProps={imageProps} projects={projects} />
