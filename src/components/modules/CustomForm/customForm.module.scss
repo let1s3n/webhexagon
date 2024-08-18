@@ -6,7 +6,6 @@
   z-index: 2;
   position: relative;
   width: 80%;
-  /* width: fit-content; */
 
   @include media-breakpoint-up(xl) {
     width: 748px;
@@ -22,8 +21,8 @@
     }
 
     .customButton {
-      background: #1e1e1e;
-      color: #949494;
+      background: $desactivado;
+      color: $white;
       width: calc(100% - 3px);
       height: 54px;
       display: flex;

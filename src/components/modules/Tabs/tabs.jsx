@@ -32,7 +32,7 @@ const tabs = () => {
               >
                 <Image
                   alt="project 0 image"
-                  src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcase-hacons-secondary.png`}
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcase-hacons-secondary.jpg`}
                   width={500}
                   /* height={279} */
                   height={0}
@@ -105,25 +105,32 @@ const tabs = () => {
           </Row>
         </Fade>
 
-        {/* <Fade direction="down" triggerOnce="true" cascade>
+        <Fade direction="down" triggerOnce="true" cascade>
           <Row
             className={styles.customRow + ' g-0 pt-6 pt-xl-0'}
             style={{ columnGap: '118px' }}
           >
             <Col xs="auto">
-              <Image
-                alt="project 4 image"
-                src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseREPORTESALR3.png`}
-                width={500}
-                height={0}
-                className={styles.tabImage}
-                quality={100}
-              />
+              <Link
+                href={`/proyectos/alr_reports`}
+                passHref
+                className="text-decoration-none"
+              >
+                <Image
+                  alt="project 4 image"
+                  src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseREPORTESALR3.png`}
+                  width={500}
+                  height={0}
+                  className={styles.tabImage}
+                  quality={100}
+                />
+              </Link>
             </Col>
           </Row>
-        </Fade> */}
+        </Fade>
       </Tab>
-      {/* <Tab
+      {/* --- SOFTWARE A MEDIDA--- */}
+      <Tab
         eventKey="software"
         title="DESARROLLO DE SOFTWARE"
         style={{ rowGap: '72px' }}
@@ -171,8 +178,7 @@ const tabs = () => {
             </Col>
           </Row>
         </Fade>
-      </Tab> */}
-
+      </Tab>
       {/* --- APLICACIONES MOVILES --- */}
       {/* <Tab
         eventKey="moviles"
@@ -232,9 +238,7 @@ const tabs = () => {
           </Row>
         </Fade>
       </Tab> */}
-
       {/* --- REDES SOCIALES --- */}
-
       {/* <Tab
         eventKey="redes"
         title="REDES SOCIALES"
