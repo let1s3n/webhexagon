@@ -13,6 +13,10 @@ const index = ({ imageProps, projects }: imageProps & projectsProps) => {
           name="description"
           content="Hexagon Studio ofrece desarrollo de páginas web, aplicaciones multiplataforma (web, móvil y escritorio), e-commerce, ERP y software a medida. Impulsa tu negocio con nuestras soluciones digitales personalizadas e innovadoras."
         />
+        <meta
+          name="keywords"
+          content="hexagonstudio.pe, hexagonstudio pe, hexagon studio, desarrollo de paginas web, desarrollo de páginas web, desarrollo de software en lima, empresa de desarrollo de software en lima, empresa de desarrollo de software en Peru, empresa de desarrollo de software en peru, empresa de desarrollo de software en Perú, empresa de desarrollo de software en perú"
+        />
       </Head>
       <Home imageProps={imageProps} projects={projects} />
     </>
