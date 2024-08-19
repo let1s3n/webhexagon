@@ -8,6 +8,9 @@ const nextConfig = {
   devIndicators: {
     buildActivity: false,
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 };
 
 module.exports = withPlaiceholder(nextConfig);
