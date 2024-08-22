@@ -14,6 +14,9 @@ dl {
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+}
 .kalekoBold {
   font-family: 'kaleko-bold';
 }
@@ -24,6 +27,19 @@ dl {
 
 .fs-14 {
   font-size: $font-size-sm !important;
+}
+.textLogo {
+  font-size: 14px;
+  @include media-breakpoint-up(xl) {
+    font-size: 18px;
+  }
+}
+.logo {
+  width: 40px;
+  height: auto;
+  @include media-breakpoint-up(md) {
+    width: 53px;
+  }
 }
 
 .form-label {

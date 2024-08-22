@@ -53,7 +53,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
           height={0}
           style={{
             height: '100vh',
-            width: '100vw',
+            width: '100%',
             position: 'absolute',
             top: 0,
             zIndex: -1,

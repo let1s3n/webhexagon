@@ -3,8 +3,12 @@ import { imageProps, projectsProps } from '@/utils/types/generalProps';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getPlaiceholder } from 'plaiceholder';
+import { NextPageWithLayout } from './_app';
 
-const index = ({ imageProps, projects }: imageProps & projectsProps) => {
+const index: NextPageWithLayout<imageProps & projectsProps> = ({
+  imageProps,
+  projects,
+}) => {
   return (
     <>
       <Head>
@@ -22,6 +26,10 @@ const index = ({ imageProps, projects }: imageProps & projectsProps) => {
     </>
   );
 };
+
+/* index.getLayout = function getLayout(page: ReactElement) {
+  return <DefaultLayout>{page}</DefaultLayout>;
+}; */
 
 export const getStaticProps: GetStaticProps = async () => {
   const illustrationHome = await getPlaiceholder(
