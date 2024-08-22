@@ -5,18 +5,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import Handlebars from 'handlebars';
 import path from 'path';
-/* type Data = {
-  projects: any;
-}; */
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  /* console.log('req.body: ', req.body);
-  const { full_name, email, company, phone_number, project } = req.body;
-   */
-
   const emailHtmlTemplate = await fs.readFileSync(
     path.resolve('./src', 'utils/emails/templates/contact.html'),
     {
@@ -33,13 +26,6 @@ export default async function handler(
       subject: 'Contacto',
       message: bodyHtml,
     });
-
-    /* await sendEmail({
-      to: [email],
-      from: 'noreply@hexagonstudio.pe',
-      subject: 'Contacto',
-      message: `Hola ${full_name}, gracias por contactarnos! Estaremos respondiendo a la brevedad.`,
-    }); */
     res.status(200).json({ message: 'Message Sent' });
   } catch (error) {
     res.status(500).json({ message: error });

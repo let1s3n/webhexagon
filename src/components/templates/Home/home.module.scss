@@ -106,7 +106,6 @@
       border: 2px solid #ffffff;
       border-radius: 5px;
       font-size: 20px;
-      /* font-family: $headings-font-family; */
       width: 169px;
       height: 50px;
       display: flex;
@@ -295,21 +294,12 @@
 }
 
 .contact {
-  /* height: fit-content; */
-
   position: relative;
 
   .main {
     height: fit-content;
     min-height: fit-content;
     padding: 100px 0px 100px 0px;
-
-    /* background: url($cdn + 'images/home/bgHome2.png') left top/cover no-repeat
-      #11121b; */
-    /* background-color: #11121b; */
-
-    /* background: url($cdn + 'images/home/bgHome3.png') left top/cover no-repeat; */
-    /* clip-path: polygon(0 100%, 0 0, 50% 5%, 100% 0, 100% 100%); */
 
     @include media-breakpoint-up(xl) {
       padding: 108px 0px 69px 0px;
@@ -322,8 +312,6 @@
     height: 53px;
     top: 0px;
     left: 0px;
-    /* border: 1px solid magenta; */
-    /* transform: skewY(0.001deg); */
     background: #192866;
 
     @include media-breakpoint-up(xl) {

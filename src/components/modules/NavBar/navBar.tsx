@@ -95,9 +95,7 @@ const NavBar = () => {
           </Nav.Link>
         </Nav>
         <Offcanvas show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-            {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
-          </Offcanvas.Header>
+          <Offcanvas.Header closeButton></Offcanvas.Header>
           <Offcanvas.Body>
             <Nav
               className="align-items-center"

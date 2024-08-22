@@ -18,7 +18,6 @@ const tabs = () => {
         style={{ rowGap: '72px', whiteSpace: 'nowrap' }}
         className="overflow-hidden"
       >
-        {/* <h1 className="text-black">WEB</h1> */}
         <Fade direction="down" triggerOnce="true" cascade>
           <Row
             className={styles.customRow + ' g-0'}
@@ -34,7 +33,6 @@ const tabs = () => {
                   alt="project 0 image"
                   src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcase-hacons-secondary.jpg`}
                   width={500}
-                  /* height={279} */
                   height={0}
                   className={styles.tabImage}
                   quality={100}
@@ -51,7 +49,6 @@ const tabs = () => {
                   alt="project 1 image"
                   src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseALR2.png`}
                   width={500}
-                  /* height={279} */
                   height={0}
                   className={styles.tabImage}
                   quality={100}
@@ -74,10 +71,8 @@ const tabs = () => {
               >
                 <Image
                   alt="project 2 image"
-                  /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto2.png`} */
                   src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseAMARANTE2.png`}
                   width={500}
-                  /* height={279} */
                   height={0}
                   className={styles.tabImage}
                   quality={100}
@@ -92,10 +87,8 @@ const tabs = () => {
               >
                 <Image
                   alt="project 3 image"
-                  /* src={`${process.env.NEXT_PUBLIC_CDN}images/projects/mock/proyecto3.png`} */
                   src={`${process.env.NEXT_PUBLIC_CDN}images/projects/web/showcaseLUSITANO2.png`}
                   width={500}
-                  /* height={279} */
                   height={0}
                   className={styles.tabImage}
                   quality={100}

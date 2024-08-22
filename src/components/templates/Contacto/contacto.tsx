@@ -57,7 +57,6 @@ const Contacto = () => {
                     </Button>
                   </Link>
                 </Col>
-                {/* <Col></Col> */}
               </Row>
             </Col>
           </Row>
@@ -69,10 +68,6 @@ const Contacto = () => {
                 : ' g-0 position-relative text-white d-flex flex-column mx-auto')
             }
           >
-            {/* <Row
-              className="g-0 justify-content-center"
-              style={{ rowGap: '1rem', columnGap: '1rem' }}
-            > */}
             <Col xs="auto" className="d-flex justify-content-center">
               <div className={styles.smallBoxleft}>
                 <div className={styles.cardTitle}>
@@ -94,12 +89,10 @@ const Contacto = () => {
                   <h4 className="fs-6 fs-xl-4">numero de contacto</h4>
                 </div>
                 <div className="py-2 d-flex justify-content-between">
-                  {/* <small className="fs-md-6">+51 907 190 881</small> */}
                   <small className="fs-md-6">+51 927 575 917</small>
                 </div>
               </div>
             </Col>
-            {/* </Row> */}
           </Row>
         </Container>
 
@@ -151,26 +144,12 @@ const Contacto = () => {
                 />
               </Link>
             </div>
-            {/* <div className={styles.icon + ' ' + styles['icon--yt']}>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/ytIcon.svg`}
-                alt="Youtube Icon"
-                width={24}
-                height={24}
-              />
-            </div> */}
           </div>
         </Container>
         <Container className="g-0">
-          {/* <div className="text-white pt-6">
-            <h1>HABLEMOS. Déjanos un mensaje</h1>
-
-            <CustomForm bgInput="bg-primary" setIsSendForm={setIsSendForm} />
-          </div> */}
           {!isSendForm ? (
             <div className="text-white pt-6">
               <h1>HABLEMOS. Déjanos un mensaje</h1>
-
               <CustomForm bgInput="bg-primary" setIsSendForm={setIsSendForm} />
             </div>
           ) : (

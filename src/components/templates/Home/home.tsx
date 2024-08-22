@@ -44,11 +44,6 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
               >
                 Define tu presencia digital.
               </h1>
-              {/* <h1
-                className={styles.title + ' text-white text-center text-xl-end'}
-              >
-                Lorem ipsum
-              </h1> */}
             </div>
             <div className={styles.textContainer}>
               <p className="text-white pb-3 text-center text-lg-end">
@@ -233,24 +228,14 @@ const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
       </section>
 
       <Parallax
-        /* blur={10} */
-        /* bgImage={`${process.env.NEXT_PUBLIC_CDN}images/home/bgHome4.jpg`} */
         bgImage={`${process.env.NEXT_PUBLIC_CDN}images/home/bgHome5.png`}
         bgImageAlt="background home 5"
         strength={500}
         disabled={width <= 600 ? true : false}
       >
-        {/* <Background>
-          <img
-            src={`${process.env.NEXT_PUBLIC_CDN}images/home/bgHome5.png`}
-            alt="background home 5"
-          />
-        </Background> */}
         <section className={styles.contact}>
           <div id="contactMain" className={styles.main}>
             <Container className="g-0 text-white text-center">
-              {/* <TechGrid /> */}
-
               {!isSendForm ? (
                 <div className="text-white pt-6">
                   <h2>¿TODO LISTO PARA EMPEZAR?</h2>
