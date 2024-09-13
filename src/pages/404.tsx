@@ -32,5 +32,6 @@ export default function Custom404() {
 }
 
 Custom404.getLayout = function getLayout(page: ReactElement) {
+  /* return <DefaultLayout>{page}</DefaultLayout>; */
   return page;
 };

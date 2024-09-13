@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 import { SSRProvider } from 'react-bootstrap';
-import { bebasNeue, rubik } from '../utils/fonts';
+import { rubik } from '../utils/fonts';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         />
       </Head>
       <main className={rubik.className}>
-        <style jsx global>{`
+        {/* <style jsx global>{`
           h1,
           h2,
           h3,
@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           h6 {
             font-family: ${bebasNeue.style.fontFamily};
           }
-        `}</style>
+        `}</style> */}
         {getLayout(<Component {...pageProps} />)}
       </main>
     </SSRProvider>

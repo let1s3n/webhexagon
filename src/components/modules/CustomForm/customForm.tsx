@@ -102,12 +102,12 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
         <Col xs={12} xl="auto" className="position-relative">
           <FloatingLabel
             controlId="floatingCompany"
-            label="Company"
+            label="Empresa"
             className="mb-3"
           >
             <Form.Control
               type="text"
-              placeholder="Company"
+              placeholder="Empresa"
               className={bgInput}
               {...register('company')}
             />

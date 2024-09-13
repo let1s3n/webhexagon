@@ -120,7 +120,7 @@
     }
     .puzzleImage {
       top: -33px;
-      right: 109px;
+      right: 50px;
       height: auto;
 
       animation: 3s linear 1s infinite alternate pulse-animation;
@@ -214,9 +214,11 @@
         width: 100%;
       }
 
+      transition: transform 0.5s ease-in;
       -webkit-transition: transform 0.5s ease-in;
       &:hover {
         transform: scale(1.05);
+        transition: transform 0.5s ease-in-out;
         -webkit-transition: transform 0.5s ease-in-out;
       }
     }
