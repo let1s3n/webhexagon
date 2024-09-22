@@ -85,7 +85,7 @@ const Footer = () => {
       </div>
 
       <p className={styles.text}>
-        Copyright © 2024 Hexagon Studio. All rights reserved.
+        Copyright © 2024 Hexagon Studio. Todos los derechos reservados.
       </p>
     </div>
   );
