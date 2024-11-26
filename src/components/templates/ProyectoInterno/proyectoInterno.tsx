@@ -49,15 +49,16 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
         <Image
           src={`${process.env.NEXT_PUBLIC_CDN}${project.hero_image}`}
           alt="Proyecto Home 4"
-          width={400}
-          height={0}
+          /* width={400}
+          height={0} */
           style={{
-            height: '100vh',
-            width: '100%',
+            /* height: 'auto',
+            width: '100%', */
             position: 'absolute',
             top: 0,
-            zIndex: -1,
+            /* zIndex: -1, */
           }}
+          fill
           className={styles.heroBg}
         />
         <div className={styles.circleDashedDecore}></div>

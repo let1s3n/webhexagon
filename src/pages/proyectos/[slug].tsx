@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         'Desarrollo web personalizado: diseño único, funcionalidades integradas y secciones a medida.',
       description:
         'Sitio web de la Constructora e Inmobiliaria H.A. Cons. Desarrollado cumpliendo todas las solicitudes del cliente: diseño moderno, uso de tecnologías avanzadas de desarrollo, servicios backend para contacto por email, y manejo óptimo de dominio y hosting.',
-      hero_image: 'images/projects/web/showcase-hacons-secondary.jpg',
+      hero_image: 'images/projects/web/showcase-hacons-dormitorio.jpg',
       card_image: 'images/projects/web/showcase-hacons-secondary.jpg',
       logo: 'images/projects/logos/hacons-logo-white.png',
       galery: ['name_1', 'name_2', 'name_3'],
@@ -177,7 +177,7 @@ export const getStaticProps: GetStaticProps = async () => {
         'Desarrollo web personalizado: diseño único, funcionalidades integradas y secciones a medida.',
       description:
         'Sitio web de la Constructora e Inmobiliaria H.A. Cons. Desarrollado cumpliendo todas las solicitudes del cliente: diseño moderno, uso de tecnologías avanzadas de desarrollo, servicios backend para contacto por email, y manejo óptimo de dominio y hosting.',
-      hero_image: 'images/projects/web/showcase-hacons-secondary.jpg',
+      hero_image: 'images/projects/web/showcase-hacons-dormitorio.jpg',
       card_image: 'images/projects/web/showcase-hacons-secondary.jpg',
       logo: 'images/projects/logos/hacons-logo-white.png',
       galery: ['name_1', 'name_2', 'name_3'],
