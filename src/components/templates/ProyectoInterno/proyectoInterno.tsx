@@ -28,7 +28,6 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
   const router = useRouter();
   let { slug } = router.query;
   useEffect(() => {
-    console.log('projects: ', projects);
     if (projects) {
       let currentProyect = projects.find((element) => element.slug == slug);
       if (currentProyect) {
@@ -54,7 +53,7 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
           height={0}
           style={{
             height: '100vh',
-            width: '100vw',
+            width: '100%',
             position: 'absolute',
             top: 0,
             zIndex: -1,
@@ -119,34 +118,6 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
                     </div>
                   </div>
                 </Col>
-                {/* <Col
-                  xs="auto"
-                  lg={6}
-                  xl={6}
-                  className="d-flex justify-content-center d-none d-lg-flex"
-                >
-                  <div className="position-relative d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <small className="fs-xl-6">Siguiente proyecto</small>
-                      <Link href="/" passHref style={{ lineHeight: '12px' }}>
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </Col> */}
               </Row>
             </Col>
           </Row>
@@ -236,13 +207,6 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
                     </p>
                   );
                 })}
-                {/* {project.techtags.map((ele, index) => {
-                  return (
-                    <p key={index} className={styles.tag}>
-                      {ele}
-                    </p>
-                  );
-                })} */}
               </div>
               <p className="py-5" style={{ textAlign: 'justify' }}>
                 {project.description}
@@ -250,27 +214,13 @@ const ProyectoInterno = ({ projects }: projectsProps) => {
               <div>
                 <h2 className="pb-4">Historia</h2>
                 <p style={{ textAlign: 'justify' }}>{project.history}</p>
-                {/* <p className="pt-3">
-                {project.description}
-                </p> */}
               </div>
               <div>
                 <h2 className="pt-5 pb-4">Solución</h2>
                 <p style={{ textAlign: 'justify' }}>{project.solution}</p>
-                {/* <p className="pt-3">
-                  Mollis aliquet eget aenean praesent velit ullamcorper nulla.
-                  Odio ullamcorper ut sapien amet risus sit. Sit magna nisl
-                  adipiscing sapien risus urna imperdiet neque ipsum. Tellus nam
-                  at tempus.
-                </p> */}
               </div>
             </Col>
           </Row>
-          {/* <Row className="py-8">
-            <div className="px-7">
-              <h2>Galeria</h2>
-            </div>
-          </Row> */}
         </Container>
       </section>
     </>

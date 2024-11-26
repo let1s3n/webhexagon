@@ -19,12 +19,10 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
       company: '',
       phone_number: '',
       project: '',
-      /* privacy_policies: false, */
     },
   });
 
   const onSubmit = async (data: any) => {
-    /* console.log('data: ', data); */
     const JSONdata = JSON.stringify(data);
     const options = {
       method: 'POST',
@@ -104,12 +102,12 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
         <Col xs={12} xl="auto" className="position-relative">
           <FloatingLabel
             controlId="floatingCompany"
-            label="Company"
+            label="Empresa"
             className="mb-3"
           >
             <Form.Control
               type="text"
-              placeholder="Company"
+              placeholder="Empresa"
               className={bgInput}
               {...register('company')}
             />
@@ -243,7 +241,6 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
       </Row>
 
       <div className={styles.customButtonContainer + ' position-relative'}>
-        {/* <Link href="/contacto" passHref> */}
         <Button
           type="submit"
           variant="link"
@@ -256,7 +253,6 @@ const CustomForm = ({ bgInput, setIsSendForm }: any) => {
         >
           ENVIAR AHORA
         </Button>
-        {/* </Link> */}
         <div className={styles.buttonDecoration}></div>
       </div>
     </Form>

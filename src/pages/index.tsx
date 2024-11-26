@@ -3,8 +3,12 @@ import { imageProps, projectsProps } from '@/utils/types/generalProps';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getPlaiceholder } from 'plaiceholder';
+import { NextPageWithLayout } from './_app';
 
-const index = ({ imageProps, projects }: imageProps & projectsProps) => {
+const index: NextPageWithLayout<imageProps & projectsProps> = ({
+  imageProps,
+  projects,
+}) => {
   return (
     <>
       <Head>
@@ -13,11 +17,19 @@ const index = ({ imageProps, projects }: imageProps & projectsProps) => {
           name="description"
           content="Hexagon Studio ofrece desarrollo de páginas web, aplicaciones multiplataforma (web, móvil y escritorio), e-commerce, ERP y software a medida. Impulsa tu negocio con nuestras soluciones digitales personalizadas e innovadoras."
         />
+        <meta
+          name="keywords"
+          content="hexagonstudio.pe, hexagonstudio pe, hexagon studio, desarrollo de paginas web, desarrollo de páginas web, desarrollo de software en lima, empresa de desarrollo de software en lima, empresa de desarrollo de software en Peru, empresa de desarrollo de software en peru, empresa de desarrollo de software en Perú, empresa de desarrollo de software en perú"
+        />
       </Head>
       <Home imageProps={imageProps} projects={projects} />
     </>
   );
 };
+
+/* index.getLayout = function getLayout(page: ReactElement) {
+  return <DefaultLayout>{page}</DefaultLayout>;
+}; */
 
 export const getStaticProps: GetStaticProps = async () => {
   const illustrationHome = await getPlaiceholder(
@@ -47,8 +59,8 @@ export const getStaticProps: GetStaticProps = async () => {
         'Desarrollo web personalizado: diseño único, funcionalidades integradas y secciones a medida.',
       description:
         'Sitio web de la Constructora e Inmobiliaria H.A. Cons. Desarrollado cumpliendo todas las solicitudes del cliente: diseño moderno, uso de tecnologías avanzadas de desarrollo, servicios backend para contacto por email, y manejo óptimo de dominio y hosting.',
-      hero_image: 'images/projects/web/showcase-hacons-secondary.png',
-      card_image: 'images/projects/web/showcase-hacons.png',
+      hero_image: 'images/projects/web/showcase-hacons-secondary.jpg',
+      card_image: 'images/projects/web/showcase-hacons-secondary.jpg',
       logo: 'images/projects/logos/hacons-logo-white.png',
       galery: ['name_1', 'name_2', 'name_3'],
       history:

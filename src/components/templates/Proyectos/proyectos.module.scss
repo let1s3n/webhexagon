@@ -5,10 +5,8 @@
   background: $degradeProyectSection;
 }
 .introduction {
-  /* height: fit-content; */
   min-height: 631px;
   padding: 120px 0px 16px 0px;
-
   position: relative;
   overflow-x: hidden;
   @include media-breakpoint-up(xl) {
@@ -41,10 +39,8 @@
       border-radius: 50%;
       background: $terciary;
       position: absolute;
-      /* top: 100%; */
       bottom: -4px;
       left: -4.5px;
-      /* transform: translate(-50%, -50%); */
     }
   }
 

@@ -49,9 +49,7 @@
     height: 428px;
     position: absolute;
     bottom: 0;
-    /* position: absolute; */
     align-items: center;
-    /* translate: -173.5px -400px; */
     border-radius: 20px;
     background: linear-gradient(
       108.46deg,
@@ -70,7 +68,6 @@
     border: 2px solid #ffffff;
     border-radius: 5px;
     font-size: 20px;
-    /* font-family: $headings-font-family; */
     width: 169px;
     height: 50px;
     display: flex;
@@ -89,7 +86,6 @@
       width: 612px;
       height: 595px;
       border-radius: 50%;
-      /* border: 1px dashed rgba(255, 255, 255, 0.35); */
       position: absolute;
       top: -5px;
       left: 70px;
@@ -146,19 +142,9 @@
   .serviceBox {
     position: relative;
     z-index: 1;
-    // width: 459px;
     height: 376px;
     background: linear-gradient(180deg, #4c7ff5 32.6%, #ff00fc 156.03%);
-    /* Sombra cards - servicios */
-
     box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.25);
-    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
-    /* &:nth-child(odd) {
-      clip-path: polygon(0 100%, 0 0, 100% 10%, 100% 100%);
-    }
-    &:nth-child(even) {
-      clip-path: polygon(0 100%, 0 10%, 100% 0, 100% 100%);
-    } */
     @include media-breakpoint-up(xl) {
       width: 459px;
       height: 336px;
@@ -186,20 +172,9 @@
   .serviceBoxDown {
     position: relative;
     z-index: 1;
-    // width: 459px;
     height: 376px;
     background: linear-gradient(0deg, #4c7ff5 32.6%, #ff00fc 156.03%);
-    // background: linear-gradient(180deg, #ff00fc 12.6%, #4c7ff5 156.03%);
-    /* Sombra cards - servicios */
-
     box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.25);
-    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
-    /* &:nth-child(odd) {
-      clip-path: polygon(0 100%, 0 0, 100% 10%, 100% 100%);
-    }
-    &:nth-child(even) {
-      clip-path: polygon(0 100%, 0 10%, 100% 0, 100% 100%);
-    } */
     @include media-breakpoint-up(xl) {
       width: 459px;
       height: 336px;

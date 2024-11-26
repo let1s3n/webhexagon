@@ -57,14 +57,6 @@ const Footer = () => {
             />
           </Link>
         </div>
-        {/* <div className={styles.icon + ' ' + styles['icon--yt']}>
-          <Image
-            src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/social/ytIcon.svg`}
-            alt="Youtube Icon"
-            width={24}
-            height={24}
-          />
-        </div> */}
       </div>
 
       <div>
@@ -93,7 +85,7 @@ const Footer = () => {
       </div>
 
       <p className={styles.text}>
-        Copyright © 2024 Hexagon Studio. All rights reserved.
+        Copyright © 2024 Hexagon Studio. Todos los derechos reservados.
       </p>
     </div>
   );
