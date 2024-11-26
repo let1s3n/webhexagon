@@ -29,16 +29,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         />
       </Head>
       <main className={rubik.className}>
-        {/* <style jsx global>{`
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6 {
-            font-family: ${bebasNeue.style.fontFamily};
-          }
-        `}</style> */}
         {getLayout(<Component {...pageProps} />)}
       </main>
     </SSRProvider>
