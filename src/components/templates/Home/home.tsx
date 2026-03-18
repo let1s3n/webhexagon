@@ -1,261 +1,208 @@
-import CustomForm from '@/components/modules/CustomForm/customForm';
-import SuccessMessage from '@/components/modules/SuccessMessage/successMessage';
-import useWindowDimensions from '@/utils/hooks/useWindowDimensions';
-import { imageProps, projectsProps } from '@/utils/types/generalProps';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-import { Button, Container } from 'react-bootstrap';
-import { Parallax } from 'react-parallax';
-import { bebasNeue } from '../../../utils/fonts';
-import styles from './home.module.scss';
 
-const Home = ({ imageProps, projects }: imageProps & projectsProps) => {
-  const { width } = useWindowDimensions();
-  const [isSendForm, setIsSendForm] = useState<boolean>(false);
-
+const Home = ({ imageProps, projects }: any) => {
   return (
     <>
-      <section className={styles.introduction}>
-        <Container
-          className="g-0 d-flex flex-column flex-xl-row p-3 px-xxl-10 pt-xxl-9 justify-content-between align-items-center align-items-xl-stretch"
-          style={{ rowGap: '1.5rem' }}
-        >
-          <div className={styles.imageContainer}>
-            <Image
-              // src={`${process.env.NEXT_PUBLIC_CDN}images/home/illustrationHome1.png`}
-              src={imageProps[0].src}
-              alt="Illustration Home 1"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-              sizes="1492px"
-              placeholder="blur"
-              blurDataURL={imageProps[0].blurDataURL}
-              quality={100}
-            />
-          </div>
-          <div className={styles.right}>
-            <div>
-              <h1
-                className={
-                  styles.title + ' text-white pb-3 text-center text-xl-end'
-                }
-              >
-                Define tu presencia digital.
-              </h1>
-            </div>
-            <div className={styles.textContainer}>
-              <p className="text-white pb-3 text-center text-lg-end">
-                Que te encuentren en todos los canales digitales para que
-                <strong> crezcas sin límites.</strong>
-              </p>
-              <p className="text-white pb-3 text-center text-lg-end">
-                En nuestro apasionado equipo, nos especializamos en dar vida a
-                tus ideas y aspiraciones a través de servicios integrales. Desde
-                la creación de páginas web impactantes que cautivarán a tu
-                audiencia hasta el desarrollo de aplicaciones móviles
-                innovadoras que llevarán tu negocio al siguiente nivel, estamos
-                aquí para transformar tu visión en una realidad digital
-                vibrante.
-              </p>
-            </div>
-            <div
-              className={styles.customButtonContainer + ' position-relative'}
-            >
-              <Link href="/contacto" passHref>
-                <Button variant="link" className={styles.customButton}>
-                  <p className={bebasNeue.className + ' m-0 lh-1'}>
-                    CONTACTAR AHORA
-                  </p>
-                </Button>
-              </Link>
-              <div className={styles.buttonDecoration}></div>
-            </div>
-          </div>
-        </Container>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div className="absolute top-1/4 left-1/4 w-[30vw] h-[30vw] bg-purple-600/30 rounded-full blur-[120px] mix-blend-screen animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-[25vw] h-[25vw] bg-cyan-600/30 rounded-full blur-[100px] mix-blend-screen animate-blob animation-delay-2000" />
+        <div className="absolute bottom-1/4 left-1/2 w-[35vw] h-[35vw] bg-pink-600/20 rounded-full blur-[130px] mix-blend-screen animate-blob animation-delay-4000" />
 
-        <div
-          className={
-            styles.infoBox +
-            ' position-absolute top-100 start-50 translate-middle text-white'
-          }
-        >
-          <h4 className="fs-6 fs-xl-4 mb-3">
-            ¡NOSOTROS PODEMOS <span className="text-terciary">AYUDARTE</span> A
-            LOGRARLO!
-          </h4>
-
-          <p
-            className="d-none d-xl-block fs-14 mb-4"
-            style={{ maxWidth: '362px' }}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-8"
           >
-            Nos apasiona apoyar a empresas, mejorando su presencia en línea y
-            multiplicando su impacto positivo.
-          </p>
+            <Sparkles className="w-4 h-4 text-cyan-400" />
+            <span className="text-xs font-semibold tracking-widest text-gray-300 uppercase">
+              La Nueva Era del Diseño Digital
+            </span>
+          </motion.div>
 
-          <Link href="/servicios" passHref className="text-decoration-none">
-            <Button variant="outline-white" className={styles.customButton}>
-              <p className={bebasNeue.className + ' m-0 lh-1'}>VER SERVICIOS</p>
-            </Button>
-          </Link>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 tracking-tight"
+          >
+            DEFINE TU
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+              PRESENCIA
+            </span>
+            <br />
+            DIGITAL
+          </motion.h1>
 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light"
+          >
+            Que te encuentren en todos los canales digitales para que crezcas
+            sin límites. Transformamos tu visión en una realidad digital
+            vibrante.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          >
+            <Link
+              href="/proyectos"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold text-lg rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] no-underline"
+            >
+              <span className="relative z-10">Ver Proyectos</span>
+              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-300 to-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Link>
+            <Link
+              href="/contacto"
+              className="text-white font-medium hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 no-underline"
+            >
+              Hablemos <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Decorative floating element */}
+        <motion.div
+          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute bottom-20 right-20 w-48 h-48 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.2)] opacity-80 hidden md:block"
+        >
           <Image
-            src={imageProps[1].src}
-            alt="Cubos Home"
-            width={277}
-            height={0}
-            className={
-              styles.puzzleImage + ' position-absolute d-none d-xl-block'
-            }
+            src={imageProps[0].src}
+            alt="Hexagon Studio"
+            fill
+            style={{ objectFit: 'cover', mixBlendMode: 'luminosity' }}
             placeholder="blur"
-            blurDataURL={imageProps[1].blurDataURL}
-            quality={100}
+            blurDataURL={imageProps[0].blurDataURL}
           />
+        </motion.div>
+      </section>
+
+      {/* Info Box */}
+      <section className="py-16 bg-[#050505]">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-8 md:p-12 text-center">
+            <h4 className="text-xl md:text-2xl font-bold text-white mb-4">
+              ¡NOSOTROS PODEMOS{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                AYUDARTE
+              </span>{' '}
+              A LOGRARLO!
+            </h4>
+            <p className="text-gray-400 mb-6 max-w-lg mx-auto">
+              Nos apasiona apoyar a empresas, mejorando su presencia en línea y
+              multiplicando su impacto positivo.
+            </p>
+            <Link
+              href="/servicios"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 text-white font-bold text-sm tracking-wider hover:bg-gradient-to-r hover:from-purple-600 hover:to-cyan-600 hover:border-transparent hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 no-underline"
+            >
+              VER SERVICIOS
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.projects}>
-        <Container className="g-0 mx-auto" style={{ width: 'fit-content' }}>
-          <div
-            className="d-flex flex-column align-items-center align-items-xl-stretch flex-md-row justify-content-between px-0 px-md-6 px-xl-0"
-            style={{ rowGap: '1rem' }}
-          >
-            <div className="position-relative" style={{ width: 'fit-content' }}>
-              <h1 className={styles.title}>PROYECTOS DESTACADOS</h1>
-              <Image
-                src={`${process.env.NEXT_PUBLIC_CDN}images/general/titleDecore.svg`}
-                alt="Title Decore"
-                width={216}
-                height={0}
-                className={styles.titleDecore}
-              />
-            </div>
-
-            <Link href="/proyectos" passHref style={{ zIndex: '2' }}>
-              <Button
-                variant="black"
-                className={
-                  styles.customButton + ' border-white border-2 rounded-0'
-                }
-              >
-                <p className={styles.innerText + ' ' + bebasNeue.className}>
-                  VER PROYECTOS
-                </p>
-              </Button>
+      {/* Projects Section */}
+      <section className="py-24 bg-black relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight"
+            >
+              Proyectos
+              <br />
+              Destacados
+            </motion.h2>
+            <Link
+              href="/proyectos"
+              className="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:text-cyan-300 transition-colors no-underline"
+            >
+              Ver todos los proyectos <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
-          <div
-            className="d-flex flex-column mt-8 align-items-center align-items-xxl-stretch"
-            style={{ rowGap: '48px' }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.length > 0 &&
-              projects.map((project, index) => {
-                return (
-                  <div key={index} className={styles.proyect}>
-                    <Link
-                      href={`/proyectos/${project.slug}`}
-                      passHref
-                      className="text-decoration-none"
-                    >
-                      <Image
-                        src={
-                          process.env.NEXT_PUBLIC_CDN + project['card_image']
-                        }
-                        alt="Proyecto Home 1"
-                        width={400}
-                        height={0}
-                        className={styles.imgProyect}
-                        style={{ height: '100%' }}
-                      />
-                    </Link>
-
-                    <div className={styles.right}>
-                      <div className="d-flex" style={{ columnGap: '12px' }}>
-                        {project['project_types'].map(
-                          (tag: any, index: any) => {
-                            return (
-                              <div key={index} className={styles.tag}>
-                                <p className="lh-1">{tag}</p>
-                              </div>
-                            );
-                          }
-                        )}
-                      </div>
-
-                      <Link
-                        href={`/proyectos/${project.slug}`}
-                        passHref
-                        className="text-decoration-none"
-                      >
-                        <h3 className="lh-1 text-white cursor-pointer">
-                          {project['company_name']}
-                        </h3>
-                      </Link>
-
-                      <p className={styles.proyectDescription}>
-                        {project['description']}
-                      </p>
-
-                      <div
-                        className="d-flex align-items-center py-2"
-                        style={{ columnGap: '1rem' }}
-                      >
-                        <p className="lh-1">Ir al proyecto</p>
-                        <Link
-                          href={`/proyectos/${project.slug}`}
-                          passHref
-                          style={{ lineHeight: '12px' }}
+              projects.slice(0, 3).map((project: any, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  className="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer"
+                >
+                  <Image
+                    src={process.env.NEXT_PUBLIC_CDN + project.card_image}
+                    alt={project.company_name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-500 via-black/50 to-transparent opacity-60 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-80" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                  <Link
+                    href={`/proyectos/${project.slug}`}
+                    className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-500 no-underline"
+                  >
+                    <div className="flex gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {project.project_types.map((tag: string, i: number) => (
+                        <span
+                          key={i}
+                          className="text-xs font-bold tracking-wider text-gray-300 uppercase"
                         >
-                          <Image
-                            src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                            alt="Arrow"
-                            width={30}
-                            height={0}
-                            style={{ height: 'auto' }}
-                          />
-                        </Link>
-                      </div>
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  </div>
-                );
-              })}
+                    <h3 className="text-3xl font-black text-white leading-tight">
+                      {project.company_name}
+                    </h3>
+                  </Link>
+                </motion.div>
+              ))}
           </div>
-        </Container>
-
-        <div className={styles.circleDecore}></div>
+        </div>
       </section>
 
-      <Parallax
-        bgImage={`${process.env.NEXT_PUBLIC_CDN}images/home/bgHome5.png`}
-        bgImageAlt="background home 5"
-        strength={500}
-        disabled={width <= 600 ? true : false}
-      >
-        <section className={styles.contact}>
-          <div id="contactMain" className={styles.main}>
-            <Container className="g-0 text-white text-center">
-              {!isSendForm ? (
-                <div className="text-white pt-6">
-                  <h2>¿TODO LISTO PARA EMPEZAR?</h2>
-                  <p>
-                    Dejanos un mensaje y te contactaremos lo más pronto posible.
-                  </p>
-                  <CustomForm
-                    bgInput="bg-black1"
-                    setIsSendForm={setIsSendForm}
-                  />
-                </div>
-              ) : (
-                <SuccessMessage />
-              )}
-            </Container>
-          </div>
-
-          <div className={styles.outsideClip}></div>
-        </section>
-      </Parallax>
+      {/* Contact CTA Section */}
+      <section className="py-24 bg-[#050505] relative overflow-hidden">
+        <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
+        <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent" />
+        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            ¿TODO LISTO PARA{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+              EMPEZAR?
+            </span>
+          </h2>
+          <p className="text-gray-400 mb-10">
+            Déjanos un mensaje y te contactaremos lo más pronto posible.
+          </p>
+          <Link
+            href="/contacto"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-lg rounded-full hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all hover:scale-105 no-underline"
+          >
+            Contactar Ahora <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

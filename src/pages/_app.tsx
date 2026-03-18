@@ -1,11 +1,12 @@
 import DefaultLayout from '@/components/layout/DefaultLayout/defaultLayout';
-import '@/sass/app.scss';
+import '@/styles/globals.css';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
-import { SSRProvider } from 'react-bootstrap';
-import { rubik } from '../utils/fonts';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -18,19 +19,22 @@ type AppPropsWithLayout = AppProps & {
 function commonLayout(page: ReactElement) {
   return <DefaultLayout>{page}</DefaultLayout>;
 }
+
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => commonLayout(page));
   return (
-    <SSRProvider>
+    <>
       <Head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=2"
         />
       </Head>
-      <main className={rubik.className}>
+      <div
+        className={`${inter.className} min-h-screen bg-black text-white selection:bg-purple-500 selection:text-white`}
+      >
         {getLayout(<Component {...pageProps} />)}
-      </main>
-    </SSRProvider>
+      </div>
+    </>
   );
 }

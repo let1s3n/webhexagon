@@ -1,363 +1,137 @@
-import CardWithUs from '@/components/modules/CardWithUs/cardWithUs';
+import { Code2, MonitorPlay, Palette, Rocket } from 'lucide-react';
+import { motion } from 'motion/react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { bebasNeue } from '../../../utils/fonts';
-import styles from './servicios.module.scss';
+
+const services = [
+  {
+    title: 'Desarrollo Web',
+    description:
+      'Creamos páginas web fusionando diseño innovador y funcionalidad intuitiva para destacar tu presencia en línea.',
+    icon: <Code2 className="w-8 h-8 text-cyan-400" />,
+    gradient: 'from-cyan-500/20 to-transparent',
+  },
+  {
+    title: 'Desarrollo de Aplicaciones',
+    description:
+      'Soluciones móviles que van más allá de las expectativas, ofreciendo funcionalidad avanzada y una experiencia de usuario excepcional.',
+    icon: <Palette className="w-8 h-8 text-purple-400" />,
+    gradient: 'from-purple-500/20 to-transparent',
+  },
+  {
+    title: 'Desarrollo de Software',
+    description:
+      'Soluciones personalizadas que se adaptan a tus necesidades específicas, impulsando la productividad y optimizando procesos.',
+    icon: <Rocket className="w-8 h-8 text-pink-400" />,
+    gradient: 'from-pink-500/20 to-transparent',
+  },
+  {
+    title: 'Redes Sociales',
+    description:
+      'Aprovecha al máximo el poder de las redes sociales con nosotros y haz que tu presencia online sea auténtica y envolvente.',
+    icon: <MonitorPlay className="w-8 h-8 text-emerald-400" />,
+    gradient: 'from-emerald-500/20 to-transparent',
+  },
+];
+
 const Servicios = ({ imageProps }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <>
-      <section className={styles.introduction}>
-        <Container className="px-6 px-xxl-12">
-          <Row className="text-white p-0 g-0">
-            <Col xl={7}>
-              <h1
-                className={
-                  styles.title + ' pb-4 pb-xl-0 text-center text-md-start'
-                }
+      {/* Hero */}
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-black pt-32 pb-20">
+        <div className="absolute top-1/4 left-1/4 w-[30vw] h-[30vw] bg-purple-600/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 right-1/4 w-[25vw] h-[25vw] bg-cyan-600/20 rounded-full blur-[100px]" />
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6"
               >
-                Somos un estudio creativo que impulsa tu visión con soluciones
-                únicas.
-              </h1>
-            </Col>
-            <Col xl={5}>
-              <p className="m-0 text-center text-md-start">
-                ¡Eleva tu presencia digital con nosotros! Nuestro equipo se
-                destaca en el desarrollo de páginas web, aplicaciones móviles,
-                desarrollo de software, el desarrollo de marca distintivo y la
-                gestión efectiva de redes sociales, ofrecemos soluciones
-                completas.
+                Somos un estudio creativo que impulsa tu{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                  visión
+                </span>
+              </motion.h1>
+              <p className="text-gray-400 text-lg mb-8 max-w-lg">
+                Nuestro equipo se destaca en el desarrollo de páginas web,
+                aplicaciones móviles, software y gestión de redes sociales.
               </p>
-              <Row className="pt-5 pt-md-4 justify-content-center justify-content-md-start">
-                <Col xs="auto" lg={4} xl={6}>
-                  <Link
-                    href="/contacto"
-                    passHref
-                    style={{ zIndex: '2', textDecoration: 'none' }}
-                  >
-                    <Button
-                      variant="outline-white"
-                      className={styles.customButton}
-                    >
-                      <p className={bebasNeue.className + ' m-0 lh-1'}>
-                        Contáctanos
-                      </p>
-                    </Button>
-                  </Link>
-                </Col>
-                <Col
-                  xs="auto"
-                  lg={4}
-                  xl={6}
-                  className="d-flex justify-content-center d-none d-md-flex"
-                >
-                  <div className="position-relative d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos</p>
-                      <Link
-                        href="/proyectos"
-                        passHref
-                        style={{ lineHeight: '12px' }}
-                      >
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <div
-            className={
-              styles.introductionHero +
-              ' position-absolute top-100 top-md-90 top-xl-100 start-50 translate-middle m-0'
-            }
-          >
-            <Image
-              alt="teamwork image"
-              src={imageProps[0].src}
-              width={595}
-              height={0}
-              blurDataURL={imageProps[0].blurDataURL}
-              quality={100}
-              className={styles.teamworkImage}
-            />
-            <div
-              className={styles.backgroundHero + ' start-50 translate-middle-x'}
-            ></div>
+              <Link
+                href="/contacto"
+                className="inline-flex px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm tracking-wider shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300 no-underline"
+              >
+                Contáctanos
+              </Link>
+            </div>
+            <div className="relative h-80 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] hidden xl:block">
+              <Image
+                src={imageProps[0].src}
+                alt="Teamwork"
+                fill
+                className="object-cover"
+                blurDataURL={imageProps[0].blurDataURL}
+                placeholder="blur"
+                quality={100}
+              />
+            </div>
           </div>
-        </Container>
-
-        <div className={styles.circleDashedDecore}></div>
+        </div>
       </section>
 
-      <section className={styles.services}>
-        <Container className="g-0">
-          <Row
-            xs={1}
-            xl={2}
-            className="text-white g-0 w-75 mx-auto px-xl-4"
-            style={{ rowGap: '1rem' }}
-          >
-            <Col>
-              <h1 className="text-center text-xl-start">
-                Podemos ayudarte a crear tus sueños.
-              </h1>
-            </Col>
-            <Col>
-              <p className="text-center text-xl-start">
-                Descubre el potencial de la excelencia digital con nosotros.
-                ¡Transformemos tus ideas en una realidad impactante!
-              </p>
-            </Col>
-          </Row>
+      {/* Services Grid */}
+      <section className="py-24 bg-[#050505] relative overflow-hidden">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+            >
+              Nuestros{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                Servicios
+              </span>
+            </motion.h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Descubre el potencial de la excelencia digital con nosotros.
+              ¡Transformemos tus ideas en una realidad impactante!
+            </p>
+          </div>
 
-          <Row
-            className={
-              styles.services__cardsContainer + ' g-0 justify-content-center'
-            }
-          >
-            <Col xs="auto">
-              <div
-                className={styles.serviceBox + ' ' + styles['serviceBox--odd']}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative bg-[#0a0a0a] rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-colors overflow-hidden"
               >
-                <Image
-                  alt="service box 1 illustration"
-                  className={styles.serviceBoxIllustration}
-                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration1.png`}
-                  width={200}
-                  height={0}
+                <div
+                  className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl ${service.gradient} rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
                 />
-                <div className="text-white pt-6 pb-5 px-4 position-relative">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloWebIcon.svg`}
-                    alt="web development"
-                    width={40}
-                    height={0}
-                    style={{ height: 'auto' }}
-                  />
-                  <h4 className="pt-4">DESARROLLO WEB</h4>
-                  <p className="pt-2">
-                    Creamos páginas web fusionando diseño innovador y
-                    funcionalidad intuitiva para destacar tu presencia en línea.
-                  </p>
-                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos web</p>
-                      <Link
-                        href="/proyectos"
-                        passHref
-                        style={{ lineHeight: '12px' }}
-                      >
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
                   </div>
-                </div>
-              </div>
-            </Col>
-
-            <Col xs="auto">
-              <div
-                className={styles.serviceBox + ' ' + styles['serviceBox--even']}
-              >
-                <Image
-                  alt="service box 1 illustration"
-                  className={styles.serviceBoxIllustration}
-                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration2.png`}
-                  width={200}
-                  height={0}
-                />
-                <div className="text-white pt-6 pb-5 px-4 position-relative">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloAplicacionesIcon.svg`}
-                    alt="web development"
-                    width={40}
-                    height={0}
-                    style={{ height: 'auto' }}
-                  />
-                  <h4 className="pt-4">DESARROLLO DE APLICACIONES</h4>
-                  <p className=" pt-2">
-                    Creamos soluciones móviles que van más allá de las
-                    expectativas, ofreciendo funcionalidad avanzada y una
-                    experiencia de usuario excepcional.
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {service.description}
                   </p>
-                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos App</p>
-                      <Link
-                        href="/proyectos"
-                        passHref
-                        style={{ lineHeight: '12px' }}
-                      >
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </Col>
-
-            <Col xs="auto">
-              <div
-                className={
-                  styles.serviceBoxDown +
-                  ' ' +
-                  styles['serviceBoxDown--odd-down']
-                }
-              >
-                <Image
-                  alt="service box 1 illustration"
-                  className={styles.serviceBoxIllustration}
-                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration3.png`}
-                  width={200}
-                  height={0}
-                />
-                <div className="text-white pt-4 pb-5 px-4 position-relative">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/desarrolloSoftwareIcon.svg`}
-                    alt="web development"
-                    width={40}
-                    height={0}
-                    style={{ height: 'auto' }}
-                  />
-                  <h4 className="pt-4">DESARROLLO DE SOFTWARE</h4>
-                  <p className="pt-2">
-                    Creamos soluciones personalizadas que se adaptan a tus
-                    necesidades específicas, impulsando la productividad y
-                    optimizando procesos.
-                  </p>
-                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos Software</p>
-                      <Link
-                        href="/proyectos"
-                        passHref
-                        style={{ lineHeight: '12px' }}
-                      >
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Col>
-
-            <Col xs="auto">
-              <div
-                className={
-                  styles.serviceBoxDown +
-                  ' ' +
-                  styles['serviceBoxDown--even-down']
-                }
-              >
-                <Image
-                  alt="service box 1 illustration"
-                  className={styles.serviceBoxIllustration}
-                  src={`${process.env.NEXT_PUBLIC_CDN}images/services/webServiceIllustration4.png`}
-                  width={200}
-                  height={0}
-                />
-                <div className="text-white pt-4 pb-5 px-4 position-relative">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_CDN}images/general/iconos/redSocialesIcon.svg`}
-                    alt="web development"
-                    width={40}
-                    height={0}
-                    style={{ height: 'auto' }}
-                  />
-                  <h4 className="pt-4">REDES SOCIALES</h4>
-                  <p className=" pt-2">
-                    Aprovecha al máximo el poder de las redes sociales con
-                    nosotros y haz que tu presencia online sea auténtica,
-                    relevante y envolvente.
-                  </p>
-                  <div className="position-relative mt-5 d-flex flex-column justify-content-center">
-                    <p
-                      style={{
-                        height: 50 + 'px',
-                        width: 50 + 'px',
-                      }}
-                      className="position-absolute opacity-25 border border-white rounded-circle"
-                    ></p>
-                    <div className="d-flex gap-3 align-items-center ps-3">
-                      <p>Ver proyectos Redes sociales</p>
-                      <Link
-                        href="/proyectos"
-                        passHref
-                        style={{ lineHeight: '12px' }}
-                      >
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CDN}images/general/arrow-right-icon.png`}
-                          alt="Arrow"
-                          width={39}
-                          height={0}
-                          style={{ height: 'auto' }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <CardWithUs />
-        </Container>
-
-        <div className={styles.circleDecore}></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

@@ -10,6 +10,26 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const { captchaToken, ...formData } = req.body;
+
+  // Verify reCAPTCHA
+  try {
+    const captchaRes = await fetch(
+      'https://www.google.com/recaptcha/api/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+      }
+    );
+    const captchaData = await captchaRes.json();
+    if (!captchaData.success) {
+      return res.status(400).json({ message: 'Captcha verification failed' });
+    }
+  } catch {
+    return res.status(500).json({ message: 'Captcha verification error' });
+  }
+
   const emailHtmlTemplate = await fs.readFileSync(
     path.resolve('./src', 'utils/emails/templates/contact.html'),
     {
@@ -18,7 +38,7 @@ export default async function handler(
   );
 
   var templateHtml = Handlebars.compile(emailHtmlTemplate.toString());
-  var bodyHtml = templateHtml(req.body);
+  var bodyHtml = templateHtml(formData);
   try {
     await sendEmail({
       to: ['dhuaytalla@hexagonstudio.pe', 'jcarneiro@hexagonstudio.pe'],

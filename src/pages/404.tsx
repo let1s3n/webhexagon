@@ -1,37 +1,24 @@
-import Image from 'next/image';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { ReactElement } from 'react';
-import { Container } from 'react-bootstrap';
 
 export default function Custom404() {
   return (
-    <Container>
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-6 text-center">
+      <h1 className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-4">
+        404
+      </h1>
+      <p className="text-xl text-gray-400 mb-8">Oops, página no encontrada</p>
       <Link
         href="/"
-        passHref
-        className="p-0 m-0 d-flex align-items-center"
-        style={{ columnGap: '20px' }}
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold no-underline hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all"
       >
-        <Image
-          className="logo"
-          src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
-          alt="Hexagon Logo"
-          width={53}
-          height={61}
-          priority
-          quality={100}
-        />
-
-        <p className="fw-bold kalekoBold text-black">Regresar</p>
+        <ArrowLeft className="w-5 h-5" /> Regresar al inicio
       </Link>
-      <h1 style={{ padding: '100px 0px 0px 0px' }}>
-        Oops, página no encontrada
-      </h1>
-    </Container>
+    </div>
   );
 }
 
 Custom404.getLayout = function getLayout(page: ReactElement) {
-  /* return <DefaultLayout>{page}</DefaultLayout>; */
   return page;
 };
