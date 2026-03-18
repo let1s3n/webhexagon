@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 const Contacto = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
-  const [captchaError, setCaptchaError] = useState(false);
+  /* const [captchaError, setCaptchaError] = useState(false); */
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const {
     register,
@@ -18,18 +18,19 @@ const Contacto = () => {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    const captchaToken = recaptchaRef.current?.getValue();
+    /* const captchaToken = recaptchaRef.current?.getValue();
     if (!captchaToken) {
       setCaptchaError(true);
       return;
     }
-    setCaptchaError(false);
+    setCaptchaError(false); */
     setIsSending(true);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, captchaToken }),
+        /* body: JSON.stringify({ ...data, captchaToken }), */
+        body: JSON.stringify({ ...data }),
       });
       if (response.ok) setIsSent(true);
     } catch (e) {
@@ -192,7 +193,7 @@ const Contacto = () => {
                     placeholder="Cuéntanos sobre tu proyecto..."
                   />
                 </div>
-                <div className="flex flex-col items-center gap-2">
+                {/* <div className="flex flex-col items-center gap-2">
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
@@ -204,7 +205,7 @@ const Contacto = () => {
                       Por favor, verifica que no eres un robot.
                     </p>
                   )}
-                </div>
+                </div> */}
                 <button
                   type="submit"
                   disabled={isSending}
