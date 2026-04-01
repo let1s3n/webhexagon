@@ -1,13 +1,12 @@
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 const NavBar = () => {
-  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -15,11 +14,35 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = ['home', 'servicios', 'clientes', 'contacto'];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   const navLinks = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Proyectos', href: '/proyectos' },
-    { name: 'Servicios', href: '/servicios' },
-    { name: 'Contacto', href: '/contacto' },
+    { name: 'Inicio', href: '#home' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Clientes', href: '#clientes' },
+    { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
@@ -35,14 +58,14 @@ const NavBar = () => {
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
             alt="Hexagon Logo"
-            width={40}
-            height={46}
+            width={30}
+            height={35}
             priority
             quality={100}
           />
           <span className="text-xl font-bold tracking-wider text-white">
             HEXAGON
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-cyan-400">
               STUDIO
             </span>
           </span>
@@ -51,24 +74,24 @@ const NavBar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.slice(0, -1).map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               className={`text-sm font-medium hover:text-cyan-400 transition-colors duration-300 uppercase tracking-widest no-underline ${
-                router.pathname === link.href
+                activeSection === link.href.replace('#', '')
                   ? 'text-cyan-400'
                   : 'text-gray-300'
               }`}
             >
               {link.name}
-            </Link>
+            </a>
           ))}
-          <Link
-            href="/contacto"
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm tracking-wider shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300 no-underline"
+          <a
+            href="#contacto"
+            className="px-6 py-2 rounded-full bg-linear-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm tracking-wider shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] transition-all duration-300 no-underline"
           >
             Contacto
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -84,14 +107,14 @@ const NavBar = () => {
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-lg border-t border-white/10 py-6 px-6 flex flex-col gap-6 md:hidden">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="text-lg font-semibold text-gray-200 hover:text-cyan-400 no-underline"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       )}

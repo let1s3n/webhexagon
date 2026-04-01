@@ -9,8 +9,8 @@ const Footer = () => {
           <Image
             src={`${process.env.NEXT_PUBLIC_CDN}images/general/logo2.png`}
             alt="Hexagon Logo"
-            width={40}
-            height={46}
+            width={30}
+            height={35}
             quality={100}
           />
           <span className="text-lg font-bold tracking-wider text-white">

@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 const Contacto = () => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
-  /* const [captchaError, setCaptchaError] = useState(false); */
+  const [captchaError, setCaptchaError] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const {
     register,
@@ -18,19 +18,18 @@ const Contacto = () => {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    /* const captchaToken = recaptchaRef.current?.getValue();
+    const captchaToken = recaptchaRef.current?.getValue();
     if (!captchaToken) {
       setCaptchaError(true);
       return;
     }
-    setCaptchaError(false); */
+    setCaptchaError(false);
     setIsSending(true);
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        /* body: JSON.stringify({ ...data, captchaToken }), */
-        body: JSON.stringify({ ...data }),
+        body: JSON.stringify({ ...data, captchaToken }),
       });
       if (response.ok) setIsSent(true);
     } catch (e) {
@@ -41,9 +40,9 @@ const Contacto = () => {
   };
 
   return (
-    <section className="py-24 pt-40 bg-[#050505] relative overflow-hidden min-h-screen">
-      <div className="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
-      <div className="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent" />
+    <section className="py-24 bg-[#050505] relative overflow-hidden min-h-screen">
+      <div className="absolute left-0 top-0 w-px h-full bg-linear-to-b from-transparent via-purple-500/50 to-transparent" />
+      <div className="absolute right-0 top-0 w-px h-full bg-linear-to-b from-transparent via-cyan-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -54,7 +53,7 @@ const Contacto = () => {
           >
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               ¿TIENES UNA <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-cyan-400">
                 IDEA?
               </span>
             </h1>
@@ -184,6 +183,17 @@ const Contacto = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">
+                    Nro. de Teléfono
+                  </label>
+                  <input
+                    {...register('phone')}
+                    type="tel"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    placeholder="+51 999 999 999"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">
                     Mensaje
                   </label>
                   <textarea
@@ -193,7 +203,7 @@ const Contacto = () => {
                     placeholder="Cuéntanos sobre tu proyecto..."
                   />
                 </div>
-                {/* <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-center gap-2">
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
@@ -205,11 +215,11 @@ const Contacto = () => {
                       Por favor, verifica que no eres un robot.
                     </p>
                   )}
-                </div> */}
+                </div>
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-lg flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all hover:scale-[1.02] disabled:opacity-50"
+                  className="w-full py-4 rounded-xl bg-linear-to-r from-purple-600 to-cyan-600 text-white font-bold text-lg flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all hover:scale-[1.02] disabled:opacity-50"
                 >
                   {isSending ? 'Enviando...' : 'Enviar Mensaje'}{' '}
                   <Send className="w-5 h-5" />
