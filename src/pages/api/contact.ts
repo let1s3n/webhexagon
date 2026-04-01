@@ -14,6 +14,14 @@ export default async function handler(
 
   // Verify reCAPTCHA
   try {
+    console.log(
+      'captchaToken received:',
+      captchaToken?.substring(0, 20) + '...'
+    );
+    console.log(
+      'secret key starts with:',
+      process.env.RECAPTCHA_SECRET_KEY?.substring(0, 10) + '...'
+    );
     const captchaRes = await fetch(
       'https://www.google.com/recaptcha/api/siteverify',
       {
