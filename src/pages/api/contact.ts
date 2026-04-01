@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { sendEmail } from '@/utils/emails/sendEmails';
+import '@/utils/envConfig';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import fs from 'fs';
