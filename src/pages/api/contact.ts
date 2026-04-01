@@ -12,9 +12,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { captchaToken, ...formData } = req.body;
-  const recaptchaSecret =
-    process.env.RECAPTCHA_SECRET_KEY ||
-    process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
 
   // Verify reCAPTCHA
   try {
