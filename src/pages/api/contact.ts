@@ -12,33 +12,23 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { captchaToken, ...formData } = req.body;
+  const recaptchaSecret =
+    process.env.RECAPTCHA_SECRET_KEY ||
+    process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY;
 
   // Verify reCAPTCHA
   try {
-    console.log(
-      'captchaToken received:',
-      captchaToken?.substring(0, 20) + '...'
-    );
-    console.log(
-      'secret key starts with:',
-      process.env.RECAPTCHA_SECRET_KEY?.substring(0, 10) + '...'
-    );
     const captchaRes = await fetch(
       'https://www.google.com/recaptcha/api/siteverify',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+        body: `secret=${recaptchaSecret}&response=${captchaToken}`,
       }
     );
     const captchaData = await captchaRes.json();
-    console.log('reCAPTCHA response:', JSON.stringify(captchaData));
-    console.log('Secret key present:', !!process.env.RECAPTCHA_SECRET_KEY);
-    console.log('Token present:', !!captchaToken);
     if (!captchaData.success) {
-      return res
-        .status(400)
-        .json({ message: 'Captcha verification failed', debug: captchaData });
+      return res.status(400).json({ message: 'Captcha verification failed' });
     }
   } catch {
     return res.status(500).json({ message: 'Captcha verification error' });
