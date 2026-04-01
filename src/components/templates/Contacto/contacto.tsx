@@ -19,6 +19,7 @@ const Contacto = () => {
 
   const onSubmit = async (data: any) => {
     const captchaToken = recaptchaRef.current?.getValue();
+    console.log('captchaToken:', captchaToken?.substring(0, 20) + '...');
     if (!captchaToken) {
       setCaptchaError(true);
       return;
