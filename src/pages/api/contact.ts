@@ -23,8 +23,13 @@ export default async function handler(
       }
     );
     const captchaData = await captchaRes.json();
+    console.log('reCAPTCHA response:', JSON.stringify(captchaData));
+    console.log('Secret key present:', !!process.env.RECAPTCHA_SECRET_KEY);
+    console.log('Token present:', !!captchaToken);
     if (!captchaData.success) {
-      return res.status(400).json({ message: 'Captcha verification failed' });
+      return res
+        .status(400)
+        .json({ message: 'Captcha verification failed', debug: captchaData });
     }
   } catch {
     return res.status(500).json({ message: 'Captcha verification error' });
